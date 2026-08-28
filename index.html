@@ -1,2896 +1,719 @@
-<!DOCTYPE html><html lang="ms"><head><meta charset="UTF-8"><meta name="viewport"
-content="width=device-width, initial-scale=1.0">
-
-<title>DAMZSTORE | Mobile Legends Account</title><style>
-
-/* =====================================================
-   GLOBAL
-===================================================== */
-
-* {
-    box-sizing: border-box;
-    scroll-behavior: smooth;
-}
-
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    color: white;
-    overflow-x: hidden;
-
-    background:
-        radial-gradient(
-            circle at 15% 15%,
-            rgba(0,170,255,0.16),
-            transparent 28%
-        ),
-        radial-gradient(
-            circle at 85% 30%,
-            rgba(0,80,255,0.14),
-            transparent 28%
-        ),
-        radial-gradient(
-            circle at 50% 90%,
-            rgba(0,170,255,0.10),
-            transparent 30%
-        ),
-        #020817;
-}
-
-body.modal-open {
-    overflow: hidden;
-}
-
-
-/* =====================================================
-   3D BACKGROUND
-===================================================== */
-
-.bg-3d {
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    overflow: hidden;
-    z-index: -1;
-    perspective: 1000px;
-}
-
-.cube {
-    position: absolute;
-    width: 70px;
-    height: 70px;
-
-    border:
-        1px solid
-        rgba(0,170,255,0.40);
-
-    background:
-        rgba(0,120,255,0.06);
-
-    box-shadow:
-        0 0 25px
-        rgba(0,170,255,0.18),
-        inset 0 0 25px
-        rgba(0,170,255,0.08);
-
-    transform-style:
-        preserve-3d;
-
-    animation:
-        cubeFloat
-        8s
-        ease-in-out
-        infinite;
-}
-
-.cube::before,
-.cube::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-
-    border:
-        1px solid
-        rgba(0,170,255,0.20);
-}
-
-.cube::before {
-    transform:
-        rotateX(60deg)
-        rotateZ(45deg);
-}
-
-.cube::after {
-    transform:
-        rotateY(60deg)
-        rotateZ(45deg);
-}
-
-.cube-1 {
-    top: 15%;
-    left: 5%;
-}
-
-.cube-2 {
-    top: 45%;
-    right: 7%;
-    width: 90px;
-    height: 90px;
-    animation-delay: 2s;
-}
-
-.cube-3 {
-    bottom: 12%;
-    left: 15%;
-    width: 45px;
-    height: 45px;
-    animation-delay: 4s;
-}
-
-.cube-4 {
-    top: 70%;
-    right: 25%;
-    width: 50px;
-    height: 50px;
-    animation-delay: 1s;
-}
-
-.orb {
-    position: absolute;
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(0,170,255,0.30),
-            rgba(0,80,255,0.06),
-            transparent 70%
-        );
-
-    filter: blur(3px);
-
-    animation:
-        orbFloat
-        10s
-        ease-in-out
-        infinite;
-}
-
-.orb-1 {
-    top: 20%;
-    right: 15%;
-}
-
-.orb-2 {
-    bottom: 20%;
-    left: 5%;
-    width: 180px;
-    height: 180px;
-    animation-delay: 3s;
-}
-
-.neon-line {
-    position: absolute;
-    width: 300px;
-    height: 2px;
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            #00aaff,
-            transparent
-        );
-
-    box-shadow:
-        0 0 15px #00aaff;
-
-    opacity: 0.45;
-}
-
-.line-1 {
-    top: 25%;
-    left: -80px;
-    transform: rotate(-25deg);
-}
-
-.line-2 {
-    top: 65%;
-    right: -80px;
-    transform: rotate(25deg);
-}
-
-.line-3 {
-    top: 85%;
-    left: 30%;
-    transform: rotate(-10deg);
-}
-
-@keyframes cubeFloat {
-
-    0%,100% {
-        transform:
-            translateY(0)
-            rotateX(35deg)
-            rotateY(35deg)
-            rotateZ(0deg);
-    }
-
-    50% {
-        transform:
-            translateY(-35px)
-            rotateX(70deg)
-            rotateY(120deg)
-            rotateZ(20deg);
-    }
-}
-
-@keyframes orbFloat {
-
-    0%,100% {
-        transform: translate(0,0);
-    }
-
-    50% {
-        transform: translate(40px,-50px);
-    }
-}
-
-
-/* =====================================================
-   HEADER
-===================================================== */
-
-header {
-    background:
-        rgba(3,14,35,0.92);
-
-    backdrop-filter:
-        blur(12px);
-
-    padding:
-        15px 5%;
-
-    display:
-        flex;
-
-    justify-content:
-        space-between;
-
-    align-items:
-        center;
-
-    position:
-        sticky;
-
-    top: 0;
-
-    z-index: 1000;
-
-    border-bottom:
-        1px solid
-        rgba(0,170,255,0.25);
-}
-
-
-/* LOGO */
-
-.logo-area {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.logo-icon {
-    width: 42px;
-    height: 42px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 11px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #00aaff,
-            #0055aa
-        );
-
-    color: white;
-
-    font-size: 18px;
-    font-weight: 900;
-
-    box-shadow:
-        0 0 18px
-        rgba(0,170,255,0.45);
-}
-
-.logo {
-    font-size: 26px;
-    font-weight: bold;
-    color: #00aaff;
-
-    text-shadow:
-        0 0 15px
-        rgba(0,170,255,0.7);
-}
-
-
-/* RIGHT HEADER */
-
-.header-right {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-
-
-/* LANGUAGE */
-
-.language-switch {
-    display: flex;
-
-    background:
-        rgba(255,255,255,0.07);
-
-    border:
-        1px solid
-        rgba(0,170,255,0.30);
-
-    border-radius: 10px;
-
-    padding: 3px;
-
-    gap: 3px;
-}
-
-.lang-btn {
-    border: 0;
-
-    background: transparent;
-
-    color: #9eafc5;
-
-    padding:
-        7px 10px;
-
-    border-radius: 7px;
-
-    cursor: pointer;
-
-    font-size: 12px;
-
-    font-weight: bold;
-
-    transition: 0.2s;
-}
-
-.lang-btn.active {
-    background:
-        linear-gradient(
-            135deg,
-            #00aaff,
-            #0077cc
-        );
-
-    color: white;
-
-    box-shadow:
-        0 0 12px
-        rgba(0,170,255,0.35);
-}
-
-
-/* NAV */
-
-nav a {
-    color: white;
-    text-decoration: none;
-    margin-left: 18px;
-    font-size: 14px;
-    transition: 0.2s;
-}
-
-nav a:hover {
-    color: #00aaff;
-
-    text-shadow:
-        0 0 10px #00aaff;
-}
-
-
-/* =====================================================
-   HERO
-===================================================== */
-
-.hero {
-    background:
-        linear-gradient(
-            135deg,
-            rgba(6,20,45,0.92),
-            rgba(7,59,114,0.72)
-        );
-
-    padding:
-        75px 20px;
-
-    text-align: center;
-
-    border-bottom:
-        1px solid
-        rgba(0,170,255,0.25);
-}
-
-.hero h1 {
-    font-size: 42px;
-    margin: 0;
-
-    text-shadow:
-        0 0 25px
-        rgba(0,170,255,0.3);
-}
-
-.hero h1 span {
-    color: #00aaff;
-}
-
-.hero p {
-    color: #d8e6f5;
-    font-size: 17px;
-    max-width: 650px;
-    margin: 15px auto;
-    line-height: 1.6;
-}
-
-.hero-button {
-    display: inline-block;
-
-    margin-top: 15px;
-
-    padding:
-        14px 28px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #00aaff,
-            #0077cc
-        );
-
-    color: white;
-
-    text-decoration: none;
-
-    border-radius: 10px;
-
-    font-weight: bold;
-
-    box-shadow:
-        0 0 20px
-        rgba(0,170,255,0.4);
-}
-
-
-/* =====================================================
-   PROMO
-===================================================== */
-
-.promo {
-    margin: 25px auto;
-    width: 92%;
-    max-width: 1100px;
-
-    background:
-        linear-gradient(
-            135deg,
-            rgba(11,29,64,0.94),
-            rgba(0,121,189,0.8)
-        );
-
-    padding: 28px;
-
-    border-radius: 18px;
-
-    text-align: center;
-
-    border:
-        1px solid
-        rgba(0,170,255,0.35);
-
-    box-shadow:
-        0 10px 35px
-        rgba(0,0,0,0.20);
-}
-
-.promo h2 {
-    margin-top: 0;
-    font-size: 26px;
-}
-
-.promo p {
-    color: #dbefff;
-    line-height: 1.6;
-}
-
-.promo-button {
-    display: inline-block;
-
-    background: white;
-
-    color: #06142d;
-
-    padding:
-        11px 22px;
-
-    border-radius: 8px;
-
-    text-decoration: none;
-
-    font-weight: bold;
-}
-
-
-/* =====================================================
-   SECTION
-===================================================== */
-
-.section {
-    padding:
-        45px 5%;
-
-    max-width: 1200px;
-
-    margin: auto;
-}
-
-.section-title {
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.section-title h2 {
-    font-size: 30px;
-    margin-bottom: 8px;
-}
-
-.section-title p {
-    color: #aab8cc;
-}
-
-
-/* =====================================================
-   CATEGORY
-===================================================== */
-
-.category-box {
-    display: flex;
-
-    justify-content: center;
-
-    flex-wrap: wrap;
-
-    gap: 10px;
-
-    margin-bottom: 25px;
-}
-
-.category-btn {
-    border: 1px solid
-        rgba(0,170,255,0.30);
-
-    background:
-        rgba(255,255,255,0.06);
-
-    color: white;
-
-    padding:
-        11px 17px;
-
-    border-radius: 10px;
-
-    cursor: pointer;
-
-    font-weight: bold;
-
-    font-size: 13px;
-
-    transition: 0.25s;
-}
-
-.category-btn:hover,
-.category-btn.active {
-    background:
-        linear-gradient(
-            135deg,
-            #00aaff,
-            #0077cc
-        );
-
-    border-color:
-        #00aaff;
-
-    box-shadow:
-        0 0 15px
-        rgba(0,170,255,0.30);
-}
-
-
-/* =====================================================
-   SEARCH
-===================================================== */
-
-.search-box {
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.search-box input {
-    width: 90%;
-    max-width: 600px;
-
-    padding:
-        15px 18px;
-
-    border:
-        1px solid
-        rgba(0,170,255,0.30);
-
-    border-radius: 12px;
-
-    font-size: 15px;
-
-    outline: none;
-
-    background:
-        rgba(255,255,255,0.08);
-
-    color: white;
-}
-
-.search-box input::placeholder {
-    color: #aab8cc;
-}
-
-
-/* =====================================================
-   ACCOUNT GRID
-===================================================== */
-
-.catalog {
-    display: grid;
-
-    grid-template-columns:
-        repeat(2,1fr);
-
-    gap: 20px;
-}
-
-
-/* =====================================================
-   ACCOUNT CARD
-===================================================== */
-
-.card {
-    background:
-        rgba(255,255,255,0.07);
-
-    border-radius: 18px;
-
-    overflow: hidden;
-
-    border:
-        1px solid
-        rgba(0,170,255,0.20);
-
-    backdrop-filter:
-        blur(10px);
-
-    transition:
-        0.3s;
-
-    box-shadow:
-        0 12px 35px
-        rgba(0,0,0,0.20);
-}
-
-.card:hover {
-    transform:
-        translateY(-7px);
-
-    border-color:
-        rgba(0,170,255,0.65);
-
-    box-shadow:
-        0 15px 40px
-        rgba(0,170,255,0.18);
-}
-
-
-/* =====================================================
-   IMAGE
-===================================================== */
-
-.image-wrap {
-    position: relative;
-    height: 230px;
-    overflow: hidden;
-    background: #06142d;
-}
-
-.account-image {
-    width: 100%;
-    height: 100%;
-
-    display: block;
-
-    object-fit: cover;
-
-    transition:
-        transform 0.5s ease,
-        filter 0.5s ease;
-}
-
-.card:hover .account-image {
-    transform: scale(1.07);
-
-    filter:
-        saturate(1.12)
-        brightness(1.05);
-}
-
-.image-wrap::after {
-    content: "";
-
-    position: absolute;
-
-    inset: 0;
-
-    background:
-        linear-gradient(
-            to top,
-            rgba(2,8,23,0.82),
-            transparent 55%,
-            rgba(0,170,255,0.08)
-        );
-
-    pointer-events: none;
-}
-
-.image-label {
-    position: absolute;
-
-    left: 12px;
-    top: 12px;
-
-    z-index: 2;
-
-    padding:
-        7px 10px;
-
-    border-radius:
-        999px;
-
-    background:
-        rgba(2,8,23,0.78);
-
-    border:
-        1px solid
-        rgba(0,170,255,0.35);
-
-    font-size: 12px;
-
-    font-weight: bold;
-
-    backdrop-filter:
-        blur(5px);
-}
-
-.zoom-hint {
-    position: absolute;
-
-    right: 12px;
-    bottom: 12px;
-
-    z-index: 2;
-
-    background:
-        rgba(0,0,0,0.55);
-
-    padding:
-        7px 10px;
-
-    border-radius: 8px;
-
-    font-size: 11px;
-
-    color: #dff7ff;
-}
-
-
-/* =====================================================
-   CARD CONTENT
-===================================================== */
-
-.content {
-    padding: 18px;
-}
-
-.game {
-    color: #8fa4bd;
-    font-size: 13px;
-}
-
-.name {
-    font-size: 20px;
-    font-weight: bold;
-    margin: 8px 0;
-}
-
-.info {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-    margin: 12px 0;
-}
-
-.tag {
-    background:
-        rgba(33,150,83,0.16);
-
-    color: #54df8c;
-
-    padding:
-        7px 9px;
-
-    border-radius: 8px;
-
-    font-size: 12px;
-}
-
-.old-price {
-    color: #8491a2;
-
-    text-decoration:
-        line-through;
-
-    font-size: 14px;
-}
-
-.price {
-    color: #ff7043;
-
-    font-size: 25px;
-
-    font-weight: bold;
-
-    margin: 5px 0;
-}
-
-.detail-button {
-    display: block;
-
-    width: 100%;
-
-    border: 0;
-
-    cursor: pointer;
-
-    text-align: center;
-
-    background:
-        linear-gradient(
-            135deg,
-            #06142d,
-            #0077b8
-        );
-
-    color: white;
-
-    padding: 13px;
-
-    border-radius: 9px;
-
-    margin-top: 12px;
-
-    font-weight: bold;
-
-    font-size: 14px;
-
-    transition: 0.25s;
-}
-
-.detail-button:hover {
-    background:
-        linear-gradient(
-            135deg,
-            #0077b8,
-            #00aaff
-        );
-
-    transform:
-        translateY(-2px);
-}
-
-
-/* =====================================================
-   NO RESULT
-===================================================== */
-
-.no-result {
-    text-align: center;
-
-    padding: 40px 20px;
-
-    color: #9eafc5;
-
-    display: none;
-}
-
-
-/* =====================================================
-   ADVERTISEMENT
-===================================================== */
-
-.ad-section {
-    width: 92%;
-    max-width: 1100px;
-
-    margin:
-        35px auto;
-
-    padding:
-        35px 25px;
-
-    border-radius:
-        20px;
-
-    background:
-        linear-gradient(
-            135deg,
-            rgba(0,42,85,0.95),
-            rgba(0,126,200,0.82)
-        );
-
-    border:
-        1px solid
-        rgba(0,190,255,0.45);
-
-    text-align: center;
-
-    box-shadow:
-        0 0 35px
-        rgba(0,170,255,0.15);
-}
-
-.ad-badge {
-    display: inline-block;
-
-    background:
-        #ff7043;
-
-    color: white;
-
-    padding:
-        6px 12px;
-
-    border-radius:
-        999px;
-
-    font-size: 12px;
-
-    font-weight: bold;
-
-    margin-bottom:
-        10px;
-}
-
-.ad-section h2 {
-    margin:
-        5px 0 10px;
-
-    font-size:
-        27px;
-}
-
-.ad-section p {
-    color:
-        #dbefff;
-
-    line-height:
-        1.6;
-}
-
-.ad-button {
-    display:
-        inline-block;
-
-    margin-top:
-        12px;
-
-    padding:
-        12px 25px;
-
-    background:
-        white;
-
-    color:
-        #06142d;
-
-    text-decoration:
-        none;
-
-    border-radius:
-        9px;
-
-    font-weight:
-        bold;
-}
-
-
-/* =====================================================
-   WHY
-===================================================== */
-
-.why {
-    display:
-        grid;
-
-    grid-template-columns:
-        repeat(3,1fr);
-
-    gap:
-        20px;
-}
-
-.why-card {
-    background:
-        rgba(255,255,255,0.06);
-
-    padding:
-        25px;
-
-    border-radius:
-        15px;
-
-    text-align:
-        center;
-
-    border:
-        1px solid
-        rgba(0,170,255,0.18);
-}
-
-.why-card h3 {
-    color:
-        #00aaff;
-}
-
-.why-card p {
-    color:
-        #9caec5;
-
-    font-size:
-        14px;
-
-    line-height:
-        1.6;
-}
-
-
-/* =====================================================
-   CONTACT
-===================================================== */
-
-.contact {
-    background:
-        linear-gradient(
-            135deg,
-            rgba(6,20,45,0.95),
-            rgba(7,59,114,0.88)
-        );
-
-    text-align:
-        center;
-
-    padding:
-        55px 20px;
-}
-
-.contact p {
-    color:
-        #d8e6f5;
-}
-
-.social-buttons {
-    display:
-        flex;
-
-    justify-content:
-        center;
-
-    gap:
-        12px;
-
-    flex-wrap:
-        wrap;
-
-    margin-top:
-        25px;
-}
-
-.social {
-    display:
-        inline-block;
-
-    padding:
-        13px 22px;
-
-    background:
-        white;
-
-    color:
-        #06142d;
-
-    text-decoration:
-        none;
-
-    border-radius:
-        10px;
-
-    font-weight:
-        bold;
-}
-
-
-/* =====================================================
-   FOOTER
-===================================================== */
-
-footer {
-    background:
-        #010611;
-
-    text-align:
-        center;
-
-    padding:
-        35px 20px;
-
-    border-top:
-        1px solid
-        rgba(0,170,255,0.15);
-}
-
-footer h2 {
-    color:
-        #00aaff;
-}
-
-footer p {
-    color:
-        #8997aa;
-
-    font-size:
-        13px;
-}
-
-footer small {
-    color:
-        #66758a;
-}
-
-
-/* =====================================================
-   MODAL
-===================================================== */
-
-.modal {
-    display:
-        none;
-
-    position:
-        fixed;
-
-    inset:
-        0;
-
-    background:
-        rgba(0,0,0,0.90);
-
-    z-index:
-        9999;
-
-    padding:
-        20px;
-
-    overflow-y:
-        auto;
-
-    backdrop-filter:
-        blur(8px);
-}
-
-.modal.show {
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    justify-content:
-        center;
-}
-
-.modal-box {
-    position:
-        relative;
-
-    width:
-        100%;
-
-    max-width:
-        700px;
-
-    background:
-        linear-gradient(
-            145deg,
-            #07162f,
-            #0b1d40
-        );
-
-    border:
-        1px solid
-        rgba(0,170,255,0.65);
-
-    border-radius:
-        20px;
-
-    overflow:
-        hidden;
-
-    box-shadow:
-        0 0 60px
-        rgba(0,170,255,0.25);
-
-    animation:
-        modalIn
-        0.25s
-        ease;
-}
-
-.modal-image-wrap {
-    height:
-        350px;
-
-    background:
-        #06142d;
-
-    position:
-        relative;
-}
-
-.modal-image {
-    width:
-        100%;
-
-    height:
-        100%;
-
-    object-fit:
-        contain;
-
-    display:
-        block;
-
-    background:
-        #06142d;
-}
-
-.modal-image-wrap::after {
-    content:
-        "";
-
-    position:
-        absolute;
-
-    inset:
-        0;
-
-    background:
-        linear-gradient(
-            to top,
-            rgba(2,8,23,0.45),
-            transparent
-        );
-
-    pointer-events:
-        none;
-}
-
-.modal-content {
-    padding:
-        25px;
-}
-
-.modal-title {
-    color:
-        #00c3ff;
-
-    margin:
-        0 45px 12px;
-
-    font-size:
-        26px;
-}
-
-.modal-desc {
-    color:
-        #dbefff;
-
-    line-height:
-        1.7;
-
-    font-size:
-        15px;
-}
-
-.modal-old {
-    color:
-        #8491a2;
-
-    text-decoration:
-        line-through;
-
-    margin-top:
-        15px;
-}
-
-.modal-price {
-    color:
-        #ff7043;
-
-    font-size:
-        30px;
-
-    font-weight:
-        bold;
-
-    margin:
-        5px 0 20px;
-}
-
-.close {
-    position:
-        absolute;
-
-    right:
-        15px;
-
-    top:
-        12px;
-
-    z-index:
-        10;
-
-    width:
-        42px;
-
-    height:
-        42px;
-
-    border:
-        0;
-
-    border-radius:
-        50%;
-
-    background:
-        rgba(0,0,0,0.70);
-
-    color:
-        white;
-
-    font-size:
-        28px;
-
-    cursor:
-        pointer;
-}
-
-.close:hover {
-    background:
-        #00aaff;
-}
-
-.modal-wa {
-    display:
-        block;
-
-    text-align:
-        center;
-
-    background:
-        linear-gradient(
-            135deg,
-            #25D366,
-            #128C7E
-        );
-
-    color:
-        white;
-
-    padding:
-        15px;
-
-    border-radius:
-        10px;
-
-    text-decoration:
-        none;
-
-    font-weight:
-        bold;
-
-    transition:
-        0.2s;
-}
-
-.modal-wa:hover {
-    transform:
-        translateY(-2px);
-
-    box-shadow:
-        0 8px 20px
-        rgba(37,211,102,0.25);
-}
-
-@keyframes modalIn {
-
-    from {
-        opacity: 0;
-
-        transform:
-            translateY(15px)
-            scale(0.97);
-    }
-
-    to {
-        opacity: 1;
-        transform: none;
-    }
-}
-
-
-/* =====================================================
-   MOBILE
-===================================================== */
-
-@media(max-width:700px) {
-
-    header {
-        padding:
-            12px 15px;
-    }
-
-    .logo-icon {
-        width: 36px;
-        height: 36px;
-        font-size: 15px;
-    }
-
-    .logo {
-        font-size:
-            21px;
-    }
-
-    .header-right {
-        gap:
-            8px;
-    }
-
-    nav {
-        display:
-            none;
-    }
-
-    .language-switch {
-        padding:
-            2px;
-    }
-
-    .lang-btn {
-        padding:
-            6px 8px;
-
-        font-size:
-            10px;
-    }
-
-    .hero {
-        padding:
-            50px 20px;
-    }
-
-    .hero h1 {
-        font-size:
-            32px;
-    }
-
-    .category-box {
-        gap:
-            6px;
-    }
-
-    .category-btn {
-        padding:
-            9px 10px;
-
-        font-size:
-            10px;
-    }
-
-    .catalog {
-        grid-template-columns:
-            repeat(2,1fr);
-
-        gap:
-            10px;
-    }
-
-    .image-wrap {
-        height:
-            145px;
-    }
-
-    .content {
-        padding:
-            11px;
-    }
-
-    .name {
-        font-size:
-            14px;
-    }
-
-    .price {
-        font-size:
-            18px;
-    }
-
-    .old-price {
-        font-size:
-            11px;
-    }
-
-    .tag {
-        font-size:
-            10px;
-
-        padding:
-            6px 7px;
-    }
-
-    .detail-button {
-        font-size:
-            11px;
-
-        padding:
-            10px 5px;
-    }
-
-    .zoom-hint {
-        display:
-            none;
-    }
-
-    .image-label {
-        font-size:
-            9px;
-
-        padding:
-            5px 7px;
-    }
-
-    .why {
-        grid-template-columns:
-            1fr;
-    }
-
-    .modal {
-        padding:
-            10px;
-    }
-
-    .modal-image-wrap {
-        height:
-            240px;
-    }
-
-    .modal-content {
-        padding:
-            18px;
-    }
-
-    .modal-title {
-        font-size:
-            21px;
-
-        margin-left:
-            0;
-    }
-
-    .modal-price {
-        font-size:
-            25px;
-    }
-}
-
-</style></head><body><!-- =====================================================
-     BACKGROUND
-===================================================== --><div class="bg-3d"><div class="cube cube-1"></div>
-<div class="cube cube-2"></div>
-<div class="cube cube-3"></div>
-<div class="cube cube-4"></div>
-
-<div class="orb orb-1"></div>
-<div class="orb orb-2"></div>
-
-<div class="neon-line line-1"></div>
-<div class="neon-line line-2"></div>
-<div class="neon-line line-3"></div>
-
-</div><!-- =====================================================
-     HEADER
-===================================================== --><header><div class="logo-area">
-
-    <div class="logo-icon">
-        DZ
-    </div>
-
-    <div class="logo">
-        DAMZSTORE
-    </div>
-
-</div>
-
-
-<div class="header-right">
-
-    <!-- LANGUAGE -->
-
-    <div class="language-switch">
-
-        <button
-            class="lang-btn active"
-            id="bmBtn"
-            onclick="setLanguage('bm')"
-        >
-            🇲🇾 BM
-        </button>
-
-        <button
-            class="lang-btn"
-            id="enBtn"
-            onclick="setLanguage('en')"
-        >
-            🇬🇧 EN
-        </button>
-
-    </div>
-
-
-    <!-- NAV -->
-
-    <nav>
-
-        <a href="#home" data-bm="Home" data-en="Home">
-            Home
-        </a>
-
-        <a href="#account"
-           data-bm="Account"
-           data-en="Accounts">
-            Account
-        </a>
-
-        <a href="#why"
-           data-bm="Why DAMZ"
-           data-en="Why DAMZ">
-            Why DAMZ
-        </a>
-
-        <a href="#contact"
-           data-bm="Contact"
-           data-en="Contact">
-            Contact
-        </a>
-
-    </nav>
-
-</div>
-
-</header><!-- =====================================================
-     HERO
-===================================================== --><section
-    class="hero"
-    id="home"
-><h1>
-    DAMZ<span>STORE</span>
-</h1>
-
-
-<p
-    data-bm="Mobile Legends Gaming Account Marketplace 🎮|Cari account Mobile Legends pilihan anda dengan mudah."
-    data-en="Mobile Legends Gaming Account Marketplace 🎮|Find your preferred Mobile Legends account easily."
->
-    Mobile Legends Gaming Account Marketplace 🎮
-    <br>
-    Cari account Mobile Legends pilihan anda dengan mudah.
-</p>
-
-
-<a
-    class="hero-button"
-    href="#account"
-    data-bm="LIHAT ACCOUNT"
-    data-en="VIEW ACCOUNTS"
->
-    LIHAT ACCOUNT
-</a>
-
-</section><!-- =====================================================
-     PROMO
-===================================================== --><div class="promo"><h2
-    data-bm="🔥 ACCOUNT MOBILE LEGENDS TERKINI"
-    data-en="🔥 LATEST MOBILE LEGENDS ACCOUNTS"
->
-    🔥 ACCOUNT MOBILE LEGENDS TERKINI
-</h2>
-
-
-<p
-    data-bm="Account baru akan ditambah dari semasa ke semasa.|Jangan lupa check katalog DAMZSTORE!"
-    data-en="New accounts will be added from time to time.|Don't forget to check the DAMZSTORE catalog!"
->
-    Account baru akan ditambah dari semasa ke semasa.
-    <br>
-    Jangan lupa check katalog DAMZSTORE!
-</p>
-
-
-<a
-    class="promo-button"
-    href="#account"
-    data-bm="EXPLORE ACCOUNT"
-    data-en="EXPLORE ACCOUNTS"
->
-    EXPLORE ACCOUNT
-</a>
-
-</div><!-- =====================================================
-     ACCOUNT
-===================================================== --><section
-    class="section"
-    id="account"
-><div class="section-title">
-
-    <h2
-        data-bm="🛒 ACCOUNT TERKINI"
-        data-en="🛒 LATEST ACCOUNTS"
-    >
-        🛒 ACCOUNT TERKINI
-    </h2>
-
-
-    <p
-        data-bm="Mobile Legends account yang tersedia"
-        data-en="Available Mobile Legends accounts"
-    >
-        Mobile Legends account yang tersedia
-    </p>
-
-</div>
-
-
-<!-- =================================================
-     CATEGORY
-================================================= -->
-
-<div class="category-box">
-
-    <button
-        class="category-btn active"
-        onclick="filterCategory('all', this)"
-        data-bm="🛒 SEMUA"
-        data-en="🛒 ALL"
-    >
-        🛒 SEMUA
-    </button>
-
-
-    <button
-        class="category-btn"
-        onclick="filterCategory('low', this)"
-        data-bm="💰 RM 0 - 499"
-        data-en="💰 RM 0 - 499"
-    >
-        💰 RM 0 - 499
-    </button>
-
-
-    <button
-        class="category-btn"
-        onclick="filterCategory('mid', this)"
-        data-bm="💎 RM 500 - 999"
-        data-en="💎 RM 500 - 999"
-    >
-        💎 RM 500 - 999
-    </button>
-
-
-    <button
-        class="category-btn"
-        onclick="filterCategory('high', this)"
-        data-bm="👑 RM 1000+"
-        data-en="👑 RM 1000+"
-    >
-        👑 RM 1000+
-    </button>
-
-</div>
-
-
-<!-- SEARCH -->
-
-<div class="search-box">
-
-    <input
-        type="text"
-        id="searchInput"
-        placeholder="🔍 Cari DZ0001, DZ0002, skin..."
-        oninput="searchAccount()"
-    >
-
-</div>
-
-
-<!-- CATALOG -->
-
-<div
-    class="catalog"
-    id="catalog"
->
-</div>
-
-
-<div
-    class="no-result"
-    id="noResult"
-    data-bm="😔 Tiada account dijumpai."
-    data-en="😔 No account found."
->
-    😔 Tiada account dijumpai.
-</div>
-
-</section><!-- =====================================================
-     ADVERTISEMENT
-===================================================== --><section class="ad-section"><div
-    class="ad-badge"
-    data-bm="🔥 PROMOSI"
-    data-en="🔥 PROMOTION"
->
-    🔥 PROMOSI
-</div>
-
-
-<h2
-    data-bm="🎮 CARI ACCOUNT IMPIAN ANDA?"
-    data-en="🎮 LOOKING FOR YOUR DREAM ACCOUNT?"
->
-    🎮 CARI ACCOUNT IMPIAN ANDA?
-</h2>
-
-
-<p
-    data-bm="Semua account tersedia dengan maklumat yang jelas.|Tekan LIHAT DETAIL untuk melihat gambar penuh dan maklumat account."
-    data-en="All accounts come with clear information.|Press VIEW DETAILS to see the full image and account information."
->
-    Semua account tersedia dengan maklumat yang jelas.
-    <br>
-    Tekan <b>LIHAT DETAIL</b> untuk melihat gambar penuh dan maklumat account.
-</p>
-
-
-<a
-    href="#contact"
-    class="ad-button"
-    data-bm="💬 HUBUNGI DAMZ"
-    data-en="💬 CONTACT DAMZ"
->
-    💬 HUBUNGI DAMZ
-</a>
-
-</section><!-- =====================================================
-     WHY DAMZ
-===================================================== --><section
-    class="section"
-    id="why"
-><div class="section-title">
-
-    <h2
-        data-bm="⭐ KENAPA DAMZ?"
-        data-en="⭐ WHY DAMZ?"
-    >
-        ⭐ KENAPA DAMZ?
-    </h2>
-
-</div>
-
-
-<div class="why">
-
-
-    <div class="why-card">
-
-        <h3
-            data-bm="🛡️ Warranty"
-            data-en="🛡️ Warranty"
-        >
-            🛡️ Warranty
-        </h3>
-
-
-        <p
-            data-bm="Sesetengah account mempunyai warranty bergantung kepada listing."
-            data-en="Some accounts come with warranty depending on the listing."
-        >
-            Sesetengah account mempunyai warranty bergantung kepada listing.
-        </p>
-
-    </div>
-
-
-    <div class="why-card">
-
-        <h3
-            data-bm="📱 Easy Contact"
-            data-en="📱 Easy Contact"
-        >
-            📱 Easy Contact
-        </h3>
-
-
-        <p
-            data-bm="Mudah untuk menghubungi DAMZ melalui WhatsApp, Instagram atau Telegram."
-            data-en="Easy to contact DAMZ through WhatsApp, Instagram or Telegram."
-        >
-            Mudah untuk menghubungi DAMZ melalui WhatsApp, Instagram atau Telegram.
-        </p>
-
-    </div>
-
-
-    <div class="why-card">
-
-        <h3
-            data-bm="🎮 Gaming Focus"
-            data-en="🎮 Gaming Focus"
-        >
-            🎮 Gaming Focus
-        </h3>
-
-
-        <p
-            data-bm="Fokus kepada Mobile Legends account dan servis berkaitan gaming."
-            data-en="Focused on Mobile Legends accounts and gaming-related services."
-        >
-            Fokus kepada Mobile Legends account dan servis berkaitan gaming.
-        </p>
-
-    </div>
-
-
-</div>
-
-</section><!-- =====================================================
-     ADVERTISEMENT 2
-===================================================== --><section class="ad-section"><div
-    class="ad-badge"
-    data-bm="⚡ DAMZSTORE"
-    data-en="⚡ DAMZSTORE"
->
-    ⚡ DAMZSTORE
-</div>
-
-
-<h2
-    data-bm="💎 ACCOUNT BERKUALITI • HARGA MENARIK"
-    data-en="💎 QUALITY ACCOUNTS • ATTRACTIVE PRICES"
->
-    💎 ACCOUNT BERKUALITI • HARGA MENARIK
-</h2>
-
-
-<p
-    data-bm="Pilih account yang anda minat, tekan LIHAT DETAIL dan terus hubungi DAMZ melalui WhatsApp."
-    data-en="Choose the account you like, press VIEW DETAILS and contact DAMZ through WhatsApp."
->
-    Pilih account yang anda minat,
-    tekan <b>LIHAT DETAIL</b> dan terus
-    hubungi DAMZ melalui WhatsApp.
-</p>
-
-
-<a
-    href="#account"
-    class="ad-button"
-    data-bm="🛒 LIHAT SEMUA ACCOUNT"
-    data-en="🛒 VIEW ALL ACCOUNTS"
->
-    🛒 LIHAT SEMUA ACCOUNT
-</a>
-
-</section><!-- =====================================================
-     CONTACT
-===================================================== --><section
-    class="contact"
-    id="contact"
-><h2
-    data-bm="📱 CONTACT DAMZ"
-    data-en="📱 CONTACT DAMZ"
->
-    📱 CONTACT DAMZ
-</h2>
-
-
-<p
-    data-bm="Berminat dengan mana-mana account?|Hubungi kami untuk maklumat lanjut."
-    data-en="Interested in any account?|Contact us for more information."
->
-    Berminat dengan mana-mana account?
-    <br>
-    Hubungi kami untuk maklumat lanjut.
-</p>
-
-
-<div class="social-buttons">
-
-
-    <a
-        class="social"
-        href="https://wa.me/601133169293"
-        target="_blank"
-    >
-        💬 WhatsApp
-    </a>
-
-
-    <a
-        class="social"
-        href="https://instagram.com/damzofficialmy"
-        target="_blank"
-    >
-        📸 Instagram
-    </a>
-
-
-    <a
-        class="social"
-        href="https://t.me/damzresellermy"
-        target="_blank"
-    >
-        ✈️ Telegram
-    </a>
-
-
-</div>
-
-</section><!-- =====================================================
-     FOOTER
-===================================================== --><footer><h2>
-    DAMZSTORE
-</h2>
-
-
-<p
-    data-bm="Trusted Mobile Legends Account Seller"
-    data-en="Trusted Mobile Legends Account Seller"
->
-    Trusted Mobile Legends Account Seller
-</p>
-
-
-<p
-    data-bm="Mobile Legends • Reseller • Midman • Paid Promote"
-    data-en="Mobile Legends • Reseller • Midman • Paid Promote"
->
-    Mobile Legends • Reseller • Midman • Paid Promote
-</p>
-
-
-<small>
-    © 2026 DAMZSTORE. All rights reserved.
-</small>
-
-</footer><!-- =====================================================
-     DETAIL MODAL
-===================================================== --><div
-    class="modal"
-    id="detailModal"
-    onclick="outsideClose(event)"
-><div class="modal-box">
-
-
-    <button
-        class="close"
-        onclick="closeDetail()"
-    >
-        &times;
-    </button>
-
-
-    <div class="modal-image-wrap">
-
-        <img
-            id="modalImage"
-            class="modal-image"
-            src=""
-            alt="Account Mobile Legends"
-        >
-
-    </div>
-
-
-    <div class="modal-content">
-
-        <h2
-            id="modalTitle"
-            class="modal-title"
-        >
-        </h2>
-
-
-        <p
-            id="modalDesc"
-            class="modal-desc"
-        >
-        </p>
-
-
-        <div
-            id="modalOld"
-            class="modal-old"
-        >
-        </div>
-
-
-        <div
-            id="modalPrice"
-            class="modal-price"
-        >
-        </div>
-
-
-        <a
-            id="modalWA"
-            class="modal-wa"
-            href="#"
-            target="_blank"
-        >
-            💬 BELI SEKARANG DI WHATSAPP
-        </a>
-
-    </div>
-
-</div>
-
-</div><!-- =====================================================
-     JAVASCRIPT
-===================================================== --><script>
-
-
-/* =====================================================
-   CURRENT LANGUAGE
-===================================================== */
-
-let currentLanguage = "bm";
-
-
-/* =====================================================
-   CURRENT CATEGORY
-===================================================== */
-
-let currentCategory = "all";
-
-
-/* =====================================================
-   ACCOUNT DATA
-===================================================== */
-
-const accounts = [
-
-    {
-        id: "DZ0001",
-        skin: "358 Skin",
-        oldPrice: "RM699.00",
-        price: "RM499.00",
-        priceNumber: 499,
-        image: "images/DZ0001.jpg",
-        descriptionBM:
-            "Rank Mythic Glory. Skin 358. Hero max. Binding Moonton. Clearbind. Berwaranti.",
-        descriptionEN:
-            "Mythic Glory rank. 358 skins. Max heroes. Moonton binding. Clearbind. Warranty included."
-    },
-
-
-    {
-        id: "DZ0002",
-        skin: "444 Skin",
-        oldPrice: "RM799.00",
-        price: "RM550.00",
-        priceNumber: 550,
-        image: "images/DZ0002.jpg",
-        descriptionBM:
-            "Rank Mythic Glory. Skin 444. Hero max. Binding Moonton. Clearbind. Berwaranti.",
-        descriptionEN:
-            "Mythic Glory rank. 444 skins. Max heroes. Moonton binding. Clearbind. Warranty included."
-    },
-
-
-    {
-        id: "DZ0003",
-        skin: "578 Skin",
-        oldPrice: "RM599.00",
-        price: "RM499.00",
-        priceNumber: 499,
-        image: "images/dz0003.jpg",
-        descriptionBM:
-            "Rank Mythic Glory. Skin 578. Hero max. Binding Moonton. Clearbind. Berwaranti.",
-        descriptionEN:
-            "Mythic Glory rank. 578 skins. Max heroes. Moonton binding. Clearbind. Warranty included."
-    },
-
-
-    {
-        id: "DZ0004",
-        skin: "564 Skin",
-        oldPrice: "RM569.00",
-        price: "RM469.00",
-        priceNumber: 469,
-        image: "images/dz0004.jpg",
-        descriptionBM:
-            "Rank Mythic Glory. Skin 564. Hero max. Binding Moonton. Clearbind. Berwaranti.",
-        descriptionEN:
-            "Mythic Glory rank. 564 skins. Max heroes. Moonton binding. Clearbind. Warranty included."
-    },
-
-
-    {
-        id: "DZ0005",
-        skin: "411 Skin",
-        oldPrice: "RM500.00",
-        price: "RM350.00",
-        priceNumber: 350,
-        image: "images/dz0005.jpg",
-        descriptionBM:
-            "Rank Mythic Glory. Skin 411. Hero max. Binding Moonton. Clearbind. Berwaranti.",
-        descriptionEN:
-            "Mythic Glory rank. 411 skins. Max heroes. Moonton binding. Clearbind. Warranty included."
-    },
-
-
-    {
-        id: "DZ0006",
-        skin: "483 Skin",
-        oldPrice: "RM450.00",
-        price: "RM320.00",
-        priceNumber: 320,
-        image: "images/DZ0006.jpg",
-        descriptionBM:
-            "Rank Mythic Glory. Skin 483. Hero max. Binding Moonton. Clearbind. Berwaranti.",
-        descriptionEN:
-            "Mythic Glory rank. 483 skins. Max heroes. Moonton binding. Clearbind. Warranty included."
-    },
-
-
-    {
-        id: "DZ0007",
-        skin: "500 Skin",
-        oldPrice: "RM650.00",
-        price: "RM450.00",
-        priceNumber: 450,
-        image: "images/DZ0007.jpg",
-        descriptionBM:
-            "Rank Mythic Glory. Skin 500. Hero max. Binding Moonton. Clearbind. Berwaranti.",
-        descriptionEN:
-            "Mythic Glory rank. 500 skins. Max heroes. Moonton binding. Clearbind. Warranty included."
-    },
-
-
-    {
-        id: "DZ0008",
-        skin: "520 Skin",
-        oldPrice: "RM700.00",
-        price: "RM480.00",
-        priceNumber: 480,
-        image: "images/DZ0008.jpg",
-        descriptionBM:
-            "Rank Mythic Glory. Skin 520. Hero max. Binding Moonton. Clearbind. Berwaranti.",
-        descriptionEN:
-            "Mythic Glory rank. 520 skins. Max heroes. Moonton binding. Clearbind. Warranty included."
-    },
-
-
-    {
-        id: "DZ0009",
-        skin: "450 Skin",
-        oldPrice: "RM600.00",
-        price: "RM420.00",
-        priceNumber: 420,
-        image: "images/DZ0009.jpg",
-        descriptionBM:
-            "Rank Mythic Glory. Skin 450. Hero max. Binding Moonton. Clearbind. Berwaranti.",
-        descriptionEN:
-            "Mythic Glory rank. 450 skins. Max heroes. Moonton binding. Clearbind. Warranty included."
-    },
-
-
-    {
-        id: "DZ0010",
-        skin: "550 Skin",
-        oldPrice: "RM750.00",
-        price: "RM520.00",
-        priceNumber: 520,
-        image: "images/DZ0010.jpg",
-        descriptionBM:
-            "Rank Mythic Glory. Skin 550. Hero max. Binding Moonton. Clearbind. Berwaranti.",
-        descriptionEN:
-            "Mythic Glory rank. 550 skins. Max heroes. Moonton binding. Clearbind. Warranty included."
-    },
-
-
-    {
-        id: "DZ0011",
-        skin: "600 Skin",
-        oldPrice: "RM850.00",
-        price: "RM599.00",
-        priceNumber: 599,
-        image: "images/DZ0011.jpg",
-        descriptionBM:
-            "Rank Mythic Glory. Skin 600. Hero max. Binding Moonton. Clearbind. Berwaranti.",
-        descriptionEN:
-            "Mythic Glory rank. 600 skins. Max heroes. Moonton binding. Clearbind. Warranty included."
-    },
-
-
-    {
-        id: "DZ0012",
-        skin: "650 Skin",
-        oldPrice: "RM900.00",
-        price: "RM650.00",
-        priceNumber: 650,
-        image: "images/DZ0012.jpg",
-        descriptionBM:
-            "Rank Mythic Glory. Skin 650. Hero max. Binding Moonton. Clearbind. Berwaranti.",
-        descriptionEN:
-            "Mythic Glory rank. 650 skins. Max heroes. Moonton binding. Clearbind. Warranty included."
-    }
-
-];
-
-
-/* =====================================================
-   CATEGORY CHECK
-===================================================== */
-
-function checkCategory(account) {
-
-    if (currentCategory === "all") {
-        return true;
-    }
-
-
-    if (currentCategory === "low") {
-
-        return account.priceNumber < 500;
-
-    }
-
-
-    if (currentCategory === "mid") {
-
-        return (
-            account.priceNumber >= 500 &&
-            account.priceNumber < 1000
-        );
-
-    }
-
-
-    if (currentCategory === "high") {
-
-        return account.priceNumber >= 1000;
-
-    }
-
-
-    return true;
-}
-
-
-/* =====================================================
-   CREATE CARD
-===================================================== */
-
-function createCard(account) {
-
-    const detailText =
-        currentLanguage === "bm"
-        ? "LIHAT DETAIL →"
-        : "VIEW DETAILS →";
-
-
-    const warrantyText =
-        currentLanguage === "bm"
-        ? "🛡️ Berwaranti"
-        : "🛡️ Warranty";
-
-
-    const stockText =
-        currentLanguage === "bm"
-        ? "📦 Stok 1"
-        : "📦 Stock 1";
-
-
-    return `
-
-        <div class="card">
-
-            <div class="image-wrap">
-
-                <img
-                    class="account-image"
-                    src="${account.image}"
-                    alt="${account.id}"
-                    onerror="this.style.opacity='0.25'"
-                >
-
-                <span class="image-label">
-                    🎮 ${account.skin.toUpperCase()}
-                </span>
-
-                <span class="zoom-hint">
-                    🔎 ${currentLanguage === "bm"
-                        ? "Lihat gambar"
-                        : "View image"}
-                </span>
-
-            </div>
-
-
-            <div class="content">
-
-                <div class="game">
-                    Mobile Legends
-                </div>
-
-
-                <div class="name">
-                    ${account.id} | ${account.skin}
-                </div>
-
-
-                <div class="info">
-
-                    <span class="tag">
-                        ${warrantyText}
-                    </span>
-
-                    <span class="tag">
-                        ${stockText}
-                    </span>
-
-                </div>
-
-
-                <div class="old-price">
-                    ${account.oldPrice}
-                </div>
-
-
-                <div class="price">
-                    ${account.price}
-                </div>
-
-
-                <button
-                    class="detail-button"
-                    onclick="showDetail('${account.id}')"
-                >
-                    ${detailText}
-                </button>
-
-            </div>
-
-        </div>
-
-    `;
-}
-
-
-/* =====================================================
-   LOAD ACCOUNTS
-===================================================== */
-
-function loadAccounts(list = accounts) {
-
-    const catalog =
-        document.getElementById("catalog");
-
-    const noResult =
-        document.getElementById("noResult");
-
-
-    catalog.innerHTML = "";
-
-
-    if (list.length === 0) {
-
-        noResult.style.display = "block";
-
-        return;
-
-    }
-
-
-    noResult.style.display = "none";
-
-
-    list.forEach(function(account) {
-
-        catalog.innerHTML +=
-            createCard(account);
-
-    });
-
-}
-
-
-/* =====================================================
-   FILTER CATEGORY
-===================================================== */
-
-function filterCategory(category, button) {
-
-    currentCategory = category;
-
-
-    document
-        .querySelectorAll(".category-btn")
-        .forEach(function(btn) {
-
-            btn.classList.remove("active");
-
-        });
-
-
-    button.classList.add("active");
-
-
-    searchAccount();
-
-}
-
-
-/* =====================================================
-   SEARCH
-===================================================== */
-
-function searchAccount() {
-
-    const input =
-        document
-        .getElementById("searchInput")
-        .value
-        .toLowerCase()
-        .trim();
-
-
-    const filtered =
-        accounts.filter(function(account) {
-
-            const matchesSearch =
-
-                account.id
-                .toLowerCase()
-                .includes(input)
-
-                ||
-
-                account.skin
-                .toLowerCase()
-                .includes(input)
-
-                ||
-
-                account.price
-                .toLowerCase()
-                .includes(input);
-
-
-            const matchesCategory =
-                checkCategory(account);
-
-
-            return (
-                matchesSearch &&
-                matchesCategory
-            );
-
-        });
-
-
-    loadAccounts(filtered);
-
-}
-
-
-/* =====================================================
-   SHOW DETAIL
-===================================================== */
-
-function showDetail(id) {
-
-    const account =
-        accounts.find(
-            function(item) {
-                return item.id === id;
-            }
-        );
-
-
-    if (!account) return;
-
-
-    document
-        .getElementById("modalTitle")
-        .textContent =
-            account.id + " | " + account.skin;
-
-
-    document
-        .getElementById("modalDesc")
-        .textContent =
-            currentLanguage === "bm"
-            ? account.descriptionBM
-            : account.descriptionEN;
-
-
-    document
-        .getElementById("modalOld")
-        .textContent =
-            account.oldPrice;
-
-
-    document
-        .getElementById("modalPrice")
-        .textContent =
-            account.price;
-
-
-    document
-        .getElementById("modalImage")
-        .src =
-            account.image;
-
-
-    const message =
-
-        encodeURIComponent(
-
-            currentLanguage === "bm"
-
-            ?
-
-            "Hi DAMZ, saya berminat dengan account "
-            + account.id
-            + " | "
-            + account.skin
-
-            :
-
-            "Hi DAMZ, I am interested in account "
-            + account.id
-            + " | "
-            + account.skin
-
-        );
-
-
-    document
-        .getElementById("modalWA")
-        .href =
-            "https://wa.me/601133169293?text="
-            + message;
-
-
-    document
-        .getElementById("modalWA")
-        .textContent =
-
-            currentLanguage === "bm"
-            ? "💬 BELI SEKARANG DI WHATSAPP"
-            : "💬 BUY NOW ON WHATSAPP";
-
-
-    document
-        .getElementById("detailModal")
-        .classList
-        .add("show");
-
-
-    document
-        .body
-        .classList
-        .add("modal-open");
-
-}
-
-
-/* =====================================================
-   CLOSE MODAL
-===================================================== */
-
-function closeDetail() {
-
-    document
-        .getElementById("detailModal")
-        .classList
-        .remove("show");
-
-
-    document
-        .body
-        .classList
-        .remove("modal-open");
-
-}
-
-
-/* =====================================================
-   OUTSIDE MODAL
-===================================================== */
-
-function outsideClose(event) {
-
-    const modal =
-        document.getElementById("detailModal");
-
-
-    if (
-        event.target === modal
-    ) {
-
-        closeDetail();
-
-    }
-
-}
-
-
-/* =====================================================
-   ESC
-===================================================== */
-
-document.addEventListener(
-    "keydown",
-    function(event) {
-
-        if (
-            event.key === "Escape"
-        ) {
-
-            closeDetail();
-
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAMZSTORE | Mobile Legends Account</title>
+    <style>
+        /* =====================================================
+           GLOBAL
+        ===================================================== */
+        * {
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: white;
+            overflow-x: hidden;
+            background:
+                radial-gradient(circle at 15% 15%, rgba(0,170,255,0.16), transparent 28%),
+                radial-gradient(circle at 85% 30%, rgba(0,80,255,0.14), transparent 28%),
+                radial-gradient(circle at 50% 90%, rgba(0,170,255,0.10), transparent 30%),
+                #020817;
+        }
+        body.modal-open { overflow: hidden; }
+
+        /* =====================================================
+           3D BACKGROUND
+        ===================================================== */
+        .bg-3d {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: -1;
+            perspective: 1000px;
+        }
+        .cube {
+            position: absolute;
+            width: 70px;
+            height: 70px;
+            border: 1px solid rgba(0,170,255,0.40);
+            background: rgba(0,120,255,0.06);
+            box-shadow: 0 0 25px rgba(0,170,255,0.18), inset 0 0 25px rgba(0,170,255,0.08);
+            transform-style: preserve-3d;
+            animation: cubeFloat 8s ease-in-out infinite;
+        }
+        .cube::before, .cube::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border: 1px solid rgba(0,170,255,0.20);
+        }
+        .cube::before { transform: rotateX(60deg) rotateZ(45deg); }
+        .cube::after { transform: rotateY(60deg) rotateZ(45deg); }
+        .cube-1 { top: 15%; left: 5%; }
+        .cube-2 { top: 45%; right: 7%; width: 90px; height: 90px; animation-delay: 2s; }
+        .cube-3 { bottom: 12%; left: 15%; width: 45px; height: 45px; animation-delay: 4s; }
+        .cube-4 { top: 70%; right: 25%; width: 50px; height: 50px; animation-delay: 1s; }
+
+        .orb {
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(0,170,255,0.30), rgba(0,80,255,0.06), transparent 70%);
+            filter: blur(3px);
+            animation: orbFloat 10s ease-in-out infinite;
+        }
+        .orb-1 { top: 20%; right: 15%; }
+        .orb-2 { bottom: 20%; left: 5%; width: 180px; height: 180px; animation-delay: 3s; }
+
+        .neon-line {
+            position: absolute;
+            width: 300px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #00aaff, transparent);
+            box-shadow: 0 0 15px #00aaff;
+            opacity: 0.45;
+        }
+        .line-1 { top: 25%; left: -80px; transform: rotate(-25deg); }
+        .line-2 { top: 65%; right: -80px; transform: rotate(25deg); }
+        .line-3 { top: 85%; left: 30%; transform: rotate(-10deg); }
+
+        @keyframes cubeFloat {
+            0%,100% { transform: translateY(0) rotateX(35deg) rotateY(35deg) rotateZ(0deg); }
+            50% { transform: translateY(-35px) rotateX(70deg) rotateY(120deg) rotateZ(20deg); }
+        }
+        @keyframes orbFloat {
+            0%,100% { transform: translate(0,0); }
+            50% { transform: translate(40px,-50px); }
         }
 
-    }
-);
+        /* =====================================================
+           HEADER
+        ===================================================== */
+        header {
+            background: rgba(3,14,35,0.92);
+            backdrop-filter: blur(12px);
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0,170,255,0.25);
+        }
+        .logo-area { display: flex; align-items: center; gap: 10px; }
+        .logo-icon {
+            width: 42px; height: 42px;
+            display: flex; align-items: center; justify-content: center;
+            border-radius: 11px;
+            background: linear-gradient(135deg, #00aaff, #0055aa);
+            color: white; font-size: 18px; font-weight: 900;
+            box-shadow: 0 0 18px rgba(0,170,255,0.45);
+        }
+        .logo { font-size: 26px; font-weight: bold; color: #00aaff; text-shadow: 0 0 15px rgba(0,170,255,0.7); }
+        .header-right { display: flex; align-items: center; gap: 20px; }
 
+        /* LANGUAGE */
+        .language-switch {
+            display: flex;
+            background: rgba(255,255,255,0.07);
+            border: 1px solid rgba(0,170,255,0.30);
+            border-radius: 10px;
+            padding: 3px; gap: 3px;
+        }
+        .lang-btn {
+            border: 0; background: transparent; color: #9eafc5;
+            padding: 7px 10px; border-radius: 7px;
+            cursor: pointer; font-size: 12px; font-weight: bold; transition: 0.2s;
+        }
+        .lang-btn.active {
+            background: linear-gradient(135deg, #00aaff, #0077cc);
+            color: white; box-shadow: 0 0 12px rgba(0,170,255,0.35);
+        }
+        nav a { color: white; text-decoration: none; margin-left: 18px; font-size: 14px; transition: 0.2s; }
+        nav a:hover { color: #00aaff; text-shadow: 0 0 10px #00aaff; }
 
-/* =====================================================
-   LANGUAGE SYSTEM
-===================================================== */
+        /* =====================================================
+           HERO
+        ===================================================== */
+        .hero {
+            background: linear-gradient(135deg, rgba(6,20,45,0.92), rgba(7,59,114,0.72));
+            padding: 75px 20px; text-align: center;
+            border-bottom: 1px solid rgba(0,170,255,0.25);
+        }
+        .hero h1 { font-size: 42px; margin: 0; text-shadow: 0 0 25px rgba(0,170,255,0.3); }
+        .hero h1 span { color: #00aaff; }
+        .hero p { color: #d8e6f5; font-size: 17px; max-width: 650px; margin: 15px auto; line-height: 1.6; }
+        .hero-button {
+            display: inline-block; margin-top: 15px;
+            padding: 14px 28px;
+            background: linear-gradient(135deg, #00aaff, #0077cc);
+            color: white; text-decoration: none; border-radius: 10px;
+            font-weight: bold; box-shadow: 0 0 20px rgba(0,170,255,0.4);
+        }
 
-function setLanguage(language) {
+        /* =====================================================
+           SECTION
+        ===================================================== */
+        .section { padding: 45px 5%; max-width: 1200px; margin: auto; }
+        .section-title { text-align: center; margin-bottom: 30px; }
+        .section-title h2 { font-size: 30px; margin-bottom: 8px; }
+        .section-title p { color: #aab8cc; }
 
-    currentLanguage = language;
+        /* =====================================================
+           CATEGORY
+        ===================================================== */
+        .category-box { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin-bottom: 25px; }
+        .category-btn {
+            border: 1px solid rgba(0,170,255,0.30);
+            background: rgba(255,255,255,0.06);
+            color: white; padding: 11px 17px; border-radius: 10px;
+            cursor: pointer; font-weight: bold; font-size: 13px; transition: 0.25s;
+        }
+        .category-btn:hover, .category-btn.active {
+            background: linear-gradient(135deg, #00aaff, #0077cc);
+            border-color: #00aaff; box-shadow: 0 0 15px rgba(0,170,255,0.30);
+        }
 
+        /* =====================================================
+           SEARCH
+        ===================================================== */
+        .search-box { text-align: center; margin-bottom: 30px; }
+        .search-box input {
+            width: 90%; max-width: 600px; padding: 15px 18px;
+            border: 1px solid rgba(0,170,255,0.30); border-radius: 12px;
+            font-size: 15px; outline: none;
+            background: rgba(255,255,255,0.08); color: white;
+        }
+        .search-box input::placeholder { color: #aab8cc; }
 
-    document.documentElement.lang =
-        language === "bm"
-        ? "ms"
-        : "en";
+        /* =====================================================
+           ACCOUNT GRID
+        ===================================================== */
+        .catalog { display: grid; grid-template-columns: repeat(2,1fr); gap: 20px; }
 
+        /* =====================================================
+           ACCOUNT CARD
+        ===================================================== */
+        .card {
+            background: rgba(255,255,255,0.07); border-radius: 18px; overflow: hidden;
+            border: 1px solid rgba(0,170,255,0.20); backdrop-filter: blur(10px);
+            transition: 0.3s; box-shadow: 0 12px 35px rgba(0,0,0,0.20);
+        }
+        .card:hover { transform: translateY(-7px); border-color: rgba(0,170,255,0.65); box-shadow: 0 15px 40px rgba(0,170,255,0.18); }
 
-    /* BUTTON */
+        /* IMAGE */
+        .image-wrap { position: relative; height: 230px; overflow: hidden; background: #06142d; }
+        .account-image { width: 100%; height: 100%; display: block; object-fit: cover; transition: transform 0.5s ease, filter 0.5s ease; }
+        .card:hover .account-image { transform: scale(1.07); filter: saturate(1.12) brightness(1.05); }
+        .image-wrap::after {
+            content: ""; position: absolute; inset: 0;
+            background: linear-gradient(to top, rgba(2,8,23,0.82), transparent 55%, rgba(0,170,255,0.08));
+            pointer-events: none;
+        }
+        .image-label { position: absolute; left: 12px; top: 12px; z-index: 2; padding: 7px 10px; border-radius: 999px; background: rgba(2,8,23,0.78); border: 1px solid rgba(0,170,255,0.35); font-size: 12px; font-weight: bold; backdrop-filter: blur(5px); }
+        .zoom-hint { position: absolute; right: 12px; bottom: 12px; z-index: 2; background: rgba(0,0,0,0.55); padding: 7px 10px; border-radius: 8px; font-size: 11px; color: #dff7ff; }
 
-    document
-        .getElementById("bmBtn")
-        .classList
-        .toggle(
-            "active",
-            language === "bm"
-        );
+        /* CARD CONTENT */
+        .content { padding: 18px; }
+        .game { color: #8fa4bd; font-size: 13px; }
+        .name { font-size: 20px; font-weight: bold; margin: 8px 0; }
+        .info { display: flex; flex-wrap: wrap; gap: 6px; margin: 12px 0; }
+        .tag { background: rgba(33,150,83,0.16); color: #54df8c; padding: 7px 9px; border-radius: 8px; font-size: 12px; }
+        .old-price { color: #8491a2; text-decoration: line-through; font-size: 14px; }
+        .price { color: #ff7043; font-size: 25px; font-weight: bold; margin: 5px 0; }
+        .detail-button {
+            display: block; width: 100%; border: 0; cursor: pointer; text-align: center;
+            background: linear-gradient(135deg, #06142d, #0077b8); color: white;
+            padding: 13px; border-radius: 9px; margin-top: 12px; font-weight: bold; font-size: 14px; transition: 0.25s;
+        }
+        .detail-button:hover { background: linear-gradient(135deg, #0077b8, #00aaff); transform: translateY(-2px); }
 
+        /* =====================================================
+           NO RESULT
+        ===================================================== */
+        .no-result { text-align: center; padding: 40px 20px; color: #9eafc5; display: none; }
 
-    document
-        .getElementById("enBtn")
-        .classList
-        .toggle(
-            "active",
-            language === "en"
-        );
+        /* =====================================================
+           ADVERTISEMENT
+        ===================================================== */
+        .ad-section {
+            width: 92%; max-width: 1100px; margin: 35px auto; padding: 35px 25px; border-radius: 20px;
+            background: linear-gradient(135deg, rgba(0,42,85,0.95), rgba(0,126,200,0.82));
+            border: 1px solid rgba(0,190,255,0.45); text-align: center;
+            box-shadow: 0 0 35px rgba(0,170,255,0.15);
+        }
+        .ad-badge { display: inline-block; background: #ff7043; color: white; padding: 6px 12px; border-radius: 999px; font-size: 12px; font-weight: bold; margin-bottom: 10px; }
+        .ad-section h2 { margin: 5px 0 10px; font-size: 27px; }
+        .ad-section p { color: #dbefff; line-height: 1.6; }
+        .ad-button { display: inline-block; margin-top: 12px; padding: 12px 25px; background: white; color: #06142d; text-decoration: none; border-radius: 9px; font-weight: bold; }
 
+        /* =====================================================
+           WHY
+        ===================================================== */
+        .why { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+        .why-card { background: rgba(255,255,255,0.06); padding: 25px; border-radius: 15px; text-align: center; border: 1px solid rgba(0,170,255,0.18); }
+        .why-card h3 { color: #00aaff; }
+        .why-card p { color: #9caec5; font-size: 14px; line-height: 1.6; }
 
-    /* TEXT */
+        /* =====================================================
+           CONTACT
+        ===================================================== */
+        .contact {
+            background: linear-gradient(135deg, rgba(6,20,45,0.95), rgba(7,59,114,0.88));
+            text-align: center; padding: 55px 20px;
+        }
+        .contact p { color: #d8e6f5; }
+        .social-buttons { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-top: 25px; }
+        .social { display: inline-block; padding: 13px 22px; background: white; color: #06142d; text-decoration: none; border-radius: 10px; font-weight: bold; }
 
-    document
-        .querySelectorAll("[data-bm]")
-        .forEach(function(element) {
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+        footer { background: #010611; text-align: center; padding: 35px 20px; border-top: 1px solid rgba(0,170,255,0.15); }
+        footer h2 { color: #00aaff; }
+        footer p { color: #8997aa; font-size: 13px; }
+        footer small { color: #66758a; }
 
-            const text =
-                language === "bm"
-                ? element.dataset.bm
-                : element.dataset.en;
+        /* =====================================================
+           MODAL
+        ===================================================== */
+        .modal {
+            display: none; position: fixed; inset: 0;
+            background: rgba(0,0,0,0.90); z-index: 9999; padding: 20px; overflow-y: auto;
+            backdrop-filter: blur(8px);
+        }
+        .modal.show { display: flex; align-items: center; justify-content: center; }
+        .modal-box {
+            position: relative; width: 100%; max-width: 700px;
+            background: linear-gradient(145deg, #07162f, #0b1d40);
+            border: 1px solid rgba(0,170,255,0.65); border-radius: 20px; overflow: hidden;
+            box-shadow: 0 0 60px rgba(0,170,255,0.25); animation: modalIn 0.25s ease;
+        }
+        .modal-image-wrap { height: 350px; background: #06142d; position: relative; }
+        .modal-image { width: 100%; height: 100%; object-fit: contain; display: block; background: #06142d; }
+        .modal-image-wrap::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(2,8,23,0.45), transparent); pointer-events: none; }
+        .modal-content { padding: 25px; }
+        .modal-title { color: #00c3ff; margin: 0 45px 12px; font-size: 26px; }
+        .modal-desc { color: #dbefff; line-height: 1.7; font-size: 15px; }
+        .modal-old { color: #8491a2; text-decoration: line-through; margin-top: 15px; }
+        .modal-price { color: #ff7043; font-size: 30px; font-weight: bold; margin: 5px 0 20px; }
+        .close { position: absolute; right: 15px; top: 12px; z-index: 10; width: 42px; height: 42px; border: 0; border-radius: 50%; background: rgba(0,0,0,0.70); color: white; font-size: 28px; cursor: pointer; }
+        .close:hover { background: #00aaff; }
+        .modal-wa {
+            display: block; text-align: center;
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            color: white; padding: 15px; border-radius: 10px; text-decoration: none;
+            font-weight: bold; transition: 0.2s;
+        }
+        .modal-wa:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(37,211,102,0.25); }
+        @keyframes modalIn { from { opacity: 0; transform: translateY(15px) scale(0.97); } to { opacity: 1; transform: none; } }
 
+        /* =====================================================
+           MOBILE
+        ===================================================== */
+        @media(max-width:700px) {
+            header { padding: 12px 15px; }
+            .logo-icon { width: 36px; height: 36px; font-size: 15px; }
+            .logo { font-size: 21px; }
+            .header-right { gap: 8px; }
+            nav { display: none; }
+            .language-switch { padding: 2px; }
+            .lang-btn { padding: 6px 8px; font-size: 10px; }
+            .hero { padding: 50px 20px; }
+            .hero h1 { font-size: 32px; }
+            .category-box { gap: 6px; }
+            .category-btn { padding: 9px 10px; font-size: 10px; }
+            .catalog { grid-template-columns: repeat(2,1fr); gap: 10px; }
+            .image-wrap { height: 145px; }
+            .content { padding: 11px; }
+            .name { font-size: 14px; }
+            .price { font-size: 18px; }
+            .old-price { font-size: 11px; }
+            .tag { font-size: 10px; padding: 6px 7px; }
+            .detail-button { font-size: 11px; padding: 10px 5px; }
+            .zoom-hint { display: none; }
+            .image-label { font-size: 9px; padding: 5px 7px; }
+            .why { grid-template-columns: 1fr; }
+            .modal { padding: 10px; }
+            .modal-image-wrap { height: 240px; }
+            .modal-content { padding: 18px; }
+            .modal-title { font-size: 21px; margin-left: 0; }
+            .modal-price { font-size: 25px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- =====================================================
+         BACKGROUND
+    ===================================================== -->
+    <div class="bg-3d">
+        <div class="cube cube-1"></div>
+        <div class="cube cube-2"></div>
+        <div class="cube cube-3"></div>
+        <div class="cube cube-4"></div>
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="neon-line line-1"></div>
+        <div class="neon-line line-2"></div>
+        <div class="neon-line line-3"></div>
+    </div>
 
-            if (!text) return;
+    <!-- =====================================================
+         HEADER
+    ===================================================== -->
+    <header>
+        <div class="logo-area">
+            <div class="logo-icon">DZ</div>
+            <div class="logo">DAMZSTORE</div>
+        </div>
+        <div class="header-right">
+            <div class="language-switch">
+                <button class="lang-btn active" id="bmBtn" onclick="setLanguage('bm')">🇲🇾 BM</button>
+                <button class="lang-btn" id="enBtn" onclick="setLanguage('en')">🇬🇧 EN</button>
+            </div>
+            <nav>
+                <a href="#home" data-bm="Home" data-en="Home">Home</a>
+                <a href="#account" data-bm="Account" data-en="Accounts">Account</a>
+                <a href="#why" data-bm="Why DAMZ" data-en="Why DAMZ">Why DAMZ</a>
+                <a href="#contact" data-bm="Contact" data-en="Contact">Contact</a>
+            </nav>
+        </div>
+    </header>
 
+    <!-- =====================================================
+         HERO
+    ===================================================== -->
+    <section class="hero" id="home">
+        <h1>DAMZ<span>STORE</span></h1>
+        <p data-bm="Mobile Legends Gaming Account Marketplace 🎮|Cari account Mobile Legends pilihan anda dengan mudah." data-en="Mobile Legends Gaming Account Marketplace 🎮|Find your preferred Mobile Legends account easily.">
+            Mobile Legends Gaming Account Marketplace 🎮<br>
+            Cari account Mobile Legends pilihan anda dengan mudah.
+        </p>
+        <a class="hero-button" href="#account" data-bm="LIHAT ACCOUNT" data-en="VIEW ACCOUNTS">LIHAT ACCOUNT</a>
+    </section>
 
-            const parts =
-                text.split("|");
+    <!-- ❌ BAHAGIAN PROMO YANG DILINGKARI TELAH DIBUANG DI SINI ❌ -->
 
+    <!-- =====================================================
+         ACCOUNT
+    ===================================================== -->
+    <section class="section" id="account">
+        <div class="section-title">
+            <h2 data-bm="🛒 ACCOUNT TERKINI" data-en="🛒 LATEST ACCOUNTS">🛒 ACCOUNT TERKINI</h2>
+            <p data-bm="Mobile Legends account yang tersedia" data-en="Available Mobile Legends accounts">Mobile Legends account yang tersedia</p>
+        </div>
 
-            element.innerHTML =
-                parts.join("<br>");
+        <!-- CATEGORY -->
+        <div class="category-box">
+            <button class="category-btn active" onclick="filterCategory('all', this)" data-bm="🛒 SEMUA" data-en="🛒 ALL">🛒 SEMUA</button>
+            <button class="category-btn" onclick="filterCategory('low', this)" data-bm="💰 RM 0 - 499" data-en="💰 RM 0 - 499">💰 RM 0 - 499</button>
+            <button class="category-btn" onclick="filterCategory('mid', this)" data-bm="💎 RM 500 - 999" data-en="💎 RM 500 - 999">💎 RM 500 - 999</button>
+            <button class="category-btn" onclick="filterCategory('high', this)" data-bm="👑 RM 1000+" data-en="👑 RM 1000+">👑 RM 1000+</button>
+        </div>
 
-        });
+        <!-- SEARCH -->
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="🔍 Cari DZ0001, DZ0002, skin..." oninput="searchAccount()">
+        </div>
 
+        <!-- CATALOG -->
+        <div class="catalog" id="catalog"></div>
+        <div class="no-result" id="noResult" data-bm="😔 Tiada account dijumpai." data-en="😔 No account found.">😔 Tiada account dijumpai.</div>
+    </section>
 
-    /* SEARCH PLACEHOLDER */
+    <!-- =====================================================
+         ADVERTISEMENT
+    ===================================================== -->
+    <section class="ad-section">
+        <div class="ad-badge" data-bm="🔥 PROMOSI" data-en="🔥 PROMOTION">🔥 PROMOSI</div>
+        <h2 data-bm="🎮 CARI ACCOUNT IMPIAN ANDA?" data-en="🎮 LOOKING FOR YOUR DREAM ACCOUNT?">🎮 CARI ACCOUNT IMPIAN ANDA?</h2>
+        <p data-bm="Semua account tersedia dengan maklumat yang jelas.|Tekan LIHAT DETAIL untuk melihat gambar penuh dan maklumat account." data-en="All accounts come with clear information.|Press VIEW DETAILS to see the full image and account information.">
+            Semua account tersedia dengan maklumat yang jelas.<br>
+            Tekan <b>LIHAT DETAIL</b> untuk melihat gambar penuh dan maklumat account.
+        </p>
+        <a href="#contact" class="ad-button" data-bm="💬 HUBUNGI DAMZ" data-en="💬 CONTACT DAMZ">💬 HUBUNGI DAMZ</a>
+    </section>
 
-    document
-        .getElementById("searchInput")
-        .placeholder =
+    <!-- =====================================================
+         WHY DAMZ
+    ===================================================== -->
+    <section class="section" id="why">
+        <div class="section-title">
+            <h2 data-bm="⭐ KENAPA DAMZ?" data-en="⭐ WHY DAMZ?">⭐ KENAPA DAMZ?</h2>
+        </div>
+        <div class="why">
+            <div class="why-card">
+                <h3 data-bm="🛡️ Warranty" data-en="🛡️ Warranty">🛡️ Warranty</h3>
+                <p data-bm="Sesetengah account mempunyai warranty bergantung kepada listing." data-en="Some accounts come with warranty depending on the listing.">
+                    Sesetengah account mempunyai warranty bergantung kepada listing.
+                </p>
+            </div>
+            <div class="why-card">
+                <h3 data-bm="📱 Easy Contact" data-en="📱 Easy Contact">📱 Easy Contact</h3>
+                <p data-bm="Mudah untuk menghubungi DAMZ melalui WhatsApp, Instagram atau Telegram." data-en="Easy to contact DAMZ through WhatsApp, Instagram or Telegram.">
+                    Mudah untuk menghubungi DAMZ melalui WhatsApp, Instagram atau Telegram.
+                </p>
+            </div>
+            <div class="why-card">
+                <h3 data-bm="🎮 Gaming Focus" data-en="🎮 Gaming Focus">🎮 Gaming Focus</h3>
+                <p data-bm="Fokus kepada Mobile Legends account dan servis berkaitan gaming." data-en="Focused on Mobile Legends accounts and gaming-related services.">
+                    Fokus kepada Mobile Legends account dan servis berkaitan gaming.
+                </p>
+            </div>
+        </div>
+    </section>
 
-            language === "bm"
+    <!-- =====================================================
+         ADVERTISEMENT 2
+    ===================================================== -->
+    <section class="ad-section">
+        <div class="ad-badge" data-bm="⚡ DAMZSTORE" data-en="⚡ DAMZSTORE">⚡ DAMZSTORE</div>
+        <h2 data-bm="💎 ACCOUNT BERKUALITI • HARGA MENARIK" data-en="💎 QUALITY ACCOUNTS • ATTRACTIVE PRICES">💎 ACCOUNT BERKUALITI • HARGA MENARIK</h2>
+        <p data-bm="Pilih account yang anda minat, tekan LIHAT DETAIL dan terus hubungi DAMZ melalui WhatsApp." data-en="Choose the account you like, press VIEW DETAILS and contact DAMZ through WhatsApp.">
+            Pilih account yang anda minat,<br>
+            tekan <b>LIHAT DETAIL</b> dan terus hubungi DAMZ melalui WhatsApp.
+        </p>
+        <a href="#account" class="ad-button" data-bm="🛒 LIHAT SEMUA ACCOUNT" data-en="🛒 VIEW ALL ACCOUNTS">🛒 LIHAT SEMUA ACCOUNT</a>
+    </section>
 
-            ?
+    <!-- =====================================================
+         CONTACT
+    ===================================================== -->
+    <section class="contact" id="contact">
+        <h2 data-bm="📱 CONTACT DAMZ" data-en="📱 CONTACT DAMZ">📱 CONTACT DAMZ</h2>
+        <p data-bm="Berminat dengan mana-mana account?|Hubungi kami untuk maklumat lanjut." data-en="Interested in any account?|Contact us for more information.">
+            Berminat dengan mana-mana account?<br>
+            Hubungi kami untuk maklumat lanjut.
+        </p>
+        <div class="social-buttons">
+            <a class="social" href="https://wa.me/601133169293" target="_blank">💬 WhatsApp</a>
+            <a class="social" href="https://instagram.com/damzofficialmy" target="_blank">📸 Instagram</a>
+            <a class="social" href="https://t.me/damzresellermy" target="_blank">✈️ Telegram</a>
+        </div>
+    </section>
 
-            "🔍 Cari DZ0001, DZ0002, skin..."
+    <!-- =====================================================
+         FOOTER
+    ===================================================== -->
+    <footer>
+        <h2>DAMZSTORE</h2>
+        <p data-bm="Trusted Mobile Legends Account Seller" data-en="Trusted Mobile Legends Account Seller">Trusted Mobile Legends Account Seller</p>
+        <p data-bm="Mobile Legends • Reseller • Midman • Paid Promote" data-en="Mobile Legends • Reseller • Midman • Paid Promote">Mobile Legends • Reseller • Midman • Paid Promote</p>
+        <small>© 2026 DAMZSTORE. All rights reserved.</small>
+    </footer>
 
-            :
+    <!-- =====================================================
+         DETAIL MODAL
+    ===================================================== -->
+    <div class="modal" id="detailModal" onclick="outsideClose(event)">
+        <div class="modal-box">
+            <button class="close" onclick="closeDetail()">&times;</button>
+            <div class="modal-image-wrap">
+                <img id="modalImage" class="modal-image" src="" alt="Account Mobile Legends">
+            </div>
+            <div class="modal-content">
+                <h2 id="modalTitle" class="modal-title"></h2>
+                <p id="modalDesc" class="modal-desc"></p>
+                <div id="modalOld" class="modal-old"></div>
+                <div id="modalPrice" class="modal-price"></div>
+                <a id="modalWA" class="modal-wa" href="#" target="_blank">💬 BELI SEKARANG DI WHATSAPP</a>
+            </div>
+        </div>
+    </div>
 
-            "🔍 Search DZ0001, DZ0002, skins...";
+    <!-- =====================================================
+         JAVASCRIPT
+    ===================================================== -->
+    <script>
+        let currentLanguage = "bm";
+        let currentCategory = "all";
 
+        const accounts = [
+            {
+                id: "DZ0001", skin: "358 Skin", oldPrice: "RM699.00", price: "RM499.00", priceNumber: 499,
+                image: "images/DZ0001.jpg",
+                descriptionBM: "Rank Mythic Glory. Skin 358. Hero max. Binding Moonton. Clearbind. Berwaranti.",
+                descriptionEN: "Mythic Glory rank. 358 skins. Max heroes. Moonton binding. Clearbind. Warranty included."
+            },
+            {
+                id: "DZ0002", skin: "444 Skin", oldPrice: "RM799.00", price: "RM550.00", priceNumber: 550,
+                image: "images/DZ0002.jpg",
+                descriptionBM: "Rank Mythic Glory. Skin 444. Hero max. Binding Moonton. Clearbind. Berwaranti.",
+                descriptionEN: "Mythic Glory rank. 444 skins. Max heroes. Moonton binding. Clearbind. Warranty included."
+            },
+            {
+                id: "DZ0003", skin: "578 Skin", oldPrice: "RM599.00", price: "RM499.00", priceNumber: 499,
+                image: "images/dz0003.jpg",
+                descriptionBM: "Rank Mythic Glory. Skin 578. Hero max. Binding Moonton. Clearbind. Berwaranti.",
+                descriptionEN: "Mythic Glory rank. 578 skins. Max heroes. Moonton binding. Clearbind. Warranty included."
+            },
+            {
+                id: "DZ0004", skin: "564 Skin", oldPrice: "RM569.00", price: "RM469.00", priceNumber: 469,
+                image: "images/dz0004.jpg",
+                descriptionBM: "Rank Mythic Glory. Skin 564. Hero max. Binding Moonton. Clearbind. Berwaranti.",
+                descriptionEN: "Mythic Glory rank. 564 skins. Max heroes. Moonton binding. Clearbind. Warranty included."
+            },
+            {
+                id: "DZ0005", skin: "411 Skin", oldPrice: "RM500.00", price: "RM350.00", priceNumber: 350,
+                image: "images/dz0005.jpg",
+                descriptionBM: "Rank Mythic Glory. Skin 411. Hero max. Binding Moonton. Clearbind. Berwaranti.",
+                descriptionEN: "Mythic Glory rank. 411 skins. Max heroes. Moonton binding. Clearbind. Warranty included."
+            },
+            {
+                id: "DZ0006", skin: "483 Skin", oldPrice: "RM450.00", price: "RM320.00", priceNumber: 320,
+                image: "images/DZ0006.jpg",
+                descriptionBM: "Rank Mythic Glory. Skin 483. Hero max. Binding Moonton. Clearbind. Berwaranti.",
+                descriptionEN: "Mythic Glory rank. 483 skins. Max heroes. Moonton binding. Clearbind. Warranty included."
+            },
+            {
+                id: "DZ0007", skin: "500 Skin", oldPrice: "RM650.00", price: "RM450.00", priceNumber: 450,
+                image: "images/DZ0007.jpg",
+                descriptionBM: "Rank Mythic Glory. Skin 500. Hero max. Binding Moonton. Clearbind. Berwaranti.",
+                descriptionEN: "Mythic Glory rank. 500 skins. Max heroes. Moonton binding. Clearbind. Warranty included."
+            },
+            {
+                id: "DZ0008", skin: "520 Skin", oldPrice: "RM700.00", price: "RM480.00", priceNumber: 480,
+                image: "images/DZ0008.jpg",
+                descriptionBM: "Rank Mythic Glory. Skin 520. Hero max. Binding Moonton. Clearbind. Berwaranti.",
+                descriptionEN: "Mythic Glory rank. 520 skins. Max heroes. Moonton binding. Clearbind. Warranty included."
+            },
+            {
+                id: "DZ0009", skin: "450 Skin", oldPrice: "RM600.00", price: "RM420.00", priceNumber: 420,
+                image: "images/DZ0009.jpg",
+                descriptionBM: "Rank Mythic Glory. Skin 450. Hero max. Binding Moonton. Clearbind. Berwaranti.",
+                descriptionEN: "Mythic Glory rank. 450 skins. Max heroes. Moonton binding. Clearbind. Warranty included."
+            },
+            {
+                id: "DZ0010", skin: "550 Skin", oldPrice: "RM750.00", price: "RM520.00", priceNumber: 520,
+                image: "images/DZ0010.jpg",
+                descriptionBM: "Rank Mythic Glory. Skin 550. Hero max. Binding Moonton. Clearbind. Berwaranti.",
+                descriptionEN: "Mythic Glory rank. 550 skins. Max heroes. Moonton binding. Clearbind. Warranty included."
+            },
+            {
+                id: "DZ0011", skin: "600 Skin", oldPrice: "RM850.00", price: "RM599.00", priceNumber: 599,
+                image: "images/DZ0011.jpg",
+                descriptionBM: "Rank Mythic Glory. Skin 600. Hero max. Binding Moonton. Clearbind. Berwaranti.",
+                descriptionEN: "Mythic Glory rank. 600 skins. Max heroes. Moonton binding. Clearbind. Warranty included."
+            },
+            {
+                id: "DZ0012", skin: "650 Skin", oldPrice: "RM900.00", price: "RM650.00", priceNumber: 650,
+                image: "images/DZ0012.jpg",
+                descriptionBM: "Rank Mythic Glory. Skin 650. Hero max. Binding Moonton. Clearbind. Berwaranti.",
+                descriptionEN: "Mythic Glory rank. 650 skins. Max heroes. Moonton binding. Clearbind. Warranty included."
+            }
+        ];
 
-    /* RELOAD CARDS */
+        function checkCategory(account) {
+            if (currentCategory === "all") return true;
+            if (currentCategory === "low") return account.priceNumber < 500;
+            if (currentCategory === "mid") return account.priceNumber >= 500 && account.priceNumber < 1000;
+            if (currentCategory === "high") return account.priceNumber >= 1000;
+            return true;
+        }
 
-    searchAccount();
+        function createCard(account) {
+            const detailText = currentLanguage === "bm" ? "LIHAT DETAIL →" : "VIEW DETAILS →";
+            const warrantyText = currentLanguage === "bm" ? "🛡️ Berwaranti" : "🛡️ Warranty";
+            const stockText = currentLanguage === "bm" ? "📦 Stok 1" : "📦 Stock 1";
+            return `
+                <div class="card">
+                    <div class="image-wrap">
+                        <img class="account-image" src="${account.image}" alt="${account.id}" onerror="this.style.opacity='0.25'">
+                        <span class="image-label">🎮 ${account.skin.toUpperCase()}</span>
+                        <span class="zoom-hint">🔎 ${currentLanguage === "bm" ? "Lihat gambar" : "View image"}</span>
+                    </div>
+                    <div class="content">
+                        <div class="game">Mobile Legends</div>
+                        <div class="name">${account.id} | ${account.skin}</div>
+                        <div class="info">
+                            <span class="tag">${warrantyText}</span>
+                            <span class="tag">${stockText}</span>
+                        </div>
+                        <div class="old-price">${account.oldPrice}</div>
+                        <div class="price">${account.price}</div>
+                        <button class="detail-button" onclick="showDetail('${account.id}')">${detailText}</button>
+                    </div>
+                </div>
+            `;
+        }
 
-}
+        function loadAccounts(list = accounts) {
+            const catalog = document.getElementById("catalog");
+            const noResult = document.getElementById("noResult");
+            catalog.innerHTML = "";
+            if (list.length === 0) { noResult.style.display = "block"; return; }
+            noResult.style.display = "none";
+            list.forEach(account => { catalog.innerHTML += createCard(account); });
+        }
 
+        function filterCategory(category, button) {
+            currentCategory = category;
+            document.querySelectorAll(".category-btn").forEach(btn => btn.classList.remove("active"));
+            button.classList.add("active");
+            searchAccount();
+        }
 
-/* =====================================================
-   INITIAL LOAD
-===================================================== */
+        function searchAccount() {
+            const input = document.getElementById("searchInput").value.toLowerCase().trim();
+            const filtered = accounts.filter(account => {
+                const matchesSearch = account.id.toLowerCase().includes(input) || account.skin.toLowerCase().includes(input) || account.price.toLowerCase().includes(input);
+                const matchesCategory = checkCategory(account);
+                return matchesSearch && matchesCategory;
+            });
+            loadAccounts(filtered);
+        }
 
-loadAccounts();
+        function showDetail(id) {
+            const account = accounts.find(item => item.id === id);
+            if (!account) return;
+            document.getElementById("modalTitle").textContent = account.id + " | " + account.skin;
+            document.getElementById("modalDesc").textContent = currentLanguage === "bm" ? account.descriptionBM : account.descriptionEN;
+            document.getElementById("modalOld").textContent = account.oldPrice;
+            document.getElementById("modalPrice").textContent = account.price;
+            document.getElementById("modalImage").src = account.image;
+            const message = encodeURIComponent(currentLanguage === "bm" ?
+                "Hi DAMZ, saya berminat dengan account " + account.id + " | " + account.skin :
+                "Hi DAMZ, I am interested in account " + account.id + " | " + account.skin);
+            document.getElementById("modalWA").href = "https://wa.me/601133169293?text=" + message;
+            document.getElementById("modalWA").textContent = currentLanguage === "bm" ? "💬 BELI SEKARANG DI WHATSAPP" : "💬 BUY NOW ON WHATSAPP";
+            document.getElementById("detailModal").classList.add("show");
+            document.body.classList.add("modal-open");
+        }
 
-</script></body></html>
+        function closeDetail() {
+            document.getElementById("detailModal").classList.remove("show");
+            document.body.classList.remove("modal-open");
+        }
+
+        function outsideClose(event) {
+            const modal = document.getElementById("detailModal");
+            if (event.target === modal) closeDetail();
+        }
+
+        document.addEventListener("keydown", e => { if (e.key === "Escape") closeDetail(); });
+
+        function setLanguage(language) {
+            currentLanguage = language;
+            document.documentElement.lang = language === "bm" ? "ms" : "en";
+            document.getElementById("bmBtn").classList.toggle("active", language === "bm");
+            document.getElementById("enBtn").classList.toggle("active", language === "en");
+            document.querySelectorAll("[data-bm]").forEach(el => {
+                const text = language === "bm" ? el.dataset.bm : el.dataset.en;
+                if (!text) return;
+                el.innerHTML = text.split("|").join("<br>");
+            });
+            document.getElementById("searchInput").placeholder = language === "bm" ? "🔍 Cari DZ0001, DZ0002, skin..." : "🔍 Search DZ0001, DZ0002, skins...";
+            searchAccount();
+        }
+
+        loadAccounts();
+    </script>
+</body>
+</html>
