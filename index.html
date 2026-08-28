@@ -588,6 +588,46 @@ nav a:hover {
     font-weight: bold;
 }
 
+
+
+/* =====================================================
+   SECTION
+===================================================== */
+
+.section {
+
+    padding:
+        45px 5%;
+
+    max-width: 1200px;
+
+    margin: auto;
+}
+
+
+.section-title {
+
+    text-align: center;
+
+    margin-bottom: 30px;
+}
+
+
+.section-title h2 {
+
+    font-size: 30px;
+
+    margin-bottom: 8px;
+}
+
+
+.section-title p {
+
+    color: #aab8cc;
+}
+
+
+
 /* =====================================================
    SEARCH
 ===================================================== */
@@ -596,7 +636,7 @@ nav a:hover {
 
     text-align: center;
 
-    margin-bottom: 18px;
+    margin-bottom: 30px;
 }
 
 
@@ -629,117 +669,6 @@ nav a:hover {
 .search-box input::placeholder {
 
     color: #aab8cc;
-}
-
-
-
-/* =====================================================
-   PRICE CATEGORY
-===================================================== */
-
-.price-category {
-
-    display:
-
-        flex;
-
-    justify-content:
-
-        center;
-
-    align-items:
-
-        center;
-
-    gap:
-
-        10px;
-
-    flex-wrap:
-
-        wrap;
-
-    margin-bottom:
-
-        30px;
-}
-
-
-.category-btn {
-
-    border:
-
-        1px solid
-        rgba(0,170,255,0.30);
-
-    background:
-
-        rgba(255,255,255,0.07);
-
-    color:
-
-        white;
-
-    padding:
-
-        11px 17px;
-
-    border-radius:
-
-        10px;
-
-    cursor:
-
-        pointer;
-
-    font-size:
-
-        13px;
-
-    font-weight:
-
-        bold;
-
-    transition:
-
-        0.25s;
-}
-
-
-.category-btn:hover {
-
-    background:
-
-        rgba(0,170,255,0.20);
-
-    border-color:
-
-        #00aaff;
-
-    transform:
-
-        translateY(-2px);
-}
-
-
-.category-btn.active {
-
-    background:
-
-        linear-gradient(
-            135deg,
-            #00aaff,
-            #0077cc
-        );
-
-    border-color:
-
-        #00aaff;
-
-    box-shadow:
-
-        0 0 15px
-        rgba(0,170,255,0.30);
 }
 
 
@@ -1719,6 +1648,12 @@ footer small {
     }
 
 
+    /*
+       KEKAL 2 COLUMN
+       supaya 0001 + 0002
+       sentiasa bersebelahan
+    */
+
     .catalog {
 
         grid-template-columns:
@@ -1798,23 +1733,6 @@ footer small {
 
         padding:
             5px 7px;
-    }
-
-
-    .price-category {
-
-        gap:
-            6px;
-    }
-
-
-    .category-btn {
-
-        font-size:
-            11px;
-
-        padding:
-            9px 10px;
     }
 
 
@@ -2051,57 +1969,6 @@ footer small {
             oninput="searchAccount()"
 
         >
-
-    </div>
-
-
-
-    <!-- =================================================
-         PRICE CATEGORY
-    ================================================== -->
-
-    <div class="price-category">
-
-
-        <button
-            class="category-btn active"
-            onclick="filterPrice('all', this)"
-        >
-
-            🛒 SEMUA
-
-        </button>
-
-
-        <button
-            class="category-btn"
-            onclick="filterPrice('0-499', this)"
-        >
-
-            💰 RM 0–499
-
-        </button>
-
-
-        <button
-            class="category-btn"
-            onclick="filterPrice('500-999', this)"
-        >
-
-            💎 RM 500–999
-
-        </button>
-
-
-        <button
-            class="category-btn"
-            onclick="filterPrice('1000+', this)"
-        >
-
-            👑 RM 1000+
-
-        </button>
-
 
     </div>
 
@@ -2445,6 +2312,8 @@ footer small {
 
 
 
+        <!-- GAMBAR BESAR -->
+
         <div class="modal-image-wrap">
 
 
@@ -2464,6 +2333,8 @@ footer small {
         </div>
 
 
+
+        <!-- DETAIL -->
 
         <div class="modal-content">
 
@@ -2546,7 +2417,12 @@ footer small {
 
 /* =====================================================
    DATA ACCOUNT DZ0001 - DZ0012
+=====================================================
+
+   Untuk DZ0007 hingga DZ0012,
+   anda boleh tukar skin/harga di sini.
 ===================================================== */
+
 
 const accounts = [
 
@@ -2616,6 +2492,10 @@ const accounts = [
     },
 
 
+    /* ==============================================
+       DZ0007
+    ============================================== */
+
     {
         id: "DZ0007",
         skin: "500 Skin",
@@ -2626,6 +2506,10 @@ const accounts = [
         "Rank Mythic Glory. Skin 500. Hero max. Binding Moonton. Clearbind. Berwaranti."
     },
 
+
+    /* ==============================================
+       DZ0008
+    ============================================== */
 
     {
         id: "DZ0008",
@@ -2638,6 +2522,10 @@ const accounts = [
     },
 
 
+    /* ==============================================
+       DZ0009
+    ============================================== */
+
     {
         id: "DZ0009",
         skin: "450 Skin",
@@ -2648,6 +2536,10 @@ const accounts = [
         "Rank Mythic Glory. Skin 450. Hero max. Binding Moonton. Clearbind. Berwaranti."
     },
 
+
+    /* ==============================================
+       DZ0010
+    ============================================== */
 
     {
         id: "DZ0010",
@@ -2660,6 +2552,10 @@ const accounts = [
     },
 
 
+    /* ==============================================
+       DZ0011
+    ============================================== */
+
     {
         id: "DZ0011",
         skin: "600 Skin",
@@ -2670,6 +2566,10 @@ const accounts = [
         "Rank Mythic Glory. Skin 600. Hero max. Binding Moonton. Clearbind. Berwaranti."
     },
 
+
+    /* ==============================================
+       DZ0012
+    ============================================== */
 
     {
         id: "DZ0012",
@@ -2691,18 +2591,27 @@ const accounts = [
 
 function createCard(account) {
 
+
     return `
 
         <div class="card">
 
+
             <div class="image-wrap">
 
+
                 <img
+
                     class="account-image"
+
                     src="${account.image}"
+
                     alt="${account.id}"
+
                     onerror="this.style.opacity='0.25'"
+
                 >
+
 
                 <span class="image-label">
 
@@ -2710,16 +2619,20 @@ function createCard(account) {
 
                 </span>
 
+
                 <span class="zoom-hint">
 
                     🔎 Lihat gambar
 
                 </span>
 
+
             </div>
 
 
+
             <div class="content">
+
 
                 <div class="game">
 
@@ -2737,6 +2650,7 @@ function createCard(account) {
 
                 <div class="info">
 
+
                     <span class="tag">
 
                         🛡️ Berwaranti
@@ -2749,6 +2663,7 @@ function createCard(account) {
                         📦 Stok 1
 
                     </span>
+
 
                 </div>
 
@@ -2786,7 +2701,9 @@ function createCard(account) {
 
                 </button>
 
+
             </div>
+
 
         </div>
 
@@ -2802,10 +2719,13 @@ function createCard(account) {
 
 function loadAccounts(list = accounts) {
 
+
     const catalog =
         document.getElementById("catalog");
 
+
     catalog.innerHTML = "";
+
 
     list.forEach(function(account) {
 
@@ -2813,41 +2733,6 @@ function loadAccounts(list = accounts) {
             createCard(account);
 
     });
-
-
-    /* Paparkan mesej jika tiada account */
-
-    if (list.length === 0) {
-
-        catalog.innerHTML = `
-
-            <div style="
-                grid-column: 1 / -1;
-                text-align: center;
-                padding: 40px 20px;
-                color: #aab8cc;
-            ">
-
-                <div style="
-                    font-size: 40px;
-                    margin-bottom: 10px;
-                ">
-                    😔
-                </div>
-
-                <h3 style="color:white;">
-                    Tiada account dalam kategori ini
-                </h3>
-
-                <p>
-                    Cuba pilih kategori harga lain.
-                </p>
-
-            </div>
-
-        `;
-
-    }
 
 }
 
@@ -2858,6 +2743,7 @@ function loadAccounts(list = accounts) {
 ===================================================== */
 
 function searchAccount() {
+
 
     const input =
 
@@ -2871,6 +2757,7 @@ function searchAccount() {
     const filtered =
 
         accounts.filter(function(account) {
+
 
             return (
 
@@ -2892,107 +2779,6 @@ function searchAccount() {
 
             );
 
-        });
-
-
-    loadAccounts(filtered);
-
-
-    /* Reset kategori kepada SEMUA */
-
-    document
-        .querySelectorAll(".category-btn")
-        .forEach(function(btn) {
-
-            btn.classList.remove("active");
-
-        });
-
-
-    document
-        .querySelector(".category-btn")
-        .classList.add("active");
-
-}
-
-
-
-/* =====================================================
-   FILTER PRICE CATEGORY
-===================================================== */
-
-function filterPrice(category, button) {
-
-
-    /* Tukar button aktif */
-
-    document
-        .querySelectorAll(".category-btn")
-        .forEach(function(btn) {
-
-            btn.classList.remove("active");
-
-        });
-
-
-    button.classList.add("active");
-
-
-    /* Kosongkan search */
-
-    document
-        .getElementById("searchInput")
-        .value = "";
-
-
-    /* Filter berdasarkan harga */
-
-    const filtered =
-
-        accounts.filter(function(account) {
-
-
-            const price =
-
-                parseFloat(
-
-                    account.price
-                    .replace("RM", "")
-                    .replace(",", "")
-                    .trim()
-
-                );
-
-
-            if (category === "all") {
-
-                return true;
-
-            }
-
-
-            if (category === "0-499") {
-
-                return price >= 0 && price <= 499;
-
-            }
-
-
-            if (category === "500-999") {
-
-                return price >= 500 && price <= 999;
-
-            }
-
-
-            if (category === "1000+") {
-
-                return price >= 1000;
-
-            }
-
-
-            return true;
 
         });
 
