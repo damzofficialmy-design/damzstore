@@ -22,6 +22,7 @@ content="width=device-width, initial-scale=1.0">
     scroll-behavior: smooth;
 }
 
+
 body {
 
     margin: 0;
@@ -55,9 +56,11 @@ body {
         #020817;
 }
 
+
 body.modal-open {
     overflow: hidden;
 }
+
 
 
 /* =====================================================
@@ -79,8 +82,6 @@ body.modal-open {
     perspective: 1000px;
 }
 
-
-/* CUBE */
 
 .cube {
 
@@ -197,7 +198,6 @@ body.modal-open {
 }
 
 
-/* ORBS */
 
 .orb {
 
@@ -250,7 +250,6 @@ body.modal-open {
 }
 
 
-/* NEON LINES */
 
 .neon-line {
 
@@ -309,7 +308,6 @@ body.modal-open {
 }
 
 
-/* ANIMATION */
 
 @keyframes cubeFloat {
 
@@ -349,6 +347,7 @@ body.modal-open {
     }
 
 }
+
 
 
 /* =====================================================
@@ -423,6 +422,7 @@ nav a:hover {
     text-shadow:
         0 0 10px #00aaff;
 }
+
 
 
 /* =====================================================
@@ -515,6 +515,7 @@ nav a:hover {
 }
 
 
+
 /* =====================================================
    PROMO
 ===================================================== */
@@ -545,6 +546,10 @@ nav a:hover {
     border:
         1px solid
         rgba(0,170,255,0.35);
+
+    box-shadow:
+        0 10px 35px
+        rgba(0,0,0,0.20);
 }
 
 
@@ -559,6 +564,8 @@ nav a:hover {
 .promo p {
 
     color: #dbefff;
+
+    line-height: 1.6;
 }
 
 
@@ -580,6 +587,7 @@ nav a:hover {
 
     font-weight: bold;
 }
+
 
 
 /* =====================================================
@@ -617,6 +625,7 @@ nav a:hover {
 
     color: #aab8cc;
 }
+
 
 
 /* =====================================================
@@ -663,8 +672,9 @@ nav a:hover {
 }
 
 
+
 /* =====================================================
-   ACCOUNT CATALOG
+   ACCOUNT GRID
 ===================================================== */
 
 .catalog {
@@ -672,13 +682,16 @@ nav a:hover {
     display: grid;
 
     grid-template-columns:
-        repeat(3,1fr);
+        repeat(2,1fr);
 
     gap: 20px;
 }
 
 
-/* CARD */
+
+/* =====================================================
+   ACCOUNT CARD
+===================================================== */
 
 .card {
 
@@ -715,19 +728,20 @@ nav a:hover {
 
     box-shadow:
         0 15px 40px
-        rgba(0,170,255,0.16);
+        rgba(0,170,255,0.18);
 }
 
 
+
 /* =====================================================
-   BEAUTIFUL IMAGE
+   IMAGE
 ===================================================== */
 
 .image-wrap {
 
     position: relative;
 
-    height: 210px;
+    height: 230px;
 
     overflow: hidden;
 
@@ -763,8 +777,6 @@ nav a:hover {
 }
 
 
-/* IMAGE OVERLAY */
-
 .image-wrap::after {
 
     content: "";
@@ -782,11 +794,10 @@ nav a:hover {
             rgba(0,170,255,0.08)
         );
 
-    pointer-events: none;
+    pointer-events:
+        none;
 }
 
-
-/* SKIN LABEL */
 
 .image-label {
 
@@ -801,10 +812,11 @@ nav a:hover {
     padding:
         7px 10px;
 
-    border-radius: 999px;
+    border-radius:
+        999px;
 
     background:
-        rgba(2,8,23,0.75);
+        rgba(2,8,23,0.78);
 
     border:
         1px solid
@@ -818,8 +830,6 @@ nav a:hover {
         blur(5px);
 }
 
-
-/* ZOOM TEXT */
 
 .zoom-hint {
 
@@ -845,7 +855,10 @@ nav a:hover {
 }
 
 
-/* CONTENT */
+
+/* =====================================================
+   CARD CONTENT
+===================================================== */
 
 .content {
 
@@ -863,7 +876,7 @@ nav a:hover {
 
 .name {
 
-    font-size: 18px;
+    font-size: 20px;
 
     font-weight: bold;
 
@@ -916,7 +929,7 @@ nav a:hover {
 
     color: #ff7043;
 
-    font-size: 23px;
+    font-size: 25px;
 
     font-weight: bold;
 
@@ -924,8 +937,6 @@ nav a:hover {
         5px 0;
 }
 
-
-/* DETAIL BUTTON */
 
 .detail-button {
 
@@ -949,7 +960,7 @@ nav a:hover {
 
     color: white;
 
-    padding: 12px;
+    padding: 13px;
 
     border-radius: 9px;
 
@@ -979,18 +990,135 @@ nav a:hover {
 }
 
 
+
+/* =====================================================
+   ADVERTISEMENT
+===================================================== */
+
+.ad-section {
+
+    width: 92%;
+
+    max-width: 1100px;
+
+    margin:
+        35px auto;
+
+    padding:
+        35px 25px;
+
+    border-radius:
+        20px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            rgba(0,42,85,0.95),
+            rgba(0,126,200,0.82)
+        );
+
+    border:
+        1px solid
+        rgba(0,190,255,0.45);
+
+    text-align: center;
+
+    box-shadow:
+
+        0 0 35px
+        rgba(0,170,255,0.15);
+}
+
+
+.ad-badge {
+
+    display:
+        inline-block;
+
+    background:
+        #ff7043;
+
+    color: white;
+
+    padding:
+        6px 12px;
+
+    border-radius:
+        999px;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    margin-bottom:
+        10px;
+}
+
+
+.ad-section h2 {
+
+    margin:
+        5px 0 10px;
+
+    font-size:
+        27px;
+}
+
+
+.ad-section p {
+
+    color:
+        #dbefff;
+
+    line-height:
+        1.6;
+}
+
+
+.ad-button {
+
+    display:
+        inline-block;
+
+    margin-top:
+        12px;
+
+    padding:
+        12px 25px;
+
+    background:
+        white;
+
+    color:
+        #06142d;
+
+    text-decoration:
+        none;
+
+    border-radius:
+        9px;
+
+    font-weight:
+        bold;
+}
+
+
+
 /* =====================================================
    WHY
 ===================================================== */
 
 .why {
 
-    display: grid;
+    display:
+        grid;
 
     grid-template-columns:
         repeat(3,1fr);
 
-    gap: 20px;
+    gap:
+        20px;
 }
 
 
@@ -999,11 +1127,14 @@ nav a:hover {
     background:
         rgba(255,255,255,0.06);
 
-    padding: 25px;
+    padding:
+        25px;
 
-    border-radius: 15px;
+    border-radius:
+        15px;
 
-    text-align: center;
+    text-align:
+        center;
 
     border:
         1px solid
@@ -1013,18 +1144,23 @@ nav a:hover {
 
 .why-card h3 {
 
-    color: #00aaff;
+    color:
+        #00aaff;
 }
 
 
 .why-card p {
 
-    color: #9caec5;
+    color:
+        #9caec5;
 
-    font-size: 14px;
+    font-size:
+        14px;
 
-    line-height: 1.6;
+    line-height:
+        1.6;
 }
+
 
 
 /* =====================================================
@@ -1041,7 +1177,8 @@ nav a:hover {
             rgba(7,59,114,0.88)
         );
 
-    text-align: center;
+    text-align:
+        center;
 
     padding:
         55px 20px;
@@ -1050,41 +1187,54 @@ nav a:hover {
 
 .contact p {
 
-    color: #d8e6f5;
+    color:
+        #d8e6f5;
 }
 
 
 .social-buttons {
 
-    display: flex;
+    display:
+        flex;
 
-    justify-content: center;
+    justify-content:
+        center;
 
-    gap: 12px;
+    gap:
+        12px;
 
-    flex-wrap: wrap;
+    flex-wrap:
+        wrap;
 
-    margin-top: 25px;
+    margin-top:
+        25px;
 }
 
 
 .social {
 
-    display: inline-block;
+    display:
+        inline-block;
 
     padding:
         13px 22px;
 
-    background: white;
+    background:
+        white;
 
-    color: #06142d;
+    color:
+        #06142d;
 
-    text-decoration: none;
+    text-decoration:
+        none;
 
-    border-radius: 10px;
+    border-radius:
+        10px;
 
-    font-weight: bold;
+    font-weight:
+        bold;
 }
+
 
 
 /* =====================================================
@@ -1096,7 +1246,8 @@ footer {
     background:
         #010611;
 
-    text-align: center;
+    text-align:
+        center;
 
     padding:
         35px 20px;
@@ -1109,45 +1260,55 @@ footer {
 
 footer h2 {
 
-    color: #00aaff;
+    color:
+        #00aaff;
 }
 
 
 footer p {
 
-    color: #8997aa;
+    color:
+        #8997aa;
 
-    font-size: 13px;
+    font-size:
+        13px;
 }
 
 
 footer small {
 
-    color: #66758a;
+    color:
+        #66758a;
 }
 
 
+
 /* =====================================================
-   DETAIL MODAL
+   MODAL DETAIL
 ===================================================== */
 
 .modal {
 
-    display: none;
+    display:
+        none;
 
-    position: fixed;
+    position:
+        fixed;
 
-    inset: 0;
+    inset:
+        0;
 
     background:
-        rgba(0,0,0,0.88);
+        rgba(0,0,0,0.90);
 
-    z-index: 9999;
+    z-index:
+        9999;
 
     padding:
-        25px 15px;
+        20px;
 
-    overflow-y: auto;
+    overflow-y:
+        auto;
 
     backdrop-filter:
         blur(8px);
@@ -1156,21 +1317,27 @@ footer small {
 
 .modal.show {
 
-    display: flex;
+    display:
+        flex;
 
-    align-items: center;
+    align-items:
+        center;
 
-    justify-content: center;
+    justify-content:
+        center;
 }
 
 
 .modal-box {
 
-    position: relative;
+    position:
+        relative;
 
-    width: 100%;
+    width:
+        100%;
 
-    max-width: 650px;
+    max-width:
+        700px;
 
     background:
 
@@ -1184,13 +1351,16 @@ footer small {
         1px solid
         rgba(0,170,255,0.65);
 
-    border-radius: 20px;
+    border-radius:
+        20px;
 
-    overflow: hidden;
+    overflow:
+        hidden;
 
     box-shadow:
-        0 0 50px
-        rgba(0,170,255,0.22);
+
+        0 0 60px
+        rgba(0,170,255,0.25);
 
     animation:
         modalIn
@@ -1199,128 +1369,161 @@ footer small {
 }
 
 
-/* MODAL IMAGE */
-
 .modal-image-wrap {
 
-    height: 300px;
+    height:
+        350px;
 
     background:
         #06142d;
 
-    position: relative;
+    position:
+        relative;
 }
 
 
 .modal-image {
 
-    width: 100%;
+    width:
+        100%;
 
-    height: 100%;
+    height:
+        100%;
 
-    object-fit: cover;
+    object-fit:
+        contain;
 
-    display: block;
+    display:
+        block;
+
+    background:
+        #06142d;
 }
 
 
 .modal-image-wrap::after {
 
-    content: "";
+    content:
+        "";
 
-    position: absolute;
+    position:
+        absolute;
 
-    inset: 0;
+    inset:
+        0;
 
     background:
 
         linear-gradient(
             to top,
-            rgba(2,8,23,0.50),
+            rgba(2,8,23,0.45),
             transparent
         );
 
-    pointer-events: none;
+    pointer-events:
+        none;
 }
 
 
-/* MODAL CONTENT */
-
 .modal-content {
 
-    padding: 24px;
+    padding:
+        25px;
 }
 
 
 .modal-title {
 
-    color: #00c3ff;
+    color:
+        #00c3ff;
 
     margin:
-        0 45px 10px;
+        0 45px 12px;
 
-    font-size: 25px;
+    font-size:
+        26px;
 }
 
 
 .modal-desc {
 
-    color: #dbefff;
+    color:
+        #dbefff;
 
-    line-height: 1.7;
+    line-height:
+        1.7;
+
+    font-size:
+        15px;
 }
 
 
 .modal-old {
 
-    color: #8491a2;
+    color:
+        #8491a2;
 
     text-decoration:
         line-through;
+
+    margin-top:
+        15px;
 }
 
 
 .modal-price {
 
-    color: #ff7043;
+    color:
+        #ff7043;
 
-    font-size: 28px;
+    font-size:
+        30px;
 
-    font-weight: bold;
+    font-weight:
+        bold;
 
     margin:
-        5px 0 18px;
+        5px 0 20px;
 }
 
 
-/* CLOSE */
-
 .close {
 
-    position: absolute;
+    position:
+        absolute;
 
-    right: 15px;
+    right:
+        15px;
 
-    top: 12px;
+    top:
+        12px;
 
-    z-index: 5;
+    z-index:
+        10;
 
-    width: 40px;
+    width:
+        42px;
 
-    height: 40px;
+    height:
+        42px;
 
-    border: 0;
+    border:
+        0;
 
-    border-radius: 50%;
+    border-radius:
+        50%;
 
     background:
-        rgba(0,0,0,0.65);
+        rgba(0,0,0,0.70);
 
-    color: white;
+    color:
+        white;
 
-    font-size: 27px;
+    font-size:
+        28px;
 
-    cursor: pointer;
+    cursor:
+        pointer;
 }
 
 
@@ -1331,13 +1534,13 @@ footer small {
 }
 
 
-/* WHATSAPP */
-
 .modal-wa {
 
-    display: block;
+    display:
+        block;
 
-    text-align: center;
+    text-align:
+        center;
 
     background:
 
@@ -1347,15 +1550,20 @@ footer small {
             #128C7E
         );
 
-    color: white;
+    color:
+        white;
 
-    padding: 14px;
+    padding:
+        15px;
 
-    border-radius: 10px;
+    border-radius:
+        10px;
 
-    text-decoration: none;
+    text-decoration:
+        none;
 
-    font-weight: bold;
+    font-weight:
+        bold;
 
     transition:
         0.2s;
@@ -1377,39 +1585,33 @@ footer small {
 
     from {
 
-        opacity: 0;
+        opacity:
+            0;
 
         transform:
             translateY(15px)
-            scale(0.98);
+            scale(0.97);
     }
 
     to {
 
-        opacity: 1;
+        opacity:
+            1;
 
         transform:
             none;
     }
+
 }
+
 
 
 /* =====================================================
-   RESPONSIVE
+   MOBILE
 ===================================================== */
 
-@media(max-width:900px) {
-
-    .catalog {
-
-        grid-template-columns:
-            repeat(2,1fr);
-    }
-
-}
-
-
 @media(max-width:700px) {
+
 
     header {
 
@@ -1446,12 +1648,19 @@ footer small {
     }
 
 
+    /*
+       KEKAL 2 COLUMN
+       supaya 0001 + 0002
+       sentiasa bersebelahan
+    */
+
     .catalog {
 
         grid-template-columns:
             repeat(2,1fr);
 
-        gap: 10px;
+        gap:
+            10px;
     }
 
 
@@ -1472,7 +1681,7 @@ footer small {
     .name {
 
         font-size:
-            15px;
+            14px;
     }
 
 
@@ -1483,13 +1692,47 @@ footer small {
     }
 
 
+    .old-price {
+
+        font-size:
+            11px;
+    }
+
+
+    .tag {
+
+        font-size:
+            10px;
+
+        padding:
+            6px 7px;
+    }
+
+
     .detail-button {
 
         font-size:
-            12px;
+            11px;
 
         padding:
-            10px;
+            10px 5px;
+    }
+
+
+    .zoom-hint {
+
+        display:
+            none;
+    }
+
+
+    .image-label {
+
+        font-size:
+            9px;
+
+        padding:
+            5px 7px;
     }
 
 
@@ -1510,7 +1753,7 @@ footer small {
     .modal-image-wrap {
 
         height:
-            220px;
+            240px;
     }
 
 
@@ -1525,31 +1768,16 @@ footer small {
 
         font-size:
             21px;
+
+        margin-left:
+            0;
     }
 
 
-    .zoom-hint {
+    .modal-price {
 
-        display:
-            none;
-    }
-
-}
-
-
-@media(max-width:430px) {
-
-    .catalog {
-
-        grid-template-columns:
-            1fr;
-    }
-
-
-    .image-wrap {
-
-        height:
-            200px;
+        font-size:
+            25px;
     }
 
 }
@@ -1667,7 +1895,7 @@ footer small {
 
 
 <!-- =====================================================
-     PROMO
+     PROMO 1
 ===================================================== -->
 
 <div class="promo">
@@ -1736,7 +1964,7 @@ footer small {
 
             id="searchInput"
 
-            placeholder="🔍 Cari code / account..."
+            placeholder="🔍 Cari DZ0001, DZ0002, skin..."
 
             oninput="searchAccount()"
 
@@ -1751,680 +1979,54 @@ footer small {
         id="catalog"
     >
 
-
-
-        <!-- =================================================
-             ACCOUNT 1
-        ================================================= -->
-
-        <div class="card">
-
-
-            <div class="image-wrap">
-
-                <img
-
-                    class="account-image"
-
-                    src="images/DZ0001.jpg"
-
-                    alt="DZ0001"
-
-                >
-
-
-                <span class="image-label">
-
-                    🎮 358 SKIN
-
-                </span>
-
-
-                <span class="zoom-hint">
-
-                    🔎 Lihat gambar
-
-                </span>
-
-            </div>
-
-
-
-            <div class="content">
-
-
-                <div class="game">
-
-                    Mobile Legends
-
-                </div>
-
-
-                <div class="name">
-
-                    DZ0001 | 358 Skin
-
-                </div>
-
-
-                <div class="info">
-
-                    <span class="tag">
-
-                        🛡️ Berwaranti
-
-                    </span>
-
-
-                    <span class="tag">
-
-                        📦 Stok 1
-
-                    </span>
-
-                </div>
-
-
-                <div class="old-price">
-
-                    RM699.00
-
-                </div>
-
-
-                <div class="price">
-
-                    RM499.00
-
-                </div>
-
-
-                <button
-
-                    class="detail-button"
-
-                    onclick="showDetail(
-                        'DZ0001',
-                        '358 Skin',
-                        'RM699.00',
-                        'RM499.00',
-                        'Rank Mythic Glory. Skin 358. Hero max. Binding Moonton. Clearbind. Berwaranti.',
-                        'images/DZ0001.jpg'
-                    )"
-
-                >
-
-                    LIHAT DETAIL →
-
-                </button>
-
-
-            </div>
-
-        </div>
-
-
-
-        <!-- =================================================
-             ACCOUNT 2
-        ================================================= -->
-
-        <div class="card">
-
-
-            <div class="image-wrap">
-
-                <img
-
-                    class="account-image"
-
-                    src="images/DZ0002.jpg"
-
-                    alt="DZ0002"
-
-                >
-
-
-                <span class="image-label">
-
-                    🎮 444 SKIN
-
-                </span>
-
-
-                <span class="zoom-hint">
-
-                    🔎 Lihat gambar
-
-                </span>
-
-            </div>
-
-
-
-            <div class="content">
-
-
-                <div class="game">
-
-                    Mobile Legends
-
-                </div>
-
-
-                <div class="name">
-
-                    DZ0002 | 444 Skin
-
-                </div>
-
-
-                <div class="info">
-
-                    <span class="tag">
-
-                        🛡️ Berwaranti
-
-                    </span>
-
-
-                    <span class="tag">
-
-                        📦 Stok 1
-
-                    </span>
-
-                </div>
-
-
-                <div class="old-price">
-
-                    RM799.00
-
-                </div>
-
-
-                <div class="price">
-
-                    RM550.00
-
-                </div>
-
-
-                <button
-
-                    class="detail-button"
-
-                    onclick="showDetail(
-                        'DZ0002',
-                        '444 Skin',
-                        'RM799.00',
-                        'RM550.00',
-                        'Rank Mythic Glory. Skin 444. Hero max. Binding Moonton. Clearbind. Berwaranti.',
-                        'images/DZ0002.jpg'
-                    )"
-
-                >
-
-                    LIHAT DETAIL →
-
-                </button>
-
-
-            </div>
-
-        </div>
-
-
-
-        <!-- =================================================
-             ACCOUNT 3
-        ================================================= -->
-
-        <div class="card">
-
-
-            <div class="image-wrap">
-
-                <img
-
-                    class="account-image"
-
-                    src="images/dz0003.jpg"
-
-                    alt="DZ0003"
-
-                >
-
-
-                <span class="image-label">
-
-                    🎮 578 SKIN
-
-                </span>
-
-
-                <span class="zoom-hint">
-
-                    🔎 Lihat gambar
-
-                </span>
-
-            </div>
-
-
-
-            <div class="content">
-
-
-                <div class="game">
-
-                    Mobile Legends
-
-                </div>
-
-
-                <div class="name">
-
-                    DZ0003 | 578 Skin
-
-                </div>
-
-
-                <div class="info">
-
-                    <span class="tag">
-
-                        🛡️ Berwaranti
-
-                    </span>
-
-
-                    <span class="tag">
-
-                        📦 Stok 1
-
-                    </span>
-
-                </div>
-
-
-                <div class="old-price">
-
-                    RM599.00
-
-                </div>
-
-
-                <div class="price">
-
-                    RM499.00
-
-                </div>
-
-
-                <button
-
-                    class="detail-button"
-
-                    onclick="showDetail(
-                        'DZ0003',
-                        '578 Skin',
-                        'RM599.00',
-                        'RM499.00',
-                        'Rank Mythic Glory. Skin 578. Hero max. Binding Moonton. Clearbind. Berwaranti.',
-                        'images/dz0003.jpg'
-                    )"
-
-                >
-
-                    LIHAT DETAIL →
-
-                </button>
-
-
-            </div>
-
-        </div>
-
-
-
-        <!-- =================================================
-             ACCOUNT 4
-        ================================================= -->
-
-        <div class="card">
-
-
-            <div class="image-wrap">
-
-                <img
-
-                    class="account-image"
-
-                    src="images/dz0004.jpg"
-
-                    alt="DZ0004"
-
-                >
-
-
-                <span class="image-label">
-
-                    🎮 564 SKIN
-
-                </span>
-
-
-                <span class="zoom-hint">
-
-                    🔎 Lihat gambar
-
-                </span>
-
-            </div>
-
-
-
-            <div class="content">
-
-
-                <div class="game">
-
-                    Mobile Legends
-
-                </div>
-
-
-                <div class="name">
-
-                    DZ0004 | 564 Skin
-
-                </div>
-
-
-                <div class="info">
-
-                    <span class="tag">
-
-                        🛡️ Berwaranti
-
-                    </span>
-
-
-                    <span class="tag">
-
-                        📦 Stok 1
-
-                    </span>
-
-                </div>
-
-
-                <div class="old-price">
-
-                    RM569.00
-
-                </div>
-
-
-                <div class="price">
-
-                    RM469.00
-
-                </div>
-
-
-                <button
-
-                    class="detail-button"
-
-                    onclick="showDetail(
-                        'DZ0004',
-                        '564 Skin',
-                        'RM569.00',
-                        'RM469.00',
-                        'Rank Mythic Glory. Skin 564. Hero max. Binding Moonton. Clearbind. Berwaranti.',
-                        'images/dz0004.jpg'
-                    )"
-
-                >
-
-                    LIHAT DETAIL →
-
-                </button>
-
-
-            </div>
-
-        </div>
-
-
-
-        <!-- =================================================
-             ACCOUNT 5
-        ================================================= -->
-
-        <div class="card">
-
-
-            <div class="image-wrap">
-
-                <img
-
-                    class="account-image"
-
-                    src="images/dz0005.jpg"
-
-                    alt="DZ0005"
-
-                >
-
-
-                <span class="image-label">
-
-                    🎮 411 SKIN
-
-                </span>
-
-
-                <span class="zoom-hint">
-
-                    🔎 Lihat gambar
-
-                </span>
-
-            </div>
-
-
-
-            <div class="content">
-
-
-                <div class="game">
-
-                    Mobile Legends
-
-                </div>
-
-
-                <div class="name">
-
-                    DZ0005 | 411 Skin
-
-                </div>
-
-
-                <div class="info">
-
-                    <span class="tag">
-
-                        🛡️ Berwaranti
-
-                    </span>
-
-
-                    <span class="tag">
-
-                        📦 Stok 1
-
-                    </span>
-
-                </div>
-
-
-                <div class="old-price">
-
-                    RM500.00
-
-                </div>
-
-
-                <div class="price">
-
-                    RM350.00
-
-                </div>
-
-
-                <button
-
-                    class="detail-button"
-
-                    onclick="showDetail(
-                        'DZ0005',
-                        '411 Skin',
-                        'RM500.00',
-                        'RM350.00',
-                        'Rank Mythic Glory. Skin 411. Hero max. Binding Moonton. Clearbind. Berwaranti.',
-                        'images/dz0005.jpg'
-                    )"
-
-                >
-
-                    LIHAT DETAIL →
-
-                </button>
-
-
-            </div>
-
-        </div>
-
-
-
-        <!-- =================================================
-             ACCOUNT 6
-        ================================================= -->
-
-        <div class="card">
-
-
-            <div class="image-wrap">
-
-                <img
-
-                    class="account-image"
-
-                    src="images/DZ0006.jpg"
-
-                    alt="DZ0006"
-
-                >
-
-
-                <span class="image-label">
-
-                    🎮 483 SKIN
-
-                </span>
-
-
-                <span class="zoom-hint">
-
-                    🔎 Lihat gambar
-
-                </span>
-
-            </div>
-
-
-
-            <div class="content">
-
-
-                <div class="game">
-
-                    Mobile Legends
-
-                </div>
-
-
-                <div class="name">
-
-                    DZ0006 | 483 Skin
-
-                </div>
-
-
-                <div class="info">
-
-                    <span class="tag">
-
-                        🛡️ Berwaranti
-
-                    </span>
-
-
-                    <span class="tag">
-
-                        📦 Stok 1
-
-                    </span>
-
-                </div>
-
-
-                <div class="old-price">
-
-                    RM450.00
-
-                </div>
-
-
-                <div class="price">
-
-                    RM320.00
-
-                </div>
-
-
-                <button
-
-                    class="detail-button"
-
-                    onclick="showDetail(
-                        'DZ0006',
-                        '483 Skin',
-                        'RM450.00',
-                        'RM320.00',
-                        'Rank Mythic Glory. Skin 483. Hero max. Binding Moonton. Clearbind. Berwaranti.',
-                        'images/DZ0006.jpg'
-                    )"
-
-                >
-
-                    LIHAT DETAIL →
-
-                </button>
-
-
-            </div>
-
-        </div>
-
+        <!--
+        ACCOUNT AKAN DIHASILKAN
+        OLEH JAVASCRIPT DI BAWAH
+        -->
 
     </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     ADVERTISEMENT 1
+===================================================== -->
+
+<section class="ad-section">
+
+    <div class="ad-badge">
+
+        🔥 PROMOSI
+
+    </div>
+
+
+    <h2>
+
+        🎮 CARI ACCOUNT IMPIAN ANDA?
+
+    </h2>
+
+
+    <p>
+
+        Semua account tersedia dengan maklumat
+        yang jelas. Tekan <b>LIHAT DETAIL</b> untuk
+        melihat gambar penuh dan maklumat account.
+
+    </p>
+
+
+    <a
+        href="#contact"
+        class="ad-button"
+    >
+
+        💬 HUBUNGI DAMZ
+
+    </a>
 
 </section>
 
@@ -2518,6 +2120,48 @@ footer small {
 
 
 <!-- =====================================================
+     ADVERTISEMENT 2
+===================================================== -->
+
+<section class="ad-section">
+
+    <div class="ad-badge">
+
+        ⚡ DAMZSTORE
+
+    </div>
+
+
+    <h2>
+
+        💎 ACCOUNT BERKUALITI • HARGA MENARIK
+
+    </h2>
+
+
+    <p>
+
+        Pilih account yang anda minat,
+        tekan <b>LIHAT DETAIL</b> dan terus
+        hubungi DAMZ melalui WhatsApp.
+
+    </p>
+
+
+    <a
+        href="#account"
+        class="ad-button"
+    >
+
+        🛒 LIHAT SEMUA ACCOUNT
+
+    </a>
+
+</section>
+
+
+
+<!-- =====================================================
      CONTACT
 ===================================================== -->
 
@@ -2537,6 +2181,8 @@ footer small {
     <p>
 
         Berminat dengan mana-mana account?
+
+        <br>
 
         Hubungi kami untuk maklumat lanjut.
 
@@ -2652,15 +2298,11 @@ footer small {
     <div class="modal-box">
 
 
-        <!-- CLOSE BUTTON -->
-
         <button
 
             class="close"
 
             onclick="closeDetail()"
-
-            aria-label="Tutup"
 
         >
 
@@ -2753,13 +2395,12 @@ footer small {
 
             >
 
-                💬 Beli Sekarang di WhatsApp
+                💬 BELI SEKARANG DI WHATSAPP
 
             </a>
 
 
         </div>
-
 
     </div>
 
@@ -2775,7 +2416,330 @@ footer small {
 
 
 /* =====================================================
-   SEARCH
+   DATA ACCOUNT DZ0001 - DZ0012
+=====================================================
+
+   Untuk DZ0007 hingga DZ0012,
+   anda boleh tukar skin/harga di sini.
+===================================================== */
+
+
+const accounts = [
+
+    {
+        id: "DZ0001",
+        skin: "358 Skin",
+        oldPrice: "RM699.00",
+        price: "RM499.00",
+        image: "images/DZ0001.jpg",
+        description:
+        "Rank Mythic Glory. Skin 358. Hero max. Binding Moonton. Clearbind. Berwaranti."
+    },
+
+
+    {
+        id: "DZ0002",
+        skin: "444 Skin",
+        oldPrice: "RM799.00",
+        price: "RM550.00",
+        image: "images/DZ0002.jpg",
+        description:
+        "Rank Mythic Glory. Skin 444. Hero max. Binding Moonton. Clearbind. Berwaranti."
+    },
+
+
+    {
+        id: "DZ0003",
+        skin: "578 Skin",
+        oldPrice: "RM599.00",
+        price: "RM499.00",
+        image: "images/dz0003.jpg",
+        description:
+        "Rank Mythic Glory. Skin 578. Hero max. Binding Moonton. Clearbind. Berwaranti."
+    },
+
+
+    {
+        id: "DZ0004",
+        skin: "564 Skin",
+        oldPrice: "RM569.00",
+        price: "RM469.00",
+        image: "images/dz0004.jpg",
+        description:
+        "Rank Mythic Glory. Skin 564. Hero max. Binding Moonton. Clearbind. Berwaranti."
+    },
+
+
+    {
+        id: "DZ0005",
+        skin: "411 Skin",
+        oldPrice: "RM500.00",
+        price: "RM350.00",
+        image: "images/dz0005.jpg",
+        description:
+        "Rank Mythic Glory. Skin 411. Hero max. Binding Moonton. Clearbind. Berwaranti."
+    },
+
+
+    {
+        id: "DZ0006",
+        skin: "483 Skin",
+        oldPrice: "RM450.00",
+        price: "RM320.00",
+        image: "images/DZ0006.jpg",
+        description:
+        "Rank Mythic Glory. Skin 483. Hero max. Binding Moonton. Clearbind. Berwaranti."
+    },
+
+
+    /* ==============================================
+       DZ0007
+    ============================================== */
+
+    {
+        id: "DZ0007",
+        skin: "500 Skin",
+        oldPrice: "RM650.00",
+        price: "RM450.00",
+        image: "images/DZ0007.jpg",
+        description:
+        "Rank Mythic Glory. Skin 500. Hero max. Binding Moonton. Clearbind. Berwaranti."
+    },
+
+
+    /* ==============================================
+       DZ0008
+    ============================================== */
+
+    {
+        id: "DZ0008",
+        skin: "520 Skin",
+        oldPrice: "RM700.00",
+        price: "RM480.00",
+        image: "images/DZ0008.jpg",
+        description:
+        "Rank Mythic Glory. Skin 520. Hero max. Binding Moonton. Clearbind. Berwaranti."
+    },
+
+
+    /* ==============================================
+       DZ0009
+    ============================================== */
+
+    {
+        id: "DZ0009",
+        skin: "450 Skin",
+        oldPrice: "RM600.00",
+        price: "RM420.00",
+        image: "images/DZ0009.jpg",
+        description:
+        "Rank Mythic Glory. Skin 450. Hero max. Binding Moonton. Clearbind. Berwaranti."
+    },
+
+
+    /* ==============================================
+       DZ0010
+    ============================================== */
+
+    {
+        id: "DZ0010",
+        skin: "550 Skin",
+        oldPrice: "RM750.00",
+        price: "RM520.00",
+        image: "images/DZ0010.jpg",
+        description:
+        "Rank Mythic Glory. Skin 550. Hero max. Binding Moonton. Clearbind. Berwaranti."
+    },
+
+
+    /* ==============================================
+       DZ0011
+    ============================================== */
+
+    {
+        id: "DZ0011",
+        skin: "600 Skin",
+        oldPrice: "RM850.00",
+        price: "RM599.00",
+        image: "images/DZ0011.jpg",
+        description:
+        "Rank Mythic Glory. Skin 600. Hero max. Binding Moonton. Clearbind. Berwaranti."
+    },
+
+
+    /* ==============================================
+       DZ0012
+    ============================================== */
+
+    {
+        id: "DZ0012",
+        skin: "650 Skin",
+        oldPrice: "RM900.00",
+        price: "RM650.00",
+        image: "images/DZ0012.jpg",
+        description:
+        "Rank Mythic Glory. Skin 650. Hero max. Binding Moonton. Clearbind. Berwaranti."
+    }
+
+];
+
+
+
+/* =====================================================
+   CREATE ACCOUNT CARD
+===================================================== */
+
+function createCard(account) {
+
+
+    return `
+
+        <div class="card">
+
+
+            <div class="image-wrap">
+
+
+                <img
+
+                    class="account-image"
+
+                    src="${account.image}"
+
+                    alt="${account.id}"
+
+                    onerror="this.style.opacity='0.25'"
+
+                >
+
+
+                <span class="image-label">
+
+                    🎮 ${account.skin.toUpperCase()}
+
+                </span>
+
+
+                <span class="zoom-hint">
+
+                    🔎 Lihat gambar
+
+                </span>
+
+
+            </div>
+
+
+
+            <div class="content">
+
+
+                <div class="game">
+
+                    Mobile Legends
+
+                </div>
+
+
+                <div class="name">
+
+                    ${account.id} | ${account.skin}
+
+                </div>
+
+
+                <div class="info">
+
+
+                    <span class="tag">
+
+                        🛡️ Berwaranti
+
+                    </span>
+
+
+                    <span class="tag">
+
+                        📦 Stok 1
+
+                    </span>
+
+
+                </div>
+
+
+                <div class="old-price">
+
+                    ${account.oldPrice}
+
+                </div>
+
+
+                <div class="price">
+
+                    ${account.price}
+
+                </div>
+
+
+                <button
+
+                    class="detail-button"
+
+                    onclick="showDetail(
+                        '${account.id}',
+                        '${account.skin}',
+                        '${account.oldPrice}',
+                        '${account.price}',
+                        '${account.description}',
+                        '${account.image}'
+                    )"
+
+                >
+
+                    LIHAT DETAIL →
+
+                </button>
+
+
+            </div>
+
+
+        </div>
+
+    `;
+
+}
+
+
+
+/* =====================================================
+   LOAD ACCOUNT
+===================================================== */
+
+function loadAccounts(list = accounts) {
+
+
+    const catalog =
+        document.getElementById("catalog");
+
+
+    catalog.innerHTML = "";
+
+
+    list.forEach(function(account) {
+
+        catalog.innerHTML +=
+            createCard(account);
+
+    });
+
+}
+
+
+
+/* =====================================================
+   SEARCH ACCOUNT
 ===================================================== */
 
 function searchAccount() {
@@ -2790,37 +2754,36 @@ function searchAccount() {
         .trim();
 
 
-    const cards =
+    const filtered =
 
-        document
-        .querySelectorAll(".card");
-
-
-    cards.forEach(function(card) {
+        accounts.filter(function(account) {
 
 
-        const text =
+            return (
 
-            card.innerText
-            .toLowerCase();
+                account.id
+                .toLowerCase()
+                .includes(input)
+
+                ||
+
+                account.skin
+                .toLowerCase()
+                .includes(input)
+
+                ||
+
+                account.price
+                .toLowerCase()
+                .includes(input)
+
+            );
 
 
-        if (
-            text.includes(input)
-        ) {
-
-            card.style.display = "";
-
-        }
-
-        else {
-
-            card.style.display = "none";
-
-        }
+        });
 
 
-    });
+    loadAccounts(filtered);
 
 }
 
@@ -2831,16 +2794,16 @@ function searchAccount() {
 ===================================================== */
 
 function showDetail(
+
     id,
     skin,
     oldprice,
     price,
     desc,
     image
+
 ) {
 
-
-    /* TITLE */
 
     document
     .getElementById("modalTitle")
@@ -2849,16 +2812,12 @@ function showDetail(
 
 
 
-    /* DESCRIPTION */
-
     document
     .getElementById("modalDesc")
     .textContent =
         desc;
 
 
-
-    /* OLD PRICE */
 
     document
     .getElementById("modalOld")
@@ -2867,16 +2826,12 @@ function showDetail(
 
 
 
-    /* NEW PRICE */
-
     document
     .getElementById("modalPrice")
     .textContent =
         price;
 
 
-
-    /* IMAGE */
 
     document
     .getElementById("modalImage")
@@ -2885,14 +2840,14 @@ function showDetail(
 
 
 
-    /* WHATSAPP */
-
     const message =
 
         encodeURIComponent(
 
             "Hi DAMZ, saya berminat dengan account "
             + id
+            + " | "
+            + skin
 
         );
 
@@ -2905,8 +2860,6 @@ function showDetail(
         + message;
 
 
-
-    /* SHOW MODAL */
 
     document
     .getElementById("detailModal")
@@ -2924,7 +2877,7 @@ function showDetail(
 
 
 /* =====================================================
-   CLOSE DETAIL
+   CLOSE MODAL
 ===================================================== */
 
 function closeDetail() {
@@ -2946,7 +2899,7 @@ function closeDetail() {
 
 
 /* =====================================================
-   CLOSE WHEN CLICK OUTSIDE
+   CLICK OUTSIDE MODAL
 ===================================================== */
 
 function outsideClose(event) {
@@ -2971,12 +2924,13 @@ function outsideClose(event) {
 
 
 /* =====================================================
-   CLOSE WITH ESC
+   ESC BUTTON
 ===================================================== */
 
 document.addEventListener(
     "keydown",
     function(event) {
+
 
         if (
             event.key === "Escape"
@@ -2986,8 +2940,17 @@ document.addEventListener(
 
         }
 
+
     }
 );
+
+
+
+/* =====================================================
+   INITIAL LOAD
+===================================================== */
+
+loadAccounts();
 
 
 </script>
