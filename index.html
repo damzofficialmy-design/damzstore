@@ -1,16 +1,7 @@
-<!DOCTYPE html>
-<html lang="ms">
-
-<head>
-
-<meta charset="UTF-8">
-
-<meta name="viewport"
+<!DOCTYPE html><html lang="ms"><head><meta charset="UTF-8"><meta name="viewport"
 content="width=device-width, initial-scale=1.0">
 
-<title>DAMZSTORE | Mobile Legends Account</title>
-
-<style>
+<title>DAMZSTORE | Mobile Legends Account</title><style>
 
 /* =====================================================
    GLOBAL
@@ -22,35 +13,27 @@ content="width=device-width, initial-scale=1.0">
 }
 
 body {
-
     margin: 0;
-
     font-family: Arial, sans-serif;
-
     color: white;
-
     overflow-x: hidden;
 
     background:
-
         radial-gradient(
             circle at 15% 15%,
             rgba(0,170,255,0.16),
             transparent 28%
         ),
-
         radial-gradient(
             circle at 85% 30%,
             rgba(0,80,255,0.14),
             transparent 28%
         ),
-
         radial-gradient(
             circle at 50% 90%,
             rgba(0,170,255,0.10),
             transparent 30%
         ),
-
         #020817;
 }
 
@@ -64,26 +47,17 @@ body.modal-open {
 ===================================================== */
 
 .bg-3d {
-
     position: fixed;
-
     inset: 0;
-
     pointer-events: none;
-
     overflow: hidden;
-
     z-index: -1;
-
     perspective: 1000px;
 }
 
 .cube {
-
     position: absolute;
-
     width: 70px;
-
     height: 70px;
 
     border:
@@ -94,10 +68,8 @@ body.modal-open {
         rgba(0,120,255,0.06);
 
     box-shadow:
-
         0 0 25px
         rgba(0,170,255,0.18),
-
         inset 0 0 25px
         rgba(0,170,255,0.08);
 
@@ -113,11 +85,8 @@ body.modal-open {
 
 .cube::before,
 .cube::after {
-
     content: "";
-
     position: absolute;
-
     inset: 0;
 
     border:
@@ -126,77 +95,53 @@ body.modal-open {
 }
 
 .cube::before {
-
     transform:
         rotateX(60deg)
         rotateZ(45deg);
 }
 
 .cube::after {
-
     transform:
         rotateY(60deg)
         rotateZ(45deg);
 }
 
 .cube-1 {
-
     top: 15%;
-
     left: 5%;
 }
 
 .cube-2 {
-
     top: 45%;
-
     right: 7%;
-
     width: 90px;
-
     height: 90px;
-
     animation-delay: 2s;
 }
 
 .cube-3 {
-
     bottom: 12%;
-
     left: 15%;
-
     width: 45px;
-
     height: 45px;
-
     animation-delay: 4s;
 }
 
 .cube-4 {
-
     top: 70%;
-
     right: 25%;
-
     width: 50px;
-
     height: 50px;
-
     animation-delay: 1s;
 }
 
 .orb {
-
     position: absolute;
-
     width: 120px;
-
     height: 120px;
-
     border-radius: 50%;
 
     background:
-
         radial-gradient(
             circle,
             rgba(0,170,255,0.30),
@@ -214,35 +159,24 @@ body.modal-open {
 }
 
 .orb-1 {
-
     top: 20%;
-
     right: 15%;
 }
 
 .orb-2 {
-
     bottom: 20%;
-
     left: 5%;
-
     width: 180px;
-
     height: 180px;
-
     animation-delay: 3s;
 }
 
 .neon-line {
-
     position: absolute;
-
     width: 300px;
-
     height: 2px;
 
     background:
-
         linear-gradient(
             90deg,
             transparent,
@@ -257,39 +191,26 @@ body.modal-open {
 }
 
 .line-1 {
-
     top: 25%;
-
     left: -80px;
-
-    transform:
-        rotate(-25deg);
+    transform: rotate(-25deg);
 }
 
 .line-2 {
-
     top: 65%;
-
     right: -80px;
-
-    transform:
-        rotate(25deg);
+    transform: rotate(25deg);
 }
 
 .line-3 {
-
     top: 85%;
-
     left: 30%;
-
-    transform:
-        rotate(-10deg);
+    transform: rotate(-10deg);
 }
 
 @keyframes cubeFloat {
 
     0%,100% {
-
         transform:
             translateY(0)
             rotateX(35deg)
@@ -298,7 +219,6 @@ body.modal-open {
     }
 
     50% {
-
         transform:
             translateY(-35px)
             rotateX(70deg)
@@ -310,15 +230,11 @@ body.modal-open {
 @keyframes orbFloat {
 
     0%,100% {
-
-        transform:
-            translate(0,0);
+        transform: translate(0,0);
     }
 
     50% {
-
-        transform:
-            translate(40px,-50px);
+        transform: translate(40px,-50px);
     }
 }
 
@@ -328,7 +244,6 @@ body.modal-open {
 ===================================================== */
 
 header {
-
     background:
         rgba(3,14,35,0.92);
 
@@ -336,7 +251,7 @@ header {
         blur(12px);
 
     padding:
-        12px 5%;
+        15px 5%;
 
     display:
         flex;
@@ -363,42 +278,42 @@ header {
 /* LOGO */
 
 .logo-area {
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    gap:
-        10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-.logo-image {
+.logo-icon {
+    width: 42px;
+    height: 42px;
 
-    width:
-        48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    height:
-        48px;
+    border-radius: 11px;
 
-    object-fit:
-        contain;
+    background:
+        linear-gradient(
+            135deg,
+            #00aaff,
+            #0055aa
+        );
 
-    border-radius:
-        10px;
+    color: white;
+
+    font-size: 18px;
+    font-weight: 900;
+
+    box-shadow:
+        0 0 18px
+        rgba(0,170,255,0.45);
 }
 
 .logo {
-
-    font-size:
-        25px;
-
-    font-weight:
-        bold;
-
-    color:
-        #00aaff;
+    font-size: 26px;
+    font-weight: bold;
+    color: #00aaff;
 
     text-shadow:
         0 0 15px
@@ -406,111 +321,86 @@ header {
 }
 
 
-/* NAV */
+/* RIGHT HEADER */
 
-nav {
-
-    display:
-        flex;
-
-    align-items:
-        center;
-}
-
-nav a {
-
-    color:
-        white;
-
-    text-decoration:
-        none;
-
-    margin-left:
-        18px;
-
-    font-size:
-        14px;
-
-    transition:
-        0.2s;
-}
-
-nav a:hover {
-
-    color:
-        #00aaff;
-
-    text-shadow:
-        0 0 10px
-        #00aaff;
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }
 
 
 /* LANGUAGE */
 
 .language-switch {
-
-    display:
-        flex;
-
-    gap:
-        5px;
-
-    margin-left:
-        18px;
-
-    padding:
-        4px;
+    display: flex;
 
     background:
-        rgba(255,255,255,0.08);
+        rgba(255,255,255,0.07);
 
     border:
         1px solid
-        rgba(0,170,255,0.25);
+        rgba(0,170,255,0.30);
 
-    border-radius:
-        9px;
+    border-radius: 10px;
+
+    padding: 3px;
+
+    gap: 3px;
 }
 
 .lang-btn {
+    border: 0;
 
-    border:
-        0;
+    background: transparent;
 
-    background:
-        transparent;
-
-    color:
-        #aab8cc;
+    color: #9eafc5;
 
     padding:
-        7px 9px;
+        7px 10px;
 
-    border-radius:
-        6px;
+    border-radius: 7px;
 
-    cursor:
-        pointer;
+    cursor: pointer;
 
-    font-size:
-        12px;
+    font-size: 12px;
 
-    font-weight:
-        bold;
+    font-weight: bold;
+
+    transition: 0.2s;
 }
 
 .lang-btn.active {
-
     background:
-        #00aaff;
+        linear-gradient(
+            135deg,
+            #00aaff,
+            #0077cc
+        );
 
-    color:
-        white;
+    color: white;
 
     box-shadow:
-        0 0 10px
+        0 0 12px
         rgba(0,170,255,0.35);
+}
+
+
+/* NAV */
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 18px;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+nav a:hover {
+    color: #00aaff;
+
+    text-shadow:
+        0 0 10px #00aaff;
 }
 
 
@@ -519,9 +409,7 @@ nav a:hover {
 ===================================================== */
 
 .hero {
-
     background:
-
         linear-gradient(
             135deg,
             rgba(6,20,45,0.92),
@@ -531,8 +419,7 @@ nav a:hover {
     padding:
         75px 20px;
 
-    text-align:
-        center;
+    text-align: center;
 
     border-bottom:
         1px solid
@@ -540,12 +427,8 @@ nav a:hover {
 }
 
 .hero h1 {
-
-    font-size:
-        42px;
-
-    margin:
-        0;
+    font-size: 42px;
+    margin: 0;
 
     text-shadow:
         0 0 25px
@@ -553,59 +436,39 @@ nav a:hover {
 }
 
 .hero h1 span {
-
-    color:
-        #00aaff;
+    color: #00aaff;
 }
 
 .hero p {
-
-    color:
-        #d8e6f5;
-
-    font-size:
-        17px;
-
-    max-width:
-        650px;
-
-    margin:
-        15px auto;
-
-    line-height:
-        1.6;
+    color: #d8e6f5;
+    font-size: 17px;
+    max-width: 650px;
+    margin: 15px auto;
+    line-height: 1.6;
 }
 
 .hero-button {
+    display: inline-block;
 
-    display:
-        inline-block;
-
-    margin-top:
-        15px;
+    margin-top: 15px;
 
     padding:
         14px 28px;
 
     background:
-
         linear-gradient(
             135deg,
             #00aaff,
             #0077cc
         );
 
-    color:
-        white;
+    color: white;
 
-    text-decoration:
-        none;
+    text-decoration: none;
 
-    border-radius:
-        10px;
+    border-radius: 10px;
 
-    font-weight:
-        bold;
+    font-weight: bold;
 
     box-shadow:
         0 0 20px
@@ -618,32 +481,22 @@ nav a:hover {
 ===================================================== */
 
 .promo {
-
-    margin:
-        25px auto;
-
-    width:
-        92%;
-
-    max-width:
-        1100px;
+    margin: 25px auto;
+    width: 92%;
+    max-width: 1100px;
 
     background:
-
         linear-gradient(
             135deg,
             rgba(11,29,64,0.94),
             rgba(0,121,189,0.8)
         );
 
-    padding:
-        28px;
+    padding: 28px;
 
-    border-radius:
-        18px;
+    border-radius: 18px;
 
-    text-align:
-        center;
+    text-align: center;
 
     border:
         1px solid
@@ -655,45 +508,30 @@ nav a:hover {
 }
 
 .promo h2 {
-
-    margin-top:
-        0;
-
-    font-size:
-        26px;
+    margin-top: 0;
+    font-size: 26px;
 }
 
 .promo p {
-
-    color:
-        #dbefff;
-
-    line-height:
-        1.6;
+    color: #dbefff;
+    line-height: 1.6;
 }
 
 .promo-button {
+    display: inline-block;
 
-    display:
-        inline-block;
+    background: white;
 
-    background:
-        white;
-
-    color:
-        #06142d;
+    color: #06142d;
 
     padding:
         11px 22px;
 
-    border-radius:
-        8px;
+    border-radius: 8px;
 
-    text-decoration:
-        none;
+    text-decoration: none;
 
-    font-weight:
-        bold;
+    font-weight: bold;
 }
 
 
@@ -702,165 +540,71 @@ nav a:hover {
 ===================================================== */
 
 .section {
-
     padding:
         45px 5%;
 
-    max-width:
-        1200px;
+    max-width: 1200px;
 
-    margin:
-        auto;
+    margin: auto;
 }
 
 .section-title {
-
-    text-align:
-        center;
-
-    margin-bottom:
-        30px;
+    text-align: center;
+    margin-bottom: 30px;
 }
 
 .section-title h2 {
-
-    font-size:
-        30px;
-
-    margin-bottom:
-        8px;
+    font-size: 30px;
+    margin-bottom: 8px;
 }
 
 .section-title p {
-
-    color:
-        #aab8cc;
+    color: #aab8cc;
 }
 
 
 /* =====================================================
-   SEARCH
+   CATEGORY
 ===================================================== */
 
-.search-box {
+.category-box {
+    display: flex;
 
-    text-align:
-        center;
+    justify-content: center;
 
-    margin-bottom:
-        18px;
-}
+    flex-wrap: wrap;
 
-.search-box input {
+    gap: 10px;
 
-    width:
-        90%;
-
-    max-width:
-        600px;
-
-    padding:
-        15px 18px;
-
-    border:
-        1px solid
-        rgba(0,170,255,0.30);
-
-    border-radius:
-        12px;
-
-    font-size:
-        15px;
-
-    outline:
-        none;
-
-    background:
-        rgba(255,255,255,0.08);
-
-    color:
-        white;
-}
-
-.search-box input::placeholder {
-
-    color:
-        #aab8cc;
-}
-
-
-/* =====================================================
-   PRICE CATEGORY
-===================================================== */
-
-.price-category {
-
-    display:
-        flex;
-
-    justify-content:
-        center;
-
-    align-items:
-        center;
-
-    gap:
-        10px;
-
-    flex-wrap:
-        wrap;
-
-    margin-bottom:
-        30px;
+    margin-bottom: 25px;
 }
 
 .category-btn {
-
-    border:
-        1px solid
+    border: 1px solid
         rgba(0,170,255,0.30);
 
     background:
-        rgba(255,255,255,0.07);
+        rgba(255,255,255,0.06);
 
-    color:
-        white;
+    color: white;
 
     padding:
         11px 17px;
 
-    border-radius:
-        10px;
+    border-radius: 10px;
 
-    cursor:
-        pointer;
+    cursor: pointer;
 
-    font-size:
-        13px;
+    font-weight: bold;
 
-    font-weight:
-        bold;
+    font-size: 13px;
 
-    transition:
-        0.25s;
+    transition: 0.25s;
 }
 
-.category-btn:hover {
-
-    background:
-        rgba(0,170,255,0.20);
-
-    border-color:
-        #00aaff;
-
-    transform:
-        translateY(-2px);
-}
-
+.category-btn:hover,
 .category-btn.active {
-
     background:
-
         linear-gradient(
             135deg,
             #00aaff,
@@ -877,19 +621,53 @@ nav a:hover {
 
 
 /* =====================================================
+   SEARCH
+===================================================== */
+
+.search-box {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.search-box input {
+    width: 90%;
+    max-width: 600px;
+
+    padding:
+        15px 18px;
+
+    border:
+        1px solid
+        rgba(0,170,255,0.30);
+
+    border-radius: 12px;
+
+    font-size: 15px;
+
+    outline: none;
+
+    background:
+        rgba(255,255,255,0.08);
+
+    color: white;
+}
+
+.search-box input::placeholder {
+    color: #aab8cc;
+}
+
+
+/* =====================================================
    ACCOUNT GRID
 ===================================================== */
 
 .catalog {
-
-    display:
-        grid;
+    display: grid;
 
     grid-template-columns:
         repeat(2,1fr);
 
-    gap:
-        20px;
+    gap: 20px;
 }
 
 
@@ -898,15 +676,12 @@ nav a:hover {
 ===================================================== */
 
 .card {
-
     background:
         rgba(255,255,255,0.07);
 
-    border-radius:
-        18px;
+    border-radius: 18px;
 
-    overflow:
-        hidden;
+    overflow: hidden;
 
     border:
         1px solid
@@ -924,7 +699,6 @@ nav a:hover {
 }
 
 .card:hover {
-
     transform:
         translateY(-7px);
 
@@ -942,33 +716,19 @@ nav a:hover {
 ===================================================== */
 
 .image-wrap {
-
-    position:
-        relative;
-
-    height:
-        230px;
-
-    overflow:
-        hidden;
-
-    background:
-        #06142d;
+    position: relative;
+    height: 230px;
+    overflow: hidden;
+    background: #06142d;
 }
 
 .account-image {
+    width: 100%;
+    height: 100%;
 
-    width:
-        100%;
+    display: block;
 
-    height:
-        100%;
-
-    display:
-        block;
-
-    object-fit:
-        cover;
+    object-fit: cover;
 
     transition:
         transform 0.5s ease,
@@ -976,9 +736,7 @@ nav a:hover {
 }
 
 .card:hover .account-image {
-
-    transform:
-        scale(1.07);
+    transform: scale(1.07);
 
     filter:
         saturate(1.12)
@@ -986,18 +744,13 @@ nav a:hover {
 }
 
 .image-wrap::after {
+    content: "";
 
-    content:
-        "";
+    position: absolute;
 
-    position:
-        absolute;
-
-    inset:
-        0;
+    inset: 0;
 
     background:
-
         linear-gradient(
             to top,
             rgba(2,8,23,0.82),
@@ -1005,23 +758,16 @@ nav a:hover {
             rgba(0,170,255,0.08)
         );
 
-    pointer-events:
-        none;
+    pointer-events: none;
 }
 
 .image-label {
+    position: absolute;
 
-    position:
-        absolute;
+    left: 12px;
+    top: 12px;
 
-    left:
-        12px;
-
-    top:
-        12px;
-
-    z-index:
-        2;
+    z-index: 2;
 
     padding:
         7px 10px;
@@ -1036,29 +782,21 @@ nav a:hover {
         1px solid
         rgba(0,170,255,0.35);
 
-    font-size:
-        12px;
+    font-size: 12px;
 
-    font-weight:
-        bold;
+    font-weight: bold;
 
     backdrop-filter:
         blur(5px);
 }
 
 .zoom-hint {
+    position: absolute;
 
-    position:
-        absolute;
+    right: 12px;
+    bottom: 12px;
 
-    right:
-        12px;
-
-    bottom:
-        12px;
-
-    z-index:
-        2;
+    z-index: 2;
 
     background:
         rgba(0,0,0,0.55);
@@ -1066,14 +804,11 @@ nav a:hover {
     padding:
         7px 10px;
 
-    border-radius:
-        8px;
+    border-radius: 8px;
 
-    font-size:
-        11px;
+    font-size: 11px;
 
-    color:
-        #dff7ff;
+    color: #dff7ff;
 }
 
 
@@ -1082,143 +817,95 @@ nav a:hover {
 ===================================================== */
 
 .content {
-
-    padding:
-        18px;
+    padding: 18px;
 }
 
 .game {
-
-    color:
-        #8fa4bd;
-
-    font-size:
-        13px;
+    color: #8fa4bd;
+    font-size: 13px;
 }
 
 .name {
-
-    font-size:
-        20px;
-
-    font-weight:
-        bold;
-
-    margin:
-        8px 0;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 8px 0;
 }
 
 .info {
-
-    display:
-        flex;
-
-    flex-wrap:
-        wrap;
-
-    gap:
-        6px;
-
-    margin:
-        12px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 12px 0;
 }
 
 .tag {
-
     background:
         rgba(33,150,83,0.16);
 
-    color:
-        #54df8c;
+    color: #54df8c;
 
     padding:
         7px 9px;
 
-    border-radius:
-        8px;
+    border-radius: 8px;
 
-    font-size:
-        12px;
+    font-size: 12px;
 }
 
 .old-price {
-
-    color:
-        #8491a2;
+    color: #8491a2;
 
     text-decoration:
         line-through;
 
-    font-size:
-        14px;
+    font-size: 14px;
 }
 
 .price {
+    color: #ff7043;
 
-    color:
-        #ff7043;
+    font-size: 25px;
 
-    font-size:
-        25px;
+    font-weight: bold;
 
-    font-weight:
-        bold;
-
-    margin:
-        5px 0;
+    margin: 5px 0;
 }
 
 .detail-button {
+    display: block;
 
-    display:
-        block;
+    width: 100%;
 
-    width:
-        100%;
+    border: 0;
 
-    border:
-        0;
+    cursor: pointer;
 
-    cursor:
-        pointer;
-
-    text-align:
-        center;
+    text-align: center;
 
     background:
-
         linear-gradient(
             135deg,
             #06142d,
             #0077b8
         );
 
-    color:
-        white;
+    color: white;
 
-    padding:
-        13px;
+    padding: 13px;
 
-    border-radius:
-        9px;
+    border-radius: 9px;
 
-    margin-top:
-        12px;
+    margin-top: 12px;
 
-    font-weight:
-        bold;
+    font-weight: bold;
 
-    font-size:
-        14px;
+    font-size: 14px;
 
-    transition:
-        0.25s;
+    transition: 0.25s;
 }
 
 .detail-button:hover {
-
     background:
-
         linear-gradient(
             135deg,
             #0077b8,
@@ -1231,16 +918,27 @@ nav a:hover {
 
 
 /* =====================================================
+   NO RESULT
+===================================================== */
+
+.no-result {
+    text-align: center;
+
+    padding: 40px 20px;
+
+    color: #9eafc5;
+
+    display: none;
+}
+
+
+/* =====================================================
    ADVERTISEMENT
 ===================================================== */
 
 .ad-section {
-
-    width:
-        92%;
-
-    max-width:
-        1100px;
+    width: 92%;
+    max-width: 1100px;
 
     margin:
         35px auto;
@@ -1252,7 +950,6 @@ nav a:hover {
         20px;
 
     background:
-
         linear-gradient(
             135deg,
             rgba(0,42,85,0.95),
@@ -1263,25 +960,20 @@ nav a:hover {
         1px solid
         rgba(0,190,255,0.45);
 
-    text-align:
-        center;
+    text-align: center;
 
     box-shadow:
-
         0 0 35px
         rgba(0,170,255,0.15);
 }
 
 .ad-badge {
-
-    display:
-        inline-block;
+    display: inline-block;
 
     background:
         #ff7043;
 
-    color:
-        white;
+    color: white;
 
     padding:
         6px 12px;
@@ -1289,18 +981,15 @@ nav a:hover {
     border-radius:
         999px;
 
-    font-size:
-        12px;
+    font-size: 12px;
 
-    font-weight:
-        bold;
+    font-weight: bold;
 
     margin-bottom:
         10px;
 }
 
 .ad-section h2 {
-
     margin:
         5px 0 10px;
 
@@ -1309,7 +998,6 @@ nav a:hover {
 }
 
 .ad-section p {
-
     color:
         #dbefff;
 
@@ -1318,7 +1006,6 @@ nav a:hover {
 }
 
 .ad-button {
-
     display:
         inline-block;
 
@@ -1350,7 +1037,6 @@ nav a:hover {
 ===================================================== */
 
 .why {
-
     display:
         grid;
 
@@ -1362,7 +1048,6 @@ nav a:hover {
 }
 
 .why-card {
-
     background:
         rgba(255,255,255,0.06);
 
@@ -1381,13 +1066,11 @@ nav a:hover {
 }
 
 .why-card h3 {
-
     color:
         #00aaff;
 }
 
 .why-card p {
-
     color:
         #9caec5;
 
@@ -1404,9 +1087,7 @@ nav a:hover {
 ===================================================== */
 
 .contact {
-
     background:
-
         linear-gradient(
             135deg,
             rgba(6,20,45,0.95),
@@ -1421,13 +1102,11 @@ nav a:hover {
 }
 
 .contact p {
-
     color:
         #d8e6f5;
 }
 
 .social-buttons {
-
     display:
         flex;
 
@@ -1445,7 +1124,6 @@ nav a:hover {
 }
 
 .social {
-
     display:
         inline-block;
 
@@ -1474,7 +1152,6 @@ nav a:hover {
 ===================================================== */
 
 footer {
-
     background:
         #010611;
 
@@ -1490,13 +1167,11 @@ footer {
 }
 
 footer h2 {
-
     color:
         #00aaff;
 }
 
 footer p {
-
     color:
         #8997aa;
 
@@ -1505,18 +1180,16 @@ footer p {
 }
 
 footer small {
-
     color:
         #66758a;
 }
 
 
 /* =====================================================
-   MODAL DETAIL
+   MODAL
 ===================================================== */
 
 .modal {
-
     display:
         none;
 
@@ -1543,7 +1216,6 @@ footer small {
 }
 
 .modal.show {
-
     display:
         flex;
 
@@ -1555,7 +1227,6 @@ footer small {
 }
 
 .modal-box {
-
     position:
         relative;
 
@@ -1566,7 +1237,6 @@ footer small {
         700px;
 
     background:
-
         linear-gradient(
             145deg,
             #07162f,
@@ -1584,7 +1254,6 @@ footer small {
         hidden;
 
     box-shadow:
-
         0 0 60px
         rgba(0,170,255,0.25);
 
@@ -1595,7 +1264,6 @@ footer small {
 }
 
 .modal-image-wrap {
-
     height:
         350px;
 
@@ -1607,7 +1275,6 @@ footer small {
 }
 
 .modal-image {
-
     width:
         100%;
 
@@ -1625,7 +1292,6 @@ footer small {
 }
 
 .modal-image-wrap::after {
-
     content:
         "";
 
@@ -1636,7 +1302,6 @@ footer small {
         0;
 
     background:
-
         linear-gradient(
             to top,
             rgba(2,8,23,0.45),
@@ -1648,13 +1313,11 @@ footer small {
 }
 
 .modal-content {
-
     padding:
         25px;
 }
 
 .modal-title {
-
     color:
         #00c3ff;
 
@@ -1666,7 +1329,6 @@ footer small {
 }
 
 .modal-desc {
-
     color:
         #dbefff;
 
@@ -1678,7 +1340,6 @@ footer small {
 }
 
 .modal-old {
-
     color:
         #8491a2;
 
@@ -1690,7 +1351,6 @@ footer small {
 }
 
 .modal-price {
-
     color:
         #ff7043;
 
@@ -1705,7 +1365,6 @@ footer small {
 }
 
 .close {
-
     position:
         absolute;
 
@@ -1744,13 +1403,11 @@ footer small {
 }
 
 .close:hover {
-
     background:
         #00aaff;
 }
 
 .modal-wa {
-
     display:
         block;
 
@@ -1758,7 +1415,6 @@ footer small {
         center;
 
     background:
-
         linear-gradient(
             135deg,
             #25D366,
@@ -1785,7 +1441,6 @@ footer small {
 }
 
 .modal-wa:hover {
-
     transform:
         translateY(-2px);
 
@@ -1797,9 +1452,7 @@ footer small {
 @keyframes modalIn {
 
     from {
-
-        opacity:
-            0;
+        opacity: 0;
 
         transform:
             translateY(15px)
@@ -1807,12 +1460,8 @@ footer small {
     }
 
     to {
-
-        opacity:
-            1;
-
-        transform:
-            none;
+        opacity: 1;
+        transform: none;
     }
 }
 
@@ -1824,52 +1473,68 @@ footer small {
 @media(max-width:700px) {
 
     header {
-
         padding:
-            10px 12px;
+            12px 15px;
     }
 
-    .logo-image {
-
-        width:
-            38px;
-
-        height:
-            38px;
+    .logo-icon {
+        width: 36px;
+        height: 36px;
+        font-size: 15px;
     }
 
     .logo {
-
         font-size:
-            20px;
+            21px;
+    }
+
+    .header-right {
+        gap:
+            8px;
     }
 
     nav {
-
         display:
             none;
     }
 
     .language-switch {
+        padding:
+            2px;
+    }
 
-        margin-left:
-            auto;
+    .lang-btn {
+        padding:
+            6px 8px;
+
+        font-size:
+            10px;
     }
 
     .hero {
-
         padding:
             50px 20px;
     }
 
     .hero h1 {
-
         font-size:
             32px;
     }
 
-    .catalog {
+    .category-box {
+        gap:
+            6px;
+    }
 
+    .category-btn {
+        padding:
+            9px 10px;
+
+        font-size:
+            10px;
+    }
+
+    .catalog {
         grid-template-columns:
             repeat(2,1fr);
 
@@ -1878,37 +1543,31 @@ footer small {
     }
 
     .image-wrap {
-
         height:
             145px;
     }
 
     .content {
-
         padding:
             11px;
     }
 
     .name {
-
         font-size:
             14px;
     }
 
     .price {
-
         font-size:
             18px;
     }
 
     .old-price {
-
         font-size:
             11px;
     }
 
     .tag {
-
         font-size:
             10px;
 
@@ -1917,7 +1576,6 @@ footer small {
     }
 
     .detail-button {
-
         font-size:
             11px;
 
@@ -1926,13 +1584,11 @@ footer small {
     }
 
     .zoom-hint {
-
         display:
             none;
     }
 
     .image-label {
-
         font-size:
             9px;
 
@@ -1940,47 +1596,27 @@ footer small {
             5px 7px;
     }
 
-    .price-category {
-
-        gap:
-            6px;
-    }
-
-    .category-btn {
-
-        font-size:
-            11px;
-
-        padding:
-            9px 10px;
-    }
-
     .why {
-
         grid-template-columns:
             1fr;
     }
 
     .modal {
-
         padding:
             10px;
     }
 
     .modal-image-wrap {
-
         height:
             240px;
     }
 
     .modal-content {
-
         padding:
             18px;
     }
 
     .modal-title {
-
         font-size:
             21px;
 
@@ -1989,1051 +1625,587 @@ footer small {
     }
 
     .modal-price {
-
         font-size:
             25px;
     }
-
 }
 
-</style>
-
-</head>
-
-
-<body>
-
-
-<!-- =====================================================
+</style></head><body><!-- =====================================================
      BACKGROUND
-===================================================== -->
+===================================================== --><div class="bg-3d"><div class="cube cube-1"></div>
+<div class="cube cube-2"></div>
+<div class="cube cube-3"></div>
+<div class="cube cube-4"></div>
 
-<div class="bg-3d">
+<div class="orb orb-1"></div>
+<div class="orb orb-2"></div>
 
-    <div class="cube cube-1"></div>
+<div class="neon-line line-1"></div>
+<div class="neon-line line-2"></div>
+<div class="neon-line line-3"></div>
 
-    <div class="cube cube-2"></div>
+</div><!-- =====================================================
+     HEADER
+===================================================== --><header><div class="logo-area">
 
-    <div class="cube cube-3"></div>
+    <div class="logo-icon">
+        DZ
+    </div>
 
-    <div class="cube cube-4"></div>
-
-    <div class="orb orb-1"></div>
-
-    <div class="orb orb-2"></div>
-
-    <div class="neon-line line-1"></div>
-
-    <div class="neon-line line-2"></div>
-
-    <div class="neon-line line-3"></div>
+    <div class="logo">
+        DAMZSTORE
+    </div>
 
 </div>
 
 
+<div class="header-right">
 
-<!-- =====================================================
-     HEADER
-===================================================== -->
+    <!-- LANGUAGE -->
 
-<header>
+    <div class="language-switch">
 
-    <div class="logo-area">
-
-        <img
-            src="images/logo.png"
-            class="logo-image"
-            alt="DAMZ Logo"
-            onerror="this.style.display='none'"
+        <button
+            class="lang-btn active"
+            id="bmBtn"
+            onclick="setLanguage('bm')"
         >
+            🇲🇾 BM
+        </button>
 
-        <div class="logo">
-            DAMZSTORE
-        </div>
+        <button
+            class="lang-btn"
+            id="enBtn"
+            onclick="setLanguage('en')"
+        >
+            🇬🇧 EN
+        </button>
 
     </div>
 
 
+    <!-- NAV -->
+
     <nav>
 
-        <a href="#home" data-i18n="navHome">
+        <a href="#home" data-bm="Home" data-en="Home">
             Home
         </a>
 
-        <a href="#account" data-i18n="navAccount">
+        <a href="#account"
+           data-bm="Account"
+           data-en="Accounts">
             Account
         </a>
 
-        <a href="#why" data-i18n="navWhy">
+        <a href="#why"
+           data-bm="Why DAMZ"
+           data-en="Why DAMZ">
             Why DAMZ
         </a>
 
-        <a href="#contact" data-i18n="navContact">
+        <a href="#contact"
+           data-bm="Contact"
+           data-en="Contact">
             Contact
         </a>
 
-
-        <!-- LANGUAGE -->
-
-        <div class="language-switch">
-
-            <button
-                class="lang-btn active"
-                id="bmBtn"
-                onclick="changeLanguage('bm')"
-            >
-                🇲🇾 BM
-            </button>
-
-            <button
-                class="lang-btn"
-                id="enBtn"
-                onclick="changeLanguage('en')"
-            >
-                🇬🇧 EN
-            </button>
-
-        </div>
-
     </nav>
 
-</header>
+</div>
 
-
-
-<!-- =====================================================
+</header><!-- =====================================================
      HERO
-===================================================== -->
-
-<section
+===================================================== --><section
     class="hero"
     id="home"
+><h1>
+    DAMZ<span>STORE</span>
+</h1>
+
+
+<p
+    data-bm="Mobile Legends Gaming Account Marketplace 🎮|Cari account Mobile Legends pilihan anda dengan mudah."
+    data-en="Mobile Legends Gaming Account Marketplace 🎮|Find your preferred Mobile Legends account easily."
 >
-
-    <h1>
-
-        DAMZ<span>STORE</span>
-
-    </h1>
+    Mobile Legends Gaming Account Marketplace 🎮
+    <br>
+    Cari account Mobile Legends pilihan anda dengan mudah.
+</p>
 
 
-    <p data-i18n="heroText">
+<a
+    class="hero-button"
+    href="#account"
+    data-bm="LIHAT ACCOUNT"
+    data-en="VIEW ACCOUNTS"
+>
+    LIHAT ACCOUNT
+</a>
 
-        Mobile Legends Gaming Account Marketplace 🎮
-
-        <br>
-
-        Cari account Mobile Legends pilihan anda
-        dengan mudah.
-
-    </p>
-
-
-    <a
-        class="hero-button"
-        href="#account"
-        data-i18n="heroButton"
-    >
-
-        LIHAT ACCOUNT
-
-    </a>
-
-</section>
-
-
-
-<!-- =====================================================
+</section><!-- =====================================================
      PROMO
-===================================================== -->
+===================================================== --><div class="promo"><h2
+    data-bm="🔥 ACCOUNT MOBILE LEGENDS TERKINI"
+    data-en="🔥 LATEST MOBILE LEGENDS ACCOUNTS"
+>
+    🔥 ACCOUNT MOBILE LEGENDS TERKINI
+</h2>
 
-<div class="promo">
 
-    <h2 data-i18n="promoTitle">
+<p
+    data-bm="Account baru akan ditambah dari semasa ke semasa.|Jangan lupa check katalog DAMZSTORE!"
+    data-en="New accounts will be added from time to time.|Don't forget to check the DAMZSTORE catalog!"
+>
+    Account baru akan ditambah dari semasa ke semasa.
+    <br>
+    Jangan lupa check katalog DAMZSTORE!
+</p>
 
-        🔥 ACCOUNT MOBILE LEGENDS TERKINI
 
+<a
+    class="promo-button"
+    href="#account"
+    data-bm="EXPLORE ACCOUNT"
+    data-en="EXPLORE ACCOUNTS"
+>
+    EXPLORE ACCOUNT
+</a>
+
+</div><!-- =====================================================
+     ACCOUNT
+===================================================== --><section
+    class="section"
+    id="account"
+><div class="section-title">
+
+    <h2
+        data-bm="🛒 ACCOUNT TERKINI"
+        data-en="🛒 LATEST ACCOUNTS"
+    >
+        🛒 ACCOUNT TERKINI
     </h2>
 
 
-    <p data-i18n="promoText">
-
-        Account baru akan ditambah dari semasa ke semasa.
-
-        Jangan lupa check katalog DAMZSTORE!
-
-    </p>
-
-
-    <a
-        class="promo-button"
-        href="#account"
-        data-i18n="promoButton"
+    <p
+        data-bm="Mobile Legends account yang tersedia"
+        data-en="Available Mobile Legends accounts"
     >
-
-        EXPLORE ACCOUNT
-
-    </a>
+        Mobile Legends account yang tersedia
+    </p>
 
 </div>
 
 
+<!-- =================================================
+     CATEGORY
+================================================= -->
 
-<!-- =====================================================
-     ACCOUNT
-===================================================== -->
+<div class="category-box">
 
-<section
-    class="section"
-    id="account"
+    <button
+        class="category-btn active"
+        onclick="filterCategory('all', this)"
+        data-bm="🛒 SEMUA"
+        data-en="🛒 ALL"
+    >
+        🛒 SEMUA
+    </button>
+
+
+    <button
+        class="category-btn"
+        onclick="filterCategory('low', this)"
+        data-bm="💰 RM 0 - 499"
+        data-en="💰 RM 0 - 499"
+    >
+        💰 RM 0 - 499
+    </button>
+
+
+    <button
+        class="category-btn"
+        onclick="filterCategory('mid', this)"
+        data-bm="💎 RM 500 - 999"
+        data-en="💎 RM 500 - 999"
+    >
+        💎 RM 500 - 999
+    </button>
+
+
+    <button
+        class="category-btn"
+        onclick="filterCategory('high', this)"
+        data-bm="👑 RM 1000+"
+        data-en="👑 RM 1000+"
+    >
+        👑 RM 1000+
+    </button>
+
+</div>
+
+
+<!-- SEARCH -->
+
+<div class="search-box">
+
+    <input
+        type="text"
+        id="searchInput"
+        placeholder="🔍 Cari DZ0001, DZ0002, skin..."
+        oninput="searchAccount()"
+    >
+
+</div>
+
+
+<!-- CATALOG -->
+
+<div
+    class="catalog"
+    id="catalog"
 >
+</div>
 
 
-    <div class="section-title">
+<div
+    class="no-result"
+    id="noResult"
+    data-bm="😔 Tiada account dijumpai."
+    data-en="😔 No account found."
+>
+    😔 Tiada account dijumpai.
+</div>
 
-        <h2 data-i18n="accountTitle">
+</section><!-- =====================================================
+     ADVERTISEMENT
+===================================================== --><section class="ad-section"><div
+    class="ad-badge"
+    data-bm="🔥 PROMOSI"
+    data-en="🔥 PROMOTION"
+>
+    🔥 PROMOSI
+</div>
 
-            🛒 ACCOUNT TERKINI
 
-        </h2>
+<h2
+    data-bm="🎮 CARI ACCOUNT IMPIAN ANDA?"
+    data-en="🎮 LOOKING FOR YOUR DREAM ACCOUNT?"
+>
+    🎮 CARI ACCOUNT IMPIAN ANDA?
+</h2>
 
 
-        <p data-i18n="accountSubtitle">
+<p
+    data-bm="Semua account tersedia dengan maklumat yang jelas.|Tekan LIHAT DETAIL untuk melihat gambar penuh dan maklumat account."
+    data-en="All accounts come with clear information.|Press VIEW DETAILS to see the full image and account information."
+>
+    Semua account tersedia dengan maklumat yang jelas.
+    <br>
+    Tekan <b>LIHAT DETAIL</b> untuk melihat gambar penuh dan maklumat account.
+</p>
 
-            Mobile Legends account yang tersedia
 
+<a
+    href="#contact"
+    class="ad-button"
+    data-bm="💬 HUBUNGI DAMZ"
+    data-en="💬 CONTACT DAMZ"
+>
+    💬 HUBUNGI DAMZ
+</a>
+
+</section><!-- =====================================================
+     WHY DAMZ
+===================================================== --><section
+    class="section"
+    id="why"
+><div class="section-title">
+
+    <h2
+        data-bm="⭐ KENAPA DAMZ?"
+        data-en="⭐ WHY DAMZ?"
+    >
+        ⭐ KENAPA DAMZ?
+    </h2>
+
+</div>
+
+
+<div class="why">
+
+
+    <div class="why-card">
+
+        <h3
+            data-bm="🛡️ Warranty"
+            data-en="🛡️ Warranty"
+        >
+            🛡️ Warranty
+        </h3>
+
+
+        <p
+            data-bm="Sesetengah account mempunyai warranty bergantung kepada listing."
+            data-en="Some accounts come with warranty depending on the listing."
+        >
+            Sesetengah account mempunyai warranty bergantung kepada listing.
         </p>
 
     </div>
 
 
+    <div class="why-card">
 
-    <!-- SEARCH -->
-
-    <div class="search-box">
-
-        <input
-
-            type="text"
-
-            id="searchInput"
-
-            placeholder="🔍 Cari DZ0001, DZ0002, skin..."
-
-            oninput="searchAccount()"
-
+        <h3
+            data-bm="📱 Easy Contact"
+            data-en="📱 Easy Contact"
         >
-
-    </div>
-
-
-
-    <!-- PRICE CATEGORY -->
-
-    <div class="price-category">
+            📱 Easy Contact
+        </h3>
 
 
-        <button
-            class="category-btn active"
-            onclick="filterPrice('all', this)"
-            data-i18n="all"
+        <p
+            data-bm="Mudah untuk menghubungi DAMZ melalui WhatsApp, Instagram atau Telegram."
+            data-en="Easy to contact DAMZ through WhatsApp, Instagram or Telegram."
         >
+            Mudah untuk menghubungi DAMZ melalui WhatsApp, Instagram atau Telegram.
+        </p>
 
-            🛒 SEMUA
-
-        </button>
+    </div>
 
 
-        <button
-            class="category-btn"
-            onclick="filterPrice('0-499', this)"
-            data-i18n="price1"
+    <div class="why-card">
+
+        <h3
+            data-bm="🎮 Gaming Focus"
+            data-en="🎮 Gaming Focus"
         >
-
-            💰 RM 0–499
-
-        </button>
+            🎮 Gaming Focus
+        </h3>
 
 
-        <button
-            class="category-btn"
-            onclick="filterPrice('500-999', this)"
-            data-i18n="price2"
+        <p
+            data-bm="Fokus kepada Mobile Legends account dan servis berkaitan gaming."
+            data-en="Focused on Mobile Legends accounts and gaming-related services."
         >
-
-            💎 RM 500–999
-
-        </button>
-
-
-        <button
-            class="category-btn"
-            onclick="filterPrice('1000+', this)"
-            data-i18n="price3"
-        >
-
-            👑 RM 1000+
-
-        </button>
-
+            Fokus kepada Mobile Legends account dan servis berkaitan gaming.
+        </p>
 
     </div>
 
 
+</div>
 
-    <div
-        class="catalog"
-        id="catalog"
-    >
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     ADVERTISEMENT 1
-===================================================== -->
-
-<section class="ad-section">
-
-    <div
-        class="ad-badge"
-        data-i18n="promoBadge"
-    >
-
-        🔥 PROMOSI
-
-    </div>
-
-
-    <h2 data-i18n="adTitle">
-
-        🎮 CARI ACCOUNT IMPIAN ANDA?
-
-    </h2>
-
-
-    <p data-i18n="adText">
-
-        Semua account tersedia dengan maklumat
-        yang jelas. Tekan <b>LIHAT DETAIL</b> untuk
-        melihat gambar penuh dan maklumat account.
-
-    </p>
-
-
-    <a
-        href="#contact"
-        class="ad-button"
-        data-i18n="contactButton"
-    >
-
-        💬 HUBUNGI DAMZ
-
-    </a>
-
-</section>
-
-
-
-<!-- =====================================================
-     WHY DAMZ
-===================================================== -->
-
-<section
-    class="section"
-    id="why"
->
-
-
-    <div class="section-title">
-
-        <h2 data-i18n="whyTitle">
-
-            ⭐ KENAPA DAMZ?
-
-        </h2>
-
-    </div>
-
-
-    <div class="why">
-
-
-        <div class="why-card">
-
-            <h3 data-i18n="warrantyTitle">
-
-                🛡️ Warranty
-
-            </h3>
-
-
-            <p data-i18n="warrantyText">
-
-                Sesetengah account mempunyai warranty
-                bergantung kepada listing.
-
-            </p>
-
-        </div>
-
-
-        <div class="why-card">
-
-            <h3 data-i18n="contactTitle">
-
-                📱 Easy Contact
-
-            </h3>
-
-
-            <p data-i18n="contactText">
-
-                Mudah untuk menghubungi DAMZ melalui
-                WhatsApp, Instagram atau Telegram.
-
-            </p>
-
-        </div>
-
-
-        <div class="why-card">
-
-            <h3 data-i18n="gamingTitle">
-
-                🎮 Gaming Focus
-
-            </h3>
-
-
-            <p data-i18n="gamingText">
-
-                Fokus kepada Mobile Legends account
-                dan servis berkaitan gaming.
-
-            </p>
-
-        </div>
-
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
+</section><!-- =====================================================
      ADVERTISEMENT 2
-===================================================== -->
-
-<section class="ad-section">
-
-    <div
-        class="ad-badge"
-        data-i18n="damzBadge"
-    >
-
-        ⚡ DAMZSTORE
-
-    </div>
+===================================================== --><section class="ad-section"><div
+    class="ad-badge"
+    data-bm="⚡ DAMZSTORE"
+    data-en="⚡ DAMZSTORE"
+>
+    ⚡ DAMZSTORE
+</div>
 
 
-    <h2 data-i18n="ad2Title">
-
-        💎 ACCOUNT BERKUALITI • HARGA MENARIK
-
-    </h2>
-
-
-    <p data-i18n="ad2Text">
-
-        Pilih account yang anda minat,
-        tekan LIHAT DETAIL dan terus
-        hubungi DAMZ melalui WhatsApp.
-
-    </p>
+<h2
+    data-bm="💎 ACCOUNT BERKUALITI • HARGA MENARIK"
+    data-en="💎 QUALITY ACCOUNTS • ATTRACTIVE PRICES"
+>
+    💎 ACCOUNT BERKUALITI • HARGA MENARIK
+</h2>
 
 
-    <a
-        href="#account"
-        class="ad-button"
-        data-i18n="viewAll"
-    >
-
-        🛒 LIHAT SEMUA ACCOUNT
-
-    </a>
-
-</section>
+<p
+    data-bm="Pilih account yang anda minat, tekan LIHAT DETAIL dan terus hubungi DAMZ melalui WhatsApp."
+    data-en="Choose the account you like, press VIEW DETAILS and contact DAMZ through WhatsApp."
+>
+    Pilih account yang anda minat,
+    tekan <b>LIHAT DETAIL</b> dan terus
+    hubungi DAMZ melalui WhatsApp.
+</p>
 
 
+<a
+    href="#account"
+    class="ad-button"
+    data-bm="🛒 LIHAT SEMUA ACCOUNT"
+    data-en="🛒 VIEW ALL ACCOUNTS"
+>
+    🛒 LIHAT SEMUA ACCOUNT
+</a>
 
-<!-- =====================================================
+</section><!-- =====================================================
      CONTACT
-===================================================== -->
-
-<section
+===================================================== --><section
     class="contact"
     id="contact"
+><h2
+    data-bm="📱 CONTACT DAMZ"
+    data-en="📱 CONTACT DAMZ"
 >
+    📱 CONTACT DAMZ
+</h2>
 
 
-    <h2 data-i18n="contactMain">
-
-        📱 CONTACT DAMZ
-
-    </h2>
-
-
-    <p data-i18n="contactMainText">
-
-        Berminat dengan mana-mana account?
-
-        <br>
-
-        Hubungi kami untuk maklumat lanjut.
-
-    </p>
+<p
+    data-bm="Berminat dengan mana-mana account?|Hubungi kami untuk maklumat lanjut."
+    data-en="Interested in any account?|Contact us for more information."
+>
+    Berminat dengan mana-mana account?
+    <br>
+    Hubungi kami untuk maklumat lanjut.
+</p>
 
 
-    <div class="social-buttons">
+<div class="social-buttons">
 
 
-        <a
+    <a
+        class="social"
+        href="https://wa.me/601133169293"
+        target="_blank"
+    >
+        💬 WhatsApp
+    </a>
 
-            class="social"
 
-            href="https://wa.me/601133169293"
+    <a
+        class="social"
+        href="https://instagram.com/damzofficialmy"
+        target="_blank"
+    >
+        📸 Instagram
+    </a>
 
-            target="_blank"
 
+    <a
+        class="social"
+        href="https://t.me/damzresellermy"
+        target="_blank"
+    >
+        ✈️ Telegram
+    </a>
+
+
+</div>
+
+</section><!-- =====================================================
+     FOOTER
+===================================================== --><footer><h2>
+    DAMZSTORE
+</h2>
+
+
+<p
+    data-bm="Trusted Mobile Legends Account Seller"
+    data-en="Trusted Mobile Legends Account Seller"
+>
+    Trusted Mobile Legends Account Seller
+</p>
+
+
+<p
+    data-bm="Mobile Legends • Reseller • Midman • Paid Promote"
+    data-en="Mobile Legends • Reseller • Midman • Paid Promote"
+>
+    Mobile Legends • Reseller • Midman • Paid Promote
+</p>
+
+
+<small>
+    © 2026 DAMZSTORE. All rights reserved.
+</small>
+
+</footer><!-- =====================================================
+     DETAIL MODAL
+===================================================== --><div
+    class="modal"
+    id="detailModal"
+    onclick="outsideClose(event)"
+><div class="modal-box">
+
+
+    <button
+        class="close"
+        onclick="closeDetail()"
+    >
+        &times;
+    </button>
+
+
+    <div class="modal-image-wrap">
+
+        <img
+            id="modalImage"
+            class="modal-image"
+            src=""
+            alt="Account Mobile Legends"
         >
-
-            💬 WhatsApp
-
-        </a>
-
-
-        <a
-
-            class="social"
-
-            href="https://instagram.com/damzofficialmy"
-
-            target="_blank"
-
-        >
-
-            📸 Instagram
-
-        </a>
-
-
-        <a
-
-            class="social"
-
-            href="https://t.me/damzresellermy"
-
-            target="_blank"
-
-        >
-
-            ✈️ Telegram
-
-        </a>
-
 
     </div>
 
-</section>
 
+    <div class="modal-content">
 
-
-<!-- =====================================================
-     FOOTER
-===================================================== -->
-
-<footer>
-
-    <h2>
-
-        DAMZSTORE
-
-    </h2>
-
-
-    <p data-i18n="footer1">
-
-        Trusted Mobile Legends Account Seller
-
-    </p>
-
-
-    <p>
-
-        Mobile Legends • Reseller • Midman • Paid Promote
-
-    </p>
-
-
-    <small>
-
-        © 2026 DAMZSTORE. All rights reserved.
-
-    </small>
-
-</footer>
-
-
-
-<!-- =====================================================
-     DETAIL MODAL
-===================================================== -->
-
-<div
-
-    class="modal"
-
-    id="detailModal"
-
-    onclick="outsideClose(event)"
-
->
-
-
-    <div class="modal-box">
-
-
-        <button
-
-            class="close"
-
-            onclick="closeDetail()"
-
+        <h2
+            id="modalTitle"
+            class="modal-title"
         >
-
-            &times;
-
-        </button>
+        </h2>
 
 
-
-        <div class="modal-image-wrap">
-
-
-            <img
-
-                id="modalImage"
-
-                class="modal-image"
-
-                src=""
-
-                alt="Account Mobile Legends"
-
-            >
+        <p
+            id="modalDesc"
+            class="modal-desc"
+        >
+        </p>
 
 
+        <div
+            id="modalOld"
+            class="modal-old"
+        >
         </div>
 
 
-
-        <div class="modal-content">
-
-
-            <h2
-
-                id="modalTitle"
-
-                class="modal-title"
-
-            >
-
-            </h2>
-
-
-            <p
-
-                id="modalDesc"
-
-                class="modal-desc"
-
-            >
-
-            </p>
-
-
-            <div
-
-                id="modalOld"
-
-                class="modal-old"
-
-            >
-
-            </div>
-
-
-            <div
-
-                id="modalPrice"
-
-                class="modal-price"
-
-            >
-
-            </div>
-
-
-            <a
-
-                id="modalWA"
-
-                class="modal-wa"
-
-                href="#"
-
-                target="_blank"
-
-                data-i18n="buyNow"
-
-            >
-
-                💬 BELI SEKARANG DI WHATSAPP
-
-            </a>
-
-
+        <div
+            id="modalPrice"
+            class="modal-price"
+        >
         </div>
+
+
+        <a
+            id="modalWA"
+            class="modal-wa"
+            href="#"
+            target="_blank"
+        >
+            💬 BELI SEKARANG DI WHATSAPP
+        </a>
 
     </div>
 
 </div>
 
-
-
-<!-- =====================================================
+</div><!-- =====================================================
      JAVASCRIPT
-===================================================== -->
-
-<script>
+===================================================== --><script>
 
 
 /* =====================================================
-   LANGUAGE SYSTEM
+   CURRENT LANGUAGE
 ===================================================== */
 
-const translations = {
+let currentLanguage = "bm";
 
-    bm: {
 
-        navHome: "Home",
-        navAccount: "Account",
-        navWhy: "Why DAMZ",
-        navContact: "Contact",
+/* =====================================================
+   CURRENT CATEGORY
+===================================================== */
 
-        heroText:
-            "Mobile Legends Gaming Account Marketplace 🎮<br><br>Cari account Mobile Legends pilihan anda dengan mudah.",
-
-        heroButton:
-            "LIHAT ACCOUNT",
-
-        promoTitle:
-            "🔥 ACCOUNT MOBILE LEGENDS TERKINI",
-
-        promoText:
-            "Account baru akan ditambah dari semasa ke semasa. Jangan lupa check katalog DAMZSTORE!",
-
-        promoButton:
-            "EXPLORE ACCOUNT",
-
-        accountTitle:
-            "🛒 ACCOUNT TERKINI",
-
-        accountSubtitle:
-            "Mobile Legends account yang tersedia",
-
-        all:
-            "🛒 SEMUA",
-
-        price1:
-            "💰 RM 0–499",
-
-        price2:
-            "💎 RM 500–999",
-
-        price3:
-            "👑 RM 1000+",
-
-        promoBadge:
-            "🔥 PROMOSI",
-
-        adTitle:
-            "🎮 CARI ACCOUNT IMPIAN ANDA?",
-
-        adText:
-            "Semua account tersedia dengan maklumat yang jelas. Tekan LIHAT DETAIL untuk melihat gambar penuh dan maklumat account.",
-
-        contactButton:
-            "💬 HUBUNGI DAMZ",
-
-        whyTitle:
-            "⭐ KENAPA DAMZ?",
-
-        warrantyTitle:
-            "🛡️ Warranty",
-
-        warrantyText:
-            "Sesetengah account mempunyai warranty bergantung kepada listing.",
-
-        contactTitle:
-            "📱 Easy Contact",
-
-        contactText:
-            "Mudah untuk menghubungi DAMZ melalui WhatsApp, Instagram atau Telegram.",
-
-        gamingTitle:
-            "🎮 Gaming Focus",
-
-        gamingText:
-            "Fokus kepada Mobile Legends account dan servis berkaitan gaming.",
-
-        damzBadge:
-            "⚡ DAMZSTORE",
-
-        ad2Title:
-            "💎 ACCOUNT BERKUALITI • HARGA MENARIK",
-
-        ad2Text:
-            "Pilih account yang anda minat, tekan LIHAT DETAIL dan terus hubungi DAMZ melalui WhatsApp.",
-
-        viewAll:
-            "🛒 LIHAT SEMUA ACCOUNT",
-
-        contactMain:
-            "📱 CONTACT DAMZ",
-
-        contactMainText:
-            "Berminat dengan mana-mana account?<br><br>Hubungi kami untuk maklumat lanjut.",
-
-        footer1:
-            "Trusted Mobile Legends Account Seller",
-
-        buyNow:
-            "💬 BELI SEKARANG DI WHATSAPP"
-
-    },
-
-
-    en: {
-
-        navHome:
-            "Home",
-
-        navAccount:
-            "Accounts",
-
-        navWhy:
-            "Why DAMZ",
-
-        navContact:
-            "Contact",
-
-        heroText:
-            "Mobile Legends Gaming Account Marketplace 🎮<br><br>Find your preferred Mobile Legends account easily.",
-
-        heroButton:
-            "VIEW ACCOUNTS",
-
-        promoTitle:
-            "🔥 LATEST MOBILE LEGENDS ACCOUNTS",
-
-        promoText:
-            "New accounts will be added regularly. Don't forget to check the DAMZSTORE catalog!",
-
-        promoButton:
-            "EXPLORE ACCOUNTS",
-
-        accountTitle:
-            "🛒 LATEST ACCOUNTS",
-
-        accountSubtitle:
-            "Available Mobile Legends accounts",
-
-        all:
-            "🛒 ALL",
-
-        price1:
-            "💰 RM 0–499",
-
-        price2:
-            "💎 RM 500–999",
-
-        price3:
-            "👑 RM 1000+",
-
-        promoBadge:
-            "🔥 PROMOTION",
-
-        adTitle:
-            "🎮 LOOKING FOR YOUR DREAM ACCOUNT?",
-
-        adText:
-            "All accounts come with clear information. Press VIEW DETAILS to see the full image and account information.",
-
-        contactButton:
-            "💬 CONTACT DAMZ",
-
-        whyTitle:
-            "⭐ WHY DAMZ?",
-
-        warrantyTitle:
-            "🛡️ Warranty",
-
-        warrantyText:
-            "Some accounts come with warranty depending on the listing.",
-
-        contactTitle:
-            "📱 Easy Contact",
-
-        contactText:
-            "Easily contact DAMZ through WhatsApp, Instagram or Telegram.",
-
-        gamingTitle:
-            "🎮 Gaming Focus",
-
-        gamingText:
-            "Focused on Mobile Legends accounts and gaming-related services.",
-
-        damzBadge:
-            "⚡ DAMZSTORE",
-
-        ad2Title:
-            "💎 QUALITY ACCOUNTS • GREAT PRICES",
-
-        ad2Text:
-            "Choose the account you like, press VIEW DETAILS and contact DAMZ through WhatsApp.",
-
-        viewAll:
-            "🛒 VIEW ALL ACCOUNTS",
-
-        contactMain:
-            "📱 CONTACT DAMZ",
-
-        contactMainText:
-            "Interested in any account?<br><br>Contact us for more information.",
-
-        footer1:
-            "Trusted Mobile Legends Account Seller",
-
-        buyNow:
-            "💬 BUY NOW ON WHATSAPP"
-
-    }
-
-};
-
-
-
-let currentLanguage =
-    localStorage.getItem("damzLanguage") || "bm";
-
-
-
-function changeLanguage(language) {
-
-    currentLanguage =
-        language;
-
-    localStorage.setItem(
-        "damzLanguage",
-        language
-    );
-
-
-    const text =
-        translations[language];
-
-
-    document
-        .querySelectorAll("[data-i18n]")
-        .forEach(function(element) {
-
-            const key =
-                element.getAttribute("data-i18n");
-
-
-            if (text[key]) {
-
-                element.innerHTML =
-                    text[key];
-
-            }
-
-        });
-
-
-    /* Active language */
-
-    document
-        .getElementById("bmBtn")
-        .classList
-        .remove("active");
-
-    document
-        .getElementById("enBtn")
-        .classList
-        .remove("active");
-
-
-    if (language === "bm") {
-
-        document
-            .getElementById("bmBtn")
-            .classList
-            .add("active");
-
-    } else {
-
-        document
-            .getElementById("enBtn")
-            .classList
-            .add("active");
-
-    }
-
-
-    /* Search placeholder */
-
-    const search =
-        document.getElementById(
-            "searchInput"
-        );
-
-
-    if (language === "bm") {
-
-        search.placeholder =
-            "🔍 Cari DZ0001, DZ0002, skin...";
-
-    } else {
-
-        search.placeholder =
-            "🔍 Search DZ0001, DZ0002, skin...";
-
-    }
-
-
-    /* Refresh current account cards */
-
-    loadAccounts(accounts);
-
-}
-
+let currentCategory = "all";
 
 
 /* =====================================================
@@ -3047,11 +2219,12 @@ const accounts = [
         skin: "358 Skin",
         oldPrice: "RM699.00",
         price: "RM499.00",
+        priceNumber: 499,
         image: "images/DZ0001.jpg",
         descriptionBM:
-        "Rank Mythic Glory. Skin 358. Hero max. Binding Moonton. Clearbind. Berwaranti.",
+            "Rank Mythic Glory. Skin 358. Hero max. Binding Moonton. Clearbind. Berwaranti.",
         descriptionEN:
-        "Mythic Glory rank. 358 skins. Max heroes. Moonton binding. Clearbind. Warranty included."
+            "Mythic Glory rank. 358 skins. Max heroes. Moonton binding. Clearbind. Warranty included."
     },
 
 
@@ -3060,11 +2233,12 @@ const accounts = [
         skin: "444 Skin",
         oldPrice: "RM799.00",
         price: "RM550.00",
+        priceNumber: 550,
         image: "images/DZ0002.jpg",
         descriptionBM:
-        "Rank Mythic Glory. Skin 444. Hero max. Binding Moonton. Clearbind. Berwaranti.",
+            "Rank Mythic Glory. Skin 444. Hero max. Binding Moonton. Clearbind. Berwaranti.",
         descriptionEN:
-        "Mythic Glory rank. 444 skins. Max heroes. Moonton binding. Clearbind. Warranty included."
+            "Mythic Glory rank. 444 skins. Max heroes. Moonton binding. Clearbind. Warranty included."
     },
 
 
@@ -3073,11 +2247,12 @@ const accounts = [
         skin: "578 Skin",
         oldPrice: "RM599.00",
         price: "RM499.00",
+        priceNumber: 499,
         image: "images/dz0003.jpg",
         descriptionBM:
-        "Rank Mythic Glory. Skin 578. Hero max. Binding Moonton. Clearbind. Berwaranti.",
+            "Rank Mythic Glory. Skin 578. Hero max. Binding Moonton. Clearbind. Berwaranti.",
         descriptionEN:
-        "Mythic Glory rank. 578 skins. Max heroes. Moonton binding. Clearbind. Warranty included."
+            "Mythic Glory rank. 578 skins. Max heroes. Moonton binding. Clearbind. Warranty included."
     },
 
 
@@ -3086,11 +2261,12 @@ const accounts = [
         skin: "564 Skin",
         oldPrice: "RM569.00",
         price: "RM469.00",
+        priceNumber: 469,
         image: "images/dz0004.jpg",
         descriptionBM:
-        "Rank Mythic Glory. Skin 564. Hero max. Binding Moonton. Clearbind. Berwaranti.",
+            "Rank Mythic Glory. Skin 564. Hero max. Binding Moonton. Clearbind. Berwaranti.",
         descriptionEN:
-        "Mythic Glory rank. 564 skins. Max heroes. Moonton binding. Clearbind. Warranty included."
+            "Mythic Glory rank. 564 skins. Max heroes. Moonton binding. Clearbind. Warranty included."
     },
 
 
@@ -3099,11 +2275,12 @@ const accounts = [
         skin: "411 Skin",
         oldPrice: "RM500.00",
         price: "RM350.00",
+        priceNumber: 350,
         image: "images/dz0005.jpg",
         descriptionBM:
-        "Rank Mythic Glory. Skin 411. Hero max. Binding Moonton. Clearbind. Berwaranti.",
+            "Rank Mythic Glory. Skin 411. Hero max. Binding Moonton. Clearbind. Berwaranti.",
         descriptionEN:
-        "Mythic Glory rank. 411 skins. Max heroes. Moonton binding. Clearbind. Warranty included."
+            "Mythic Glory rank. 411 skins. Max heroes. Moonton binding. Clearbind. Warranty included."
     },
 
 
@@ -3112,11 +2289,12 @@ const accounts = [
         skin: "483 Skin",
         oldPrice: "RM450.00",
         price: "RM320.00",
+        priceNumber: 320,
         image: "images/DZ0006.jpg",
         descriptionBM:
-        "Rank Mythic Glory. Skin 483. Hero max. Binding Moonton. Clearbind. Berwaranti.",
+            "Rank Mythic Glory. Skin 483. Hero max. Binding Moonton. Clearbind. Berwaranti.",
         descriptionEN:
-        "Mythic Glory rank. 483 skins. Max heroes. Moonton binding. Clearbind. Warranty included."
+            "Mythic Glory rank. 483 skins. Max heroes. Moonton binding. Clearbind. Warranty included."
     },
 
 
@@ -3125,11 +2303,12 @@ const accounts = [
         skin: "500 Skin",
         oldPrice: "RM650.00",
         price: "RM450.00",
+        priceNumber: 450,
         image: "images/DZ0007.jpg",
         descriptionBM:
-        "Rank Mythic Glory. Skin 500. Hero max. Binding Moonton. Clearbind. Berwaranti.",
+            "Rank Mythic Glory. Skin 500. Hero max. Binding Moonton. Clearbind. Berwaranti.",
         descriptionEN:
-        "Mythic Glory rank. 500 skins. Max heroes. Moonton binding. Clearbind. Warranty included."
+            "Mythic Glory rank. 500 skins. Max heroes. Moonton binding. Clearbind. Warranty included."
     },
 
 
@@ -3138,11 +2317,12 @@ const accounts = [
         skin: "520 Skin",
         oldPrice: "RM700.00",
         price: "RM480.00",
+        priceNumber: 480,
         image: "images/DZ0008.jpg",
         descriptionBM:
-        "Rank Mythic Glory. Skin 520. Hero max. Binding Moonton. Clearbind. Berwaranti.",
+            "Rank Mythic Glory. Skin 520. Hero max. Binding Moonton. Clearbind. Berwaranti.",
         descriptionEN:
-        "Mythic Glory rank. 520 skins. Max heroes. Moonton binding. Clearbind. Warranty included."
+            "Mythic Glory rank. 520 skins. Max heroes. Moonton binding. Clearbind. Warranty included."
     },
 
 
@@ -3151,11 +2331,12 @@ const accounts = [
         skin: "450 Skin",
         oldPrice: "RM600.00",
         price: "RM420.00",
+        priceNumber: 420,
         image: "images/DZ0009.jpg",
         descriptionBM:
-        "Rank Mythic Glory. Skin 450. Hero max. Binding Moonton. Clearbind. Berwaranti.",
+            "Rank Mythic Glory. Skin 450. Hero max. Binding Moonton. Clearbind. Berwaranti.",
         descriptionEN:
-        "Mythic Glory rank. 450 skins. Max heroes. Moonton binding. Clearbind. Warranty included."
+            "Mythic Glory rank. 450 skins. Max heroes. Moonton binding. Clearbind. Warranty included."
     },
 
 
@@ -3164,11 +2345,12 @@ const accounts = [
         skin: "550 Skin",
         oldPrice: "RM750.00",
         price: "RM520.00",
+        priceNumber: 520,
         image: "images/DZ0010.jpg",
         descriptionBM:
-        "Rank Mythic Glory. Skin 550. Hero max. Binding Moonton. Clearbind. Berwaranti.",
+            "Rank Mythic Glory. Skin 550. Hero max. Binding Moonton. Clearbind. Berwaranti.",
         descriptionEN:
-        "Mythic Glory rank. 550 skins. Max heroes. Moonton binding. Clearbind. Warranty included."
+            "Mythic Glory rank. 550 skins. Max heroes. Moonton binding. Clearbind. Warranty included."
     },
 
 
@@ -3177,11 +2359,12 @@ const accounts = [
         skin: "600 Skin",
         oldPrice: "RM850.00",
         price: "RM599.00",
+        priceNumber: 599,
         image: "images/DZ0011.jpg",
         descriptionBM:
-        "Rank Mythic Glory. Skin 600. Hero max. Binding Moonton. Clearbind. Berwaranti.",
+            "Rank Mythic Glory. Skin 600. Hero max. Binding Moonton. Clearbind. Berwaranti.",
         descriptionEN:
-        "Mythic Glory rank. 600 skins. Max heroes. Moonton binding. Clearbind. Warranty included."
+            "Mythic Glory rank. 600 skins. Max heroes. Moonton binding. Clearbind. Warranty included."
     },
 
 
@@ -3190,15 +2373,54 @@ const accounts = [
         skin: "650 Skin",
         oldPrice: "RM900.00",
         price: "RM650.00",
+        priceNumber: 650,
         image: "images/DZ0012.jpg",
         descriptionBM:
-        "Rank Mythic Glory. Skin 650. Hero max. Binding Moonton. Clearbind. Berwaranti.",
+            "Rank Mythic Glory. Skin 650. Hero max. Binding Moonton. Clearbind. Berwaranti.",
         descriptionEN:
-        "Mythic Glory rank. 650 skins. Max heroes. Moonton binding. Clearbind. Warranty included."
+            "Mythic Glory rank. 650 skins. Max heroes. Moonton binding. Clearbind. Warranty included."
     }
 
 ];
 
+
+/* =====================================================
+   CATEGORY CHECK
+===================================================== */
+
+function checkCategory(account) {
+
+    if (currentCategory === "all") {
+        return true;
+    }
+
+
+    if (currentCategory === "low") {
+
+        return account.priceNumber < 500;
+
+    }
+
+
+    if (currentCategory === "mid") {
+
+        return (
+            account.priceNumber >= 500 &&
+            account.priceNumber < 1000
+        );
+
+    }
+
+
+    if (currentCategory === "high") {
+
+        return account.priceNumber >= 1000;
+
+    }
+
+
+    return true;
+}
 
 
 /* =====================================================
@@ -3206,6 +2428,12 @@ const accounts = [
 ===================================================== */
 
 function createCard(account) {
+
+    const detailText =
+        currentLanguage === "bm"
+        ? "LIHAT DETAIL →"
+        : "VIEW DETAILS →";
+
 
     const warrantyText =
         currentLanguage === "bm"
@@ -3216,17 +2444,7 @@ function createCard(account) {
     const stockText =
         currentLanguage === "bm"
         ? "📦 Stok 1"
-        : "📦 1 in Stock";
-
-
-    const gameText =
-        "Mobile Legends";
-
-
-    const detailText =
-        currentLanguage === "bm"
-        ? "LIHAT DETAIL →"
-        : "VIEW DETAILS →";
+        : "📦 Stock 1";
 
 
     return `
@@ -3243,15 +2461,13 @@ function createCard(account) {
                 >
 
                 <span class="image-label">
-
                     🎮 ${account.skin.toUpperCase()}
-
                 </span>
 
                 <span class="zoom-hint">
-
-                    🔎 ${currentLanguage === "bm" ? "Lihat gambar" : "View image"}
-
+                    🔎 ${currentLanguage === "bm"
+                        ? "Lihat gambar"
+                        : "View image"}
                 </span>
 
             </div>
@@ -3260,69 +2476,43 @@ function createCard(account) {
             <div class="content">
 
                 <div class="game">
-
-                    ${gameText}
-
+                    Mobile Legends
                 </div>
 
 
                 <div class="name">
-
                     ${account.id} | ${account.skin}
-
                 </div>
 
 
                 <div class="info">
 
                     <span class="tag">
-
                         ${warrantyText}
-
                     </span>
 
-
                     <span class="tag">
-
                         ${stockText}
-
                     </span>
 
                 </div>
 
 
                 <div class="old-price">
-
                     ${account.oldPrice}
-
                 </div>
 
 
                 <div class="price">
-
                     ${account.price}
-
                 </div>
 
 
                 <button
-
                     class="detail-button"
-
-                    onclick="showDetail(
-                        '${account.id}',
-                        '${account.skin}',
-                        '${account.oldPrice}',
-                        '${account.price}',
-                        '${account.descriptionBM.replace(/'/g, "\\'")}',
-                        '${account.descriptionEN.replace(/'/g, "\\'")}',
-                        '${account.image}'
-                    )"
-
+                    onclick="showDetail('${account.id}')"
                 >
-
                     ${detailText}
-
                 </button>
 
             </div>
@@ -3330,13 +2520,11 @@ function createCard(account) {
         </div>
 
     `;
-
 }
 
 
-
 /* =====================================================
-   LOAD ACCOUNT
+   LOAD ACCOUNTS
 ===================================================== */
 
 function loadAccounts(list = accounts) {
@@ -3344,8 +2532,23 @@ function loadAccounts(list = accounts) {
     const catalog =
         document.getElementById("catalog");
 
+    const noResult =
+        document.getElementById("noResult");
+
 
     catalog.innerHTML = "";
+
+
+    if (list.length === 0) {
+
+        noResult.style.display = "block";
+
+        return;
+
+    }
+
+
+    noResult.style.display = "none";
 
 
     list.forEach(function(account) {
@@ -3355,55 +2558,33 @@ function loadAccounts(list = accounts) {
 
     });
 
-
-    if (list.length === 0) {
-
-        catalog.innerHTML = `
-
-            <div style="
-                grid-column: 1 / -1;
-                text-align: center;
-                padding: 40px 20px;
-                color: #aab8cc;
-            ">
-
-                <div style="
-                    font-size: 40px;
-                    margin-bottom: 10px;
-                ">
-
-                    😔
-
-                </div>
-
-                <h3 style="color:white;">
-
-                    ${
-                        currentLanguage === "bm"
-                        ? "Tiada account dalam kategori ini"
-                        : "No accounts in this category"
-                    }
-
-                </h3>
-
-                <p>
-
-                    ${
-                        currentLanguage === "bm"
-                        ? "Cuba pilih kategori harga lain."
-                        : "Try another price category."
-                    }
-
-                </p>
-
-            </div>
-
-        `;
-
-    }
-
 }
 
+
+/* =====================================================
+   FILTER CATEGORY
+===================================================== */
+
+function filterCategory(category, button) {
+
+    currentCategory = category;
+
+
+    document
+        .querySelectorAll(".category-btn")
+        .forEach(function(btn) {
+
+            btn.classList.remove("active");
+
+        });
+
+
+    button.classList.add("active");
+
+
+    searchAccount();
+
+}
 
 
 /* =====================================================
@@ -3413,7 +2594,6 @@ function loadAccounts(list = accounts) {
 function searchAccount() {
 
     const input =
-
         document
         .getElementById("searchInput")
         .value
@@ -3422,10 +2602,9 @@ function searchAccount() {
 
 
     const filtered =
-
         accounts.filter(function(account) {
 
-            return (
+            const matchesSearch =
 
                 account.id
                 .toLowerCase()
@@ -3441,8 +2620,16 @@ function searchAccount() {
 
                 account.price
                 .toLowerCase()
-                .includes(input)
+                .includes(input);
 
+
+            const matchesCategory =
+                checkCategory(account);
+
+
+            return (
+                matchesSearch &&
+                matchesCategory
             );
 
         });
@@ -3450,156 +2637,56 @@ function searchAccount() {
 
     loadAccounts(filtered);
 
-
-    document
-        .querySelectorAll(".category-btn")
-        .forEach(function(btn) {
-
-            btn.classList.remove("active");
-
-        });
-
-
-    document
-        .querySelector(".category-btn")
-        .classList
-        .add("active");
-
 }
-
-
-
-/* =====================================================
-   PRICE FILTER
-===================================================== */
-
-function filterPrice(category, button) {
-
-
-    document
-        .querySelectorAll(".category-btn")
-        .forEach(function(btn) {
-
-            btn.classList.remove("active");
-
-        });
-
-
-    button.classList.add("active");
-
-
-    document
-        .getElementById("searchInput")
-        .value = "";
-
-
-    const filtered =
-
-        accounts.filter(function(account) {
-
-
-            const price =
-
-                parseFloat(
-
-                    account.price
-                    .replace("RM", "")
-                    .replace(",", "")
-                    .trim()
-
-                );
-
-
-            if (category === "all") {
-
-                return true;
-
-            }
-
-
-            if (category === "0-499") {
-
-                return price >= 0 && price <= 499;
-
-            }
-
-
-            if (category === "500-999") {
-
-                return price >= 500 && price <= 999;
-
-            }
-
-
-            if (category === "1000+") {
-
-                return price >= 1000;
-
-            }
-
-
-            return true;
-
-        });
-
-
-    loadAccounts(filtered);
-
-}
-
 
 
 /* =====================================================
    SHOW DETAIL
 ===================================================== */
 
-function showDetail(
+function showDetail(id) {
 
-    id,
-    skin,
-    oldprice,
-    price,
-    descBM,
-    descEN,
-    image
-
-) {
+    const account =
+        accounts.find(
+            function(item) {
+                return item.id === id;
+            }
+        );
 
 
-    const description =
-        currentLanguage === "bm"
-        ? descBM
-        : descEN;
+    if (!account) return;
 
 
     document
         .getElementById("modalTitle")
         .textContent =
-        id + " | " + skin;
+            account.id + " | " + account.skin;
 
 
     document
         .getElementById("modalDesc")
         .textContent =
-        description;
+            currentLanguage === "bm"
+            ? account.descriptionBM
+            : account.descriptionEN;
 
 
     document
         .getElementById("modalOld")
         .textContent =
-        oldprice;
+            account.oldPrice;
 
 
     document
         .getElementById("modalPrice")
         .textContent =
-        price;
+            account.price;
 
 
     document
         .getElementById("modalImage")
         .src =
-        image;
+            account.image;
 
 
     const message =
@@ -3611,16 +2698,16 @@ function showDetail(
             ?
 
             "Hi DAMZ, saya berminat dengan account "
-            + id
+            + account.id
             + " | "
-            + skin
+            + account.skin
 
             :
 
-            "Hi DAMZ, I am interested in the account "
-            + id
+            "Hi DAMZ, I am interested in account "
+            + account.id
             + " | "
-            + skin
+            + account.skin
 
         );
 
@@ -3628,20 +2715,17 @@ function showDetail(
     document
         .getElementById("modalWA")
         .href =
-
-        "https://wa.me/601133169293?text="
-        + message;
+            "https://wa.me/601133169293?text="
+            + message;
 
 
     document
         .getElementById("modalWA")
         .textContent =
 
-        currentLanguage === "bm"
-
-        ? "💬 BELI SEKARANG DI WHATSAPP"
-
-        : "💬 BUY NOW ON WHATSAPP";
+            currentLanguage === "bm"
+            ? "💬 BELI SEKARANG DI WHATSAPP"
+            : "💬 BUY NOW ON WHATSAPP";
 
 
     document
@@ -3656,7 +2740,6 @@ function showDetail(
         .add("modal-open");
 
 }
-
 
 
 /* =====================================================
@@ -3677,7 +2760,6 @@ function closeDetail() {
         .remove("modal-open");
 
 }
-
 
 
 /* =====================================================
@@ -3701,7 +2783,6 @@ function outsideClose(event) {
 }
 
 
-
 /* =====================================================
    ESC
 ===================================================== */
@@ -3722,18 +2803,94 @@ document.addEventListener(
 );
 
 
+/* =====================================================
+   LANGUAGE SYSTEM
+===================================================== */
+
+function setLanguage(language) {
+
+    currentLanguage = language;
+
+
+    document.documentElement.lang =
+        language === "bm"
+        ? "ms"
+        : "en";
+
+
+    /* BUTTON */
+
+    document
+        .getElementById("bmBtn")
+        .classList
+        .toggle(
+            "active",
+            language === "bm"
+        );
+
+
+    document
+        .getElementById("enBtn")
+        .classList
+        .toggle(
+            "active",
+            language === "en"
+        );
+
+
+    /* TEXT */
+
+    document
+        .querySelectorAll("[data-bm]")
+        .forEach(function(element) {
+
+            const text =
+                language === "bm"
+                ? element.dataset.bm
+                : element.dataset.en;
+
+
+            if (!text) return;
+
+
+            const parts =
+                text.split("|");
+
+
+            element.innerHTML =
+                parts.join("<br>");
+
+        });
+
+
+    /* SEARCH PLACEHOLDER */
+
+    document
+        .getElementById("searchInput")
+        .placeholder =
+
+            language === "bm"
+
+            ?
+
+            "🔍 Cari DZ0001, DZ0002, skin..."
+
+            :
+
+            "🔍 Search DZ0001, DZ0002, skins...";
+
+
+    /* RELOAD CARDS */
+
+    searchAccount();
+
+}
+
 
 /* =====================================================
    INITIAL LOAD
 ===================================================== */
 
-changeLanguage(currentLanguage);
-
 loadAccounts();
 
-</script>
-
-
-</body>
-
-</html>
+</script></body></html>
