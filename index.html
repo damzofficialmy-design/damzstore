@@ -28,21 +28,9 @@ body{
     overflow-x:hidden;
 
     background:
-        radial-gradient(
-            circle at 15% 15%,
-            rgba(0,170,255,.16),
-            transparent 28%
-        ),
-        radial-gradient(
-            circle at 85% 30%,
-            rgba(0,80,255,.14),
-            transparent 28%
-        ),
-        radial-gradient(
-            circle at 50% 90%,
-            rgba(0,170,255,.10),
-            transparent 30%
-        ),
+        radial-gradient(circle at 15% 15%,rgba(0,170,255,.16),transparent 28%),
+        radial-gradient(circle at 85% 30%,rgba(0,80,255,.14),transparent 28%),
+        radial-gradient(circle at 50% 90%,rgba(0,170,255,.10),transparent 30%),
         #020817;
 }
 
@@ -52,7 +40,7 @@ body.modal-open{
 
 
 /* =====================================================
-   3D BACKGROUND IMAGE
+   BACKGROUND
 ===================================================== */
 
 .bg-image{
@@ -96,11 +84,6 @@ body.modal-open{
     pointer-events:none;
 }
 
-
-/* =====================================================
-   3D EFFECTS
-===================================================== */
-
 .bg-3d{
     position:fixed;
     inset:0;
@@ -117,14 +100,12 @@ body.modal-open{
 
 .cube{
     position:absolute;
-
     width:70px;
     height:70px;
 
     border:1px solid rgba(0,170,255,.40);
 
-    background:
-        rgba(0,120,255,.06);
+    background:rgba(0,120,255,.06);
 
     box-shadow:
         0 0 25px rgba(0,170,255,.18),
@@ -132,31 +113,23 @@ body.modal-open{
 
     transform-style:preserve-3d;
 
-    animation:
-        cubeFloat 8s ease-in-out infinite;
+    animation:cubeFloat 8s ease-in-out infinite;
 }
 
 .cube::before,
 .cube::after{
     content:"";
-
     position:absolute;
     inset:0;
-
-    border:
-        1px solid rgba(0,170,255,.20);
+    border:1px solid rgba(0,170,255,.20);
 }
 
 .cube::before{
-    transform:
-        rotateX(60deg)
-        rotateZ(45deg);
+    transform:rotateX(60deg) rotateZ(45deg);
 }
 
 .cube::after{
-    transform:
-        rotateY(60deg)
-        rotateZ(45deg);
+    transform:rotateY(60deg) rotateZ(45deg);
 }
 
 .cube-1{
@@ -167,30 +140,24 @@ body.modal-open{
 .cube-2{
     top:45%;
     right:7%;
-
     width:90px;
     height:90px;
-
     animation-delay:2s;
 }
 
 .cube-3{
     bottom:12%;
     left:15%;
-
     width:45px;
     height:45px;
-
     animation-delay:4s;
 }
 
 .cube-4{
     top:70%;
     right:25%;
-
     width:50px;
     height:50px;
-
     animation-delay:1s;
 }
 
@@ -217,8 +184,7 @@ body.modal-open{
 
     filter:blur(3px);
 
-    animation:
-        orbFloat 10s ease-in-out infinite;
+    animation:orbFloat 10s ease-in-out infinite;
 }
 
 .orb-1{
@@ -229,10 +195,8 @@ body.modal-open{
 .orb-2{
     bottom:20%;
     left:5%;
-
     width:180px;
     height:180px;
-
     animation-delay:3s;
 }
 
@@ -255,8 +219,7 @@ body.modal-open{
             transparent
         );
 
-    box-shadow:
-        0 0 15px #00aaff;
+    box-shadow:0 0 15px #00aaff;
 
     opacity:.45;
 }
@@ -304,8 +267,7 @@ body.modal-open{
         0 0 7px #00aaff,
         0 0 15px rgba(0,170,255,.7);
 
-    animation:
-        starFloat linear infinite;
+    animation:starFloat linear infinite;
 }
 
 .star:nth-child(1){left:5%;top:12%;animation-duration:7s}
@@ -351,8 +313,7 @@ body.modal-open{
 
     opacity:.65;
 
-    animation:
-        particleMove 8s linear infinite;
+    animation:particleMove 8s linear infinite;
 }
 
 .particle:nth-child(21){left:10%;top:20%;animation-delay:1s}
@@ -372,7 +333,6 @@ body.modal-open{
 ===================================================== */
 
 @keyframes cubeFloat{
-
     0%,100%{
         transform:
             translateY(0)
@@ -391,7 +351,6 @@ body.modal-open{
 }
 
 @keyframes orbFloat{
-
     0%,100%{
         transform:translate(0,0);
     }
@@ -402,39 +361,25 @@ body.modal-open{
 }
 
 @keyframes starFloat{
-
     0%{
-        transform:
-            translateY(0)
-            scale(.7);
-
+        transform:translateY(0) scale(.7);
         opacity:.25;
     }
 
     50%{
-        transform:
-            translateY(-35px)
-            scale(1.4);
-
+        transform:translateY(-35px) scale(1.4);
         opacity:1;
     }
 
     100%{
-        transform:
-            translateY(-70px)
-            scale(.6);
-
+        transform:translateY(-70px) scale(.6);
         opacity:0;
     }
 }
 
 @keyframes particleMove{
-
     0%{
-        transform:
-            translate(0,0)
-            rotate(45deg);
-
+        transform:translate(0,0) rotate(45deg);
         opacity:0;
     }
 
@@ -443,10 +388,7 @@ body.modal-open{
     }
 
     100%{
-        transform:
-            translate(100px,-100px)
-            rotate(45deg);
-
+        transform:translate(100px,-100px) rotate(45deg);
         opacity:0;
     }
 }
@@ -457,8 +399,7 @@ body.modal-open{
 ===================================================== */
 
 header{
-    background:
-        rgba(3,14,35,.84);
+    background:rgba(3,14,35,.84);
 
     backdrop-filter:blur(14px);
 
@@ -473,8 +414,7 @@ header{
 
     z-index:1000;
 
-    border-bottom:
-        1px solid rgba(0,170,255,.25);
+    border-bottom:1px solid rgba(0,170,255,.25);
 }
 
 .logo-area{
@@ -491,11 +431,9 @@ header{
 
     object-fit:cover;
 
-    border:
-        1px solid rgba(0,170,255,.55);
+    border:1px solid rgba(0,170,255,.55);
 
-    box-shadow:
-        0 0 18px rgba(0,170,255,.45);
+    box-shadow:0 0 18px rgba(0,170,255,.45);
 }
 
 .logo{
@@ -504,8 +442,7 @@ header{
 
     color:#00aaff;
 
-    text-shadow:
-        0 0 15px rgba(0,170,255,.7);
+    text-shadow:0 0 15px rgba(0,170,255,.7);
 }
 
 .header-right{
@@ -522,11 +459,9 @@ header{
 .language-switch{
     display:flex;
 
-    background:
-        rgba(255,255,255,.07);
+    background:rgba(255,255,255,.07);
 
-    border:
-        1px solid rgba(0,170,255,.30);
+    border:1px solid rgba(0,170,255,.30);
 
     border-radius:10px;
 
@@ -563,8 +498,7 @@ header{
 
     color:white;
 
-    box-shadow:
-        0 0 12px rgba(0,170,255,.35);
+    box-shadow:0 0 12px rgba(0,170,255,.35);
 }
 
 
@@ -586,8 +520,7 @@ nav a{
 nav a:hover{
     color:#00aaff;
 
-    text-shadow:
-        0 0 10px #00aaff;
+    text-shadow:0 0 10px #00aaff;
 }
 
 
@@ -609,8 +542,7 @@ nav a:hover{
 
     text-align:center;
 
-    border-bottom:
-        1px solid rgba(0,170,255,.25);
+    border-bottom:1px solid rgba(0,170,255,.25);
 
     overflow:hidden;
 }
@@ -619,8 +551,7 @@ nav a:hover{
     font-size:42px;
     margin:0;
 
-    text-shadow:
-        0 0 25px rgba(0,170,255,.55);
+    text-shadow:0 0 25px rgba(0,170,255,.55);
 }
 
 .hero h1 span{
@@ -661,8 +592,7 @@ nav a:hover{
 
     font-weight:bold;
 
-    box-shadow:
-        0 0 20px rgba(0,170,255,.4);
+    box-shadow:0 0 20px rgba(0,170,255,.4);
 
     transition:.25s;
 }
@@ -670,8 +600,7 @@ nav a:hover{
 .hero-button:hover{
     transform:translateY(-3px);
 
-    box-shadow:
-        0 0 30px rgba(0,170,255,.7);
+    box-shadow:0 0 30px rgba(0,170,255,.7);
 }
 
 
@@ -719,15 +648,13 @@ nav a:hover{
 }
 
 .game-btn{
-    border:
-        1px solid rgba(0,170,255,.30);
+    border:1px solid rgba(0,170,255,.30);
 
-    background:
-        rgba(3,14,35,.70);
+    background:rgba(3,14,35,.70);
 
     color:white;
 
-    padding:12px 20px;
+    padding:12px 18px;
 
     border-radius:10px;
 
@@ -751,8 +678,7 @@ nav a:hover{
 
     border-color:#00aaff;
 
-    box-shadow:
-        0 0 15px rgba(0,170,255,.30);
+    box-shadow:0 0 15px rgba(0,170,255,.30);
 }
 
 
@@ -773,11 +699,9 @@ nav a:hover{
 }
 
 .category-btn{
-    border:
-        1px solid rgba(0,170,255,.30);
+    border:1px solid rgba(0,170,255,.30);
 
-    background:
-        rgba(3,14,35,.65);
+    background:rgba(3,14,35,.65);
 
     color:white;
 
@@ -807,8 +731,7 @@ nav a:hover{
 
     border-color:#00aaff;
 
-    box-shadow:
-        0 0 15px rgba(0,170,255,.30);
+    box-shadow:0 0 15px rgba(0,170,255,.30);
 }
 
 
@@ -829,8 +752,7 @@ nav a:hover{
 
     padding:15px 18px;
 
-    border:
-        1px solid rgba(0,170,255,.30);
+    border:1px solid rgba(0,170,255,.30);
 
     border-radius:12px;
 
@@ -838,8 +760,7 @@ nav a:hover{
 
     outline:none;
 
-    background:
-        rgba(3,14,35,.70);
+    background:rgba(3,14,35,.70);
 
     color:white;
 
@@ -858,8 +779,7 @@ nav a:hover{
 .catalog{
     display:grid;
 
-    grid-template-columns:
-        repeat(2,1fr);
+    grid-template-columns:repeat(2,1fr);
 
     gap:20px;
 }
@@ -870,32 +790,27 @@ nav a:hover{
 ===================================================== */
 
 .card{
-    background:
-        rgba(3,14,35,.67);
+    background:rgba(3,14,35,.67);
 
     border-radius:18px;
 
     overflow:hidden;
 
-    border:
-        1px solid rgba(0,170,255,.20);
+    border:1px solid rgba(0,170,255,.20);
 
     backdrop-filter:blur(12px);
 
     transition:.3s;
 
-    box-shadow:
-        0 12px 35px rgba(0,0,0,.35);
+    box-shadow:0 12px 35px rgba(0,0,0,.35);
 }
 
 .card:hover{
     transform:translateY(-7px);
 
-    border-color:
-        rgba(0,170,255,.65);
+    border-color:rgba(0,170,255,.65);
 
-    box-shadow:
-        0 15px 40px rgba(0,170,255,.25);
+    box-shadow:0 15px 40px rgba(0,170,255,.25);
 }
 
 
@@ -929,15 +844,14 @@ nav a:hover{
 .card:hover .account-image{
     transform:scale(1.07);
 
-    filter:
-        saturate(1.12)
-        brightness(1.05);
+    filter:saturate(1.12) brightness(1.05);
 }
 
 .image-wrap::after{
     content:"";
 
     position:absolute;
+
     inset:0;
 
     background:
@@ -963,11 +877,9 @@ nav a:hover{
 
     border-radius:999px;
 
-    background:
-        rgba(2,8,23,.78);
+    background:rgba(2,8,23,.78);
 
-    border:
-        1px solid rgba(0,170,255,.35);
+    border:1px solid rgba(0,170,255,.35);
 
     font-size:12px;
     font-weight:bold;
@@ -983,8 +895,7 @@ nav a:hover{
 
     z-index:2;
 
-    background:
-        rgba(0,0,0,.55);
+    background:rgba(0,0,0,.55);
 
     padding:7px 10px;
 
@@ -1027,8 +938,7 @@ nav a:hover{
 }
 
 .tag{
-    background:
-        rgba(33,150,83,.16);
+    background:rgba(33,150,83,.16);
 
     color:#54df8c;
 
@@ -1124,15 +1034,13 @@ nav a:hover{
 .why{
     display:grid;
 
-    grid-template-columns:
-        repeat(3,1fr);
+    grid-template-columns:repeat(3,1fr);
 
     gap:20px;
 }
 
 .why-card{
-    background:
-        rgba(3,14,35,.67);
+    background:rgba(3,14,35,.67);
 
     padding:25px;
 
@@ -1140,8 +1048,7 @@ nav a:hover{
 
     text-align:center;
 
-    border:
-        1px solid rgba(0,170,255,.18);
+    border:1px solid rgba(0,170,255,.18);
 
     backdrop-filter:blur(10px);
 }
@@ -1175,11 +1082,9 @@ nav a:hover{
 
     padding:55px 20px;
 
-    border-top:
-        1px solid rgba(0,170,255,.20);
+    border-top:1px solid rgba(0,170,255,.20);
 
-    border-bottom:
-        1px solid rgba(0,170,255,.20);
+    border-bottom:1px solid rgba(0,170,255,.20);
 }
 
 .contact p{
@@ -1219,8 +1124,7 @@ nav a:hover{
 .social:hover{
     transform:translateY(-3px);
 
-    box-shadow:
-        0 8px 20px rgba(0,170,255,.25);
+    box-shadow:0 8px 20px rgba(0,170,255,.25);
 }
 
 
@@ -1229,15 +1133,13 @@ nav a:hover{
 ===================================================== */
 
 footer{
-    background:
-        rgba(1,6,17,.92);
+    background:rgba(1,6,17,.92);
 
     text-align:center;
 
     padding:35px 20px;
 
-    border-top:
-        1px solid rgba(0,170,255,.15);
+    border-top:1px solid rgba(0,170,255,.15);
 }
 
 footer h2{
@@ -1265,8 +1167,7 @@ footer small{
 
     inset:0;
 
-    background:
-        rgba(0,0,0,.90);
+    background:rgba(0,0,0,.90);
 
     z-index:9999;
 
@@ -1299,18 +1200,15 @@ footer small{
             #0b1d40
         );
 
-    border:
-        1px solid rgba(0,170,255,.65);
+    border:1px solid rgba(0,170,255,.65);
 
     border-radius:20px;
 
     overflow:hidden;
 
-    box-shadow:
-        0 0 60px rgba(0,170,255,.25);
+    box-shadow:0 0 60px rgba(0,170,255,.25);
 
-    animation:
-        modalIn .25s ease;
+    animation:modalIn .25s ease;
 }
 
 .modal-image-wrap{
@@ -1402,8 +1300,7 @@ footer small{
 
     border-radius:50%;
 
-    background:
-        rgba(0,0,0,.70);
+    background:rgba(0,0,0,.70);
 
     color:white;
 
@@ -1444,23 +1341,17 @@ footer small{
 .modal-wa:hover{
     transform:translateY(-2px);
 
-    box-shadow:
-        0 8px 20px rgba(37,211,102,.25);
+    box-shadow:0 8px 20px rgba(37,211,102,.25);
 }
 
 @keyframes modalIn{
-
     from{
         opacity:0;
-
-        transform:
-            translateY(15px)
-            scale(.97);
+        transform:translateY(15px) scale(.97);
     }
 
     to{
         opacity:1;
-
         transform:none;
     }
 }
@@ -1533,9 +1424,7 @@ footer small{
     }
 
     .catalog{
-        grid-template-columns:
-            repeat(2,1fr);
-
+        grid-template-columns:repeat(2,1fr);
         gap:10px;
     }
 
@@ -1619,11 +1508,6 @@ footer small{
 
 <body>
 
-
-<!-- =====================================================
-     BACKGROUND
-===================================================== -->
-
 <div class="bg-image"></div>
 <div class="bg-overlay"></div>
 
@@ -1643,8 +1527,6 @@ footer small{
 
     <div class="stars">
 
-        <!-- STARS -->
-
         <span class="star"></span>
         <span class="star"></span>
         <span class="star"></span>
@@ -1655,7 +1537,6 @@ footer small{
         <span class="star"></span>
         <span class="star"></span>
         <span class="star"></span>
-
         <span class="star"></span>
         <span class="star"></span>
         <span class="star"></span>
@@ -1666,8 +1547,6 @@ footer small{
         <span class="star"></span>
         <span class="star"></span>
         <span class="star"></span>
-
-        <!-- PARTICLES -->
 
         <span class="particle"></span>
         <span class="particle"></span>
@@ -1704,7 +1583,6 @@ footer small{
 
     </div>
 
-
     <div class="header-right">
 
         <div class="language-switch">
@@ -1729,43 +1607,30 @@ footer small{
 
         </div>
 
-
         <nav>
 
-            <a
-                href="#home"
-                data-bm="Home"
-                data-en="Home">
-
-                Home
-
+            <a href="#home"
+               data-bm="Home"
+               data-en="Home">
+               Home
             </a>
 
-            <a
-                href="#account"
-                data-bm="Account"
-                data-en="Accounts">
-
-                Account
-
+            <a href="#account"
+               data-bm="Account"
+               data-en="Accounts">
+               Account
             </a>
 
-            <a
-                href="#why"
-                data-bm="Why DAMZ"
-                data-en="Why DAMZ">
-
-                Why DAMZ
-
+            <a href="#why"
+               data-bm="Why DAMZ"
+               data-en="Why DAMZ">
+               Why DAMZ
             </a>
 
-            <a
-                href="#contact"
-                data-bm="Contact"
-                data-en="Contact">
-
-                Contact
-
+            <a href="#contact"
+               data-bm="Contact"
+               data-en="Contact">
+               Contact
             </a>
 
         </nav>
@@ -1786,13 +1651,12 @@ footer small{
     </h1>
 
     <p
-        data-bm="Gaming Account Marketplace 🎮|Cari account Mobile Legends dan Free Fire pilihan anda dengan mudah."
-        data-en="Gaming Account Marketplace 🎮|Find your preferred Mobile Legends and Free Fire account easily.">
+        data-bm="Gaming Account Marketplace 🎮|Cari account Mobile Legends, Free Fire, eFootball dan PUBG pilihan anda dengan mudah."
+        data-en="Gaming Account Marketplace 🎮|Find your preferred Mobile Legends, Free Fire, eFootball and PUBG account easily.">
 
         Gaming Account Marketplace 🎮
         <br>
-
-        Cari account Mobile Legends dan Free Fire pilihan anda dengan mudah.
+        Cari account Mobile Legends, Free Fire, eFootball dan PUBG pilihan anda dengan mudah.
 
     </p>
 
@@ -1813,9 +1677,7 @@ footer small{
      ACCOUNTS
 ===================================================== -->
 
-<section
-    class="section"
-    id="account">
+<section class="section" id="account">
 
     <div class="section-title">
 
@@ -1828,17 +1690,19 @@ footer small{
         </h2>
 
         <p
-            data-bm="Pilih account Mobile Legends atau Free Fire anda."
-            data-en="Choose your Mobile Legends or Free Fire account.">
+            data-bm="Pilih account Mobile Legends, Free Fire, eFootball atau PUBG anda."
+            data-en="Choose your Mobile Legends, Free Fire, eFootball or PUBG account.">
 
-            Pilih account Mobile Legends atau Free Fire anda.
+            Pilih account Mobile Legends, Free Fire, eFootball atau PUBG anda.
 
         </p>
 
     </div>
 
 
-    <!-- GAME FILTER -->
+    <!-- =================================================
+         GAME FILTER
+    ================================================== -->
 
     <div class="game-filter">
 
@@ -1852,7 +1716,6 @@ footer small{
 
         </button>
 
-
         <button
             class="game-btn"
             onclick="filterGame('ml',this)"
@@ -1862,7 +1725,6 @@ footer small{
             ⚔️ MOBILE LEGENDS
 
         </button>
-
 
         <button
             class="game-btn"
@@ -1874,10 +1736,32 @@ footer small{
 
         </button>
 
+        <button
+            class="game-btn"
+            onclick="filterGame('efb',this)"
+            data-bm="⚽ EFOOTBALL"
+            data-en="⚽ EFOOTBALL">
+
+            ⚽ EFOOTBALL
+
+        </button>
+
+        <button
+            class="game-btn"
+            onclick="filterGame('pubg',this)"
+            data-bm="🔫 PUBG"
+            data-en="🔫 PUBG">
+
+            🔫 PUBG
+
+        </button>
+
     </div>
 
 
-    <!-- PRICE FILTER -->
+    <!-- =================================================
+         PRICE FILTER
+    ================================================== -->
 
     <div class="category-box">
 
@@ -1891,7 +1775,6 @@ footer small{
 
         </button>
 
-
         <button
             class="category-btn"
             onclick="filterCategory('low',this)"
@@ -1902,7 +1785,6 @@ footer small{
 
         </button>
 
-
         <button
             class="category-btn"
             onclick="filterCategory('mid',this)"
@@ -1912,7 +1794,6 @@ footer small{
             💎 RM 500 - 999
 
         </button>
-
 
         <button
             class="category-btn"
@@ -1927,26 +1808,29 @@ footer small{
     </div>
 
 
-    <!-- SEARCH -->
+    <!-- =================================================
+         SEARCH
+    ================================================== -->
 
     <div class="search-box">
 
         <input
             type="text"
             id="searchInput"
-            placeholder="🔍 Cari ML001, FF001, skin..."
+            placeholder="🔍 Cari ML001, FF001, EFB001, PUBG001..."
             oninput="searchAccount()">
 
     </div>
 
 
-    <!-- CATALOG -->
+    <!-- =================================================
+         CATALOG
+    ================================================== -->
 
     <div
         class="catalog"
         id="catalog">
     </div>
-
 
     <div
         class="no-result"
@@ -1965,9 +1849,7 @@ footer small{
      WHY DAMZ
 ===================================================== -->
 
-<section
-    class="section"
-    id="why">
+<section class="section" id="why">
 
     <div class="section-title">
 
@@ -1980,7 +1862,6 @@ footer small{
         </h2>
 
     </div>
-
 
     <div class="why">
 
@@ -2000,7 +1881,6 @@ footer small{
 
         </div>
 
-
         <div class="why-card">
 
             <h3>
@@ -2017,7 +1897,6 @@ footer small{
 
         </div>
 
-
         <div class="why-card">
 
             <h3>
@@ -2025,10 +1904,10 @@ footer small{
             </h3>
 
             <p
-                data-bm="Fokus kepada Mobile Legends, Free Fire dan servis berkaitan gaming."
-                data-en="Focused on Mobile Legends, Free Fire and gaming-related services.">
+                data-bm="Fokus kepada Mobile Legends, Free Fire, eFootball, PUBG dan servis berkaitan gaming."
+                data-en="Focused on Mobile Legends, Free Fire, eFootball, PUBG and gaming-related services.">
 
-                Fokus kepada Mobile Legends, Free Fire dan servis berkaitan gaming.
+                Fokus kepada Mobile Legends, Free Fire, eFootball, PUBG dan servis berkaitan gaming.
 
             </p>
 
@@ -2043,9 +1922,7 @@ footer small{
      CONTACT
 ===================================================== -->
 
-<section
-    class="contact"
-    id="contact">
+<section class="contact" id="contact">
 
     <h2
         data-bm="📱 CONTACT DAMZ"
@@ -2055,18 +1932,15 @@ footer small{
 
     </h2>
 
-
     <p
         data-bm="Berminat dengan mana-mana account?|Hubungi kami untuk maklumat lanjut."
         data-en="Interested in any account?|Contact us for more information.">
 
         Berminat dengan mana-mana account?
         <br>
-
         Hubungi kami untuk maklumat lanjut.
 
     </p>
-
 
     <div class="social-buttons">
 
@@ -2079,7 +1953,6 @@ footer small{
 
         </a>
 
-
         <a
             class="social"
             href="https://instagram.com/damzofficialmy"
@@ -2088,7 +1961,6 @@ footer small{
             📸 Instagram
 
         </a>
-
 
         <a
             class="social"
@@ -2123,10 +1995,10 @@ footer small{
     </p>
 
     <p
-        data-bm="Mobile Legends • Free Fire • Reseller • Midman • Paid Promote"
-        data-en="Mobile Legends • Free Fire • Reseller • Midman • Paid Promote">
+        data-bm="Mobile Legends • Free Fire • eFootball • PUBG • Reseller • Midman • Paid Promote"
+        data-en="Mobile Legends • Free Fire • eFootball • PUBG • Reseller • Midman • Paid Promote">
 
-        Mobile Legends • Free Fire • Reseller • Midman • Paid Promote
+        Mobile Legends • Free Fire • eFootball • PUBG • Reseller • Midman • Paid Promote
 
     </p>
 
@@ -2156,7 +2028,6 @@ footer small{
 
         </button>
 
-
         <div class="modal-image-wrap">
 
             <img
@@ -2167,7 +2038,6 @@ footer small{
 
         </div>
 
-
         <div class="modal-content">
 
             <h2
@@ -2175,24 +2045,20 @@ footer small{
                 class="modal-title">
             </h2>
 
-
             <p
                 id="modalDesc"
                 class="modal-desc">
             </p>
-
 
             <div
                 id="modalOld"
                 class="modal-old">
             </div>
 
-
             <div
                 id="modalPrice"
                 class="modal-price">
             </div>
-
 
             <a
                 id="modalWA"
@@ -2228,9 +2094,9 @@ let currentGame = "all";
 
 const accounts = [
 
-    /* ================================
-       MOBILE LEGENDS
-    ================================= */
+    /* =================================================
+       MOBILE LEGENDS — 6
+    ================================================= */
 
     {
         id:"ML001",
@@ -2335,9 +2201,9 @@ const accounts = [
     },
 
 
-    /* ================================
-       FREE FIRE
-    ================================= */
+    /* =================================================
+       FREE FIRE — 6
+    ================================================= */
 
     {
         id:"FF001",
@@ -2439,6 +2305,220 @@ const accounts = [
 
         descriptionEN:
             "Free Fire collector account. Premium bundle and item collection. Suitable for collectors. Warranty included."
+    },
+
+
+    /* =================================================
+       EFOOTBALL — 6
+    ================================================= */
+
+    {
+        id:"EFB001",
+        game:"eFootball",
+        gameType:"efb",
+        skin:"Premium Squad",
+        oldPrice:"RM599.00",
+        price:"RM399.00",
+        priceNumber:399,
+        image:"images/EFB001.jpg",
+
+        descriptionBM:
+            "eFootball account. Premium squad dengan koleksi pemain menarik. Account ready untuk dimainkan. Berwaranti.",
+
+        descriptionEN:
+            "eFootball account. Premium squad with an attractive player collection. Ready to play. Warranty included."
+    },
+
+    {
+        id:"EFB002",
+        game:"eFootball",
+        gameType:"efb",
+        skin:"Epic Collection",
+        oldPrice:"RM699.00",
+        price:"RM499.00",
+        priceNumber:499,
+        image:"images/EFB002.jpg",
+
+        descriptionBM:
+            "eFootball account. Epic player collection. Squad mantap dan sesuai untuk competitive play. Berwaranti.",
+
+        descriptionEN:
+            "eFootball account. Epic player collection with a strong squad suitable for competitive play. Warranty included."
+    },
+
+    {
+        id:"EFB003",
+        game:"eFootball",
+        gameType:"efb",
+        skin:"Legend Squad",
+        oldPrice:"RM899.00",
+        price:"RM650.00",
+        priceNumber:650,
+        image:"images/EFB003.jpg",
+
+        descriptionBM:
+            "eFootball account. Legend squad dengan pelbagai pemain premium. Sesuai untuk collector dan competitive player. Berwaranti.",
+
+        descriptionEN:
+            "eFootball account. Legend squad with various premium players. Suitable for collectors and competitive players. Warranty included."
+    },
+
+    {
+        id:"EFB004",
+        game:"eFootball",
+        gameType:"efb",
+        skin:"Epic Big Time",
+        oldPrice:"RM999.00",
+        price:"RM750.00",
+        priceNumber:750,
+        image:"images/EFB004.jpg",
+
+        descriptionBM:
+            "eFootball account. Koleksi Epic dan Big Time. Squad premium dengan pemain berkualiti. Berwaranti.",
+
+        descriptionEN:
+            "eFootball account. Epic and Big Time collection with a premium squad and quality players. Warranty included."
+    },
+
+    {
+        id:"EFB005",
+        game:"eFootball",
+        gameType:"efb",
+        skin:"Elite Squad",
+        oldPrice:"RM1,199.00",
+        price:"RM899.00",
+        priceNumber:899,
+        image:"images/EFB005.jpg",
+
+        descriptionBM:
+            "eFootball account. Elite squad dengan koleksi pemain premium dan legendary. Ready untuk dimainkan. Berwaranti.",
+
+        descriptionEN:
+            "eFootball account. Elite squad with premium and legendary players. Ready to play. Warranty included."
+    },
+
+    {
+        id:"EFB006",
+        game:"eFootball",
+        gameType:"efb",
+        skin:"Ultimate Collection",
+        oldPrice:"RM1,499.00",
+        price:"RM1,199.00",
+        priceNumber:1199,
+        image:"images/EFB006.jpg",
+
+        descriptionBM:
+            "eFootball account. Ultimate collection. Banyak pemain premium, Epic dan Big Time. Sesuai untuk collector. Berwaranti.",
+
+        descriptionEN:
+            "eFootball account. Ultimate collection with premium, Epic and Big Time players. Suitable for collectors. Warranty included."
+    },
+
+
+    /* =================================================
+       PUBG — 6
+    ================================================= */
+
+    {
+        id:"PUBG001",
+        game:"PUBG Mobile",
+        gameType:"pubg",
+        skin:"Starter Collection",
+        oldPrice:"RM499.00",
+        price:"RM299.00",
+        priceNumber:299,
+        image:"images/PUBG001.jpg",
+
+        descriptionBM:
+            "PUBG Mobile account. Starter collection dengan pelbagai item dan cosmetic. Ready untuk dimainkan. Berwaranti.",
+
+        descriptionEN:
+            "PUBG Mobile account. Starter collection with various items and cosmetics. Ready to play. Warranty included."
+    },
+
+    {
+        id:"PUBG002",
+        game:"PUBG Mobile",
+        gameType:"pubg",
+        skin:"Rare Collection",
+        oldPrice:"RM599.00",
+        price:"RM399.00",
+        priceNumber:399,
+        image:"images/PUBG002.jpg",
+
+        descriptionBM:
+            "PUBG Mobile account. Rare collection dengan cosmetic dan item menarik. Berwaranti.",
+
+        descriptionEN:
+            "PUBG Mobile account. Rare collection with attractive cosmetics and items. Warranty included."
+    },
+
+    {
+        id:"PUBG003",
+        game:"PUBG Mobile",
+        gameType:"pubg",
+        skin:"Premium Collection",
+        oldPrice:"RM799.00",
+        price:"RM550.00",
+        priceNumber:550,
+        image:"images/PUBG003.jpg",
+
+        descriptionBM:
+            "PUBG Mobile account. Premium collection dengan pelbagai cosmetic dan outfit. Account ready untuk dimainkan. Berwaranti.",
+
+        descriptionEN:
+            "PUBG Mobile account. Premium collection with various cosmetics and outfits. Ready to play. Warranty included."
+    },
+
+    {
+        id:"PUBG004",
+        game:"PUBG Mobile",
+        gameType:"pubg",
+        skin:"Mythic Collection",
+        oldPrice:"RM999.00",
+        price:"RM699.00",
+        priceNumber:699,
+        image:"images/PUBG004.jpg",
+
+        descriptionBM:
+            "PUBG Mobile account. Mythic collection dengan item premium dan rare. Sesuai untuk collector. Berwaranti.",
+
+        descriptionEN:
+            "PUBG Mobile account. Mythic collection with premium and rare items. Suitable for collectors. Warranty included."
+    },
+
+    {
+        id:"PUBG005",
+        game:"PUBG Mobile",
+        gameType:"pubg",
+        skin:"Legendary Collection",
+        oldPrice:"RM1,299.00",
+        price:"RM899.00",
+        priceNumber:899,
+        image:"images/PUBG005.jpg",
+
+        descriptionBM:
+            "PUBG Mobile account. Legendary collection dengan pelbagai outfit dan cosmetic premium. Berwaranti.",
+
+        descriptionEN:
+            "PUBG Mobile account. Legendary collection with various premium outfits and cosmetics. Warranty included."
+    },
+
+    {
+        id:"PUBG006",
+        game:"PUBG Mobile",
+        gameType:"pubg",
+        skin:"Collector Account",
+        oldPrice:"RM1,599.00",
+        price:"RM1,199.00",
+        priceNumber:1199,
+        image:"images/PUBG006.jpg",
+
+        descriptionBM:
+            "PUBG Mobile collector account. Koleksi item rare, premium dan legendary. Sesuai untuk collector. Berwaranti.",
+
+        descriptionEN:
+            "PUBG Mobile collector account. Rare, premium and legendary item collection. Suitable for collectors. Warranty included."
     }
 
 ];
@@ -2483,6 +2563,28 @@ function checkGame(account){
 
 
 /* =====================================================
+   GAME ICON
+===================================================== */
+
+function getGameIcon(gameType){
+
+    if(gameType === "ml")
+        return "⚔️";
+
+    if(gameType === "ff")
+        return "🔥";
+
+    if(gameType === "efb")
+        return "⚽";
+
+    if(gameType === "pubg")
+        return "🔫";
+
+    return "🎮";
+}
+
+
+/* =====================================================
    CREATE CARD
 ===================================================== */
 
@@ -2504,9 +2606,7 @@ function createCard(account){
         : "📦 Stock 1";
 
     const gameIcon =
-        account.gameType === "ml"
-        ? "⚔️"
-        : "🔥";
+        getGameIcon(account.gameType);
 
     return `
 
@@ -2535,18 +2635,15 @@ function createCard(account){
 
             </div>
 
-
             <div class="content">
 
                 <div class="game">
                     ${account.game}
                 </div>
 
-
                 <div class="name">
                     ${account.id} | ${account.skin}
                 </div>
-
 
                 <div class="info">
 
@@ -2560,16 +2657,13 @@ function createCard(account){
 
                 </div>
 
-
                 <div class="old-price">
                     ${account.oldPrice}
                 </div>
 
-
                 <div class="price">
                     ${account.price}
                 </div>
-
 
                 <button
                     class="detail-button"
@@ -2731,7 +2825,6 @@ function showDetail(id){
     if(!account)
         return;
 
-
     document
         .getElementById("modalTitle")
         .textContent =
@@ -2739,33 +2832,27 @@ function showDetail(id){
             " | " +
             account.skin;
 
-
     document
         .getElementById("modalDesc")
         .textContent =
-
-        currentLanguage === "bm"
-        ? account.descriptionBM
-        : account.descriptionEN;
-
+            currentLanguage === "bm"
+            ? account.descriptionBM
+            : account.descriptionEN;
 
     document
         .getElementById("modalOld")
         .textContent =
             account.oldPrice;
 
-
     document
         .getElementById("modalPrice")
         .textContent =
             account.price;
 
-
     document
         .getElementById("modalImage")
         .src =
             account.image;
-
 
     const message =
         encodeURIComponent(
@@ -2791,13 +2878,11 @@ function showDetail(id){
             account.skin
         );
 
-
     document
         .getElementById("modalWA")
         .href =
             "https://wa.me/601133169293?text=" +
             message;
-
 
     document
         .getElementById("modalWA")
@@ -2813,11 +2898,9 @@ function showDetail(id){
 
         "💬 BUY NOW ON WHATSAPP";
 
-
     document
         .getElementById("detailModal")
         .classList.add("show");
-
 
     document.body
         .classList.add("modal-open");
@@ -2887,7 +2970,6 @@ function setLanguage(language){
         ? "ms"
         : "en";
 
-
     document
         .getElementById("bmBtn")
         .classList.toggle(
@@ -2895,14 +2977,12 @@ function setLanguage(language){
             language === "bm"
         );
 
-
     document
         .getElementById("enBtn")
         .classList.toggle(
             "active",
             language === "en"
         );
-
 
     document
         .querySelectorAll("[data-bm]")
@@ -2923,7 +3003,6 @@ function setLanguage(language){
 
         });
 
-
     document
         .getElementById("searchInput")
         .placeholder =
@@ -2932,12 +3011,11 @@ function setLanguage(language){
 
         ?
 
-        "🔍 Cari ML001, FF001, skin..."
+        "🔍 Cari ML001, FF001, EFB001, PUBG001..."
 
         :
 
-        "🔍 Search ML001, FF001, skins...";
-
+        "🔍 Search ML001, FF001, EFB001, PUBG001...";
 
     searchAccount();
 }
